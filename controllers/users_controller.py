@@ -3,7 +3,7 @@ from flask_bcrypt import generate_password_hash
 
 from db import db
 from models.app_users import AppUsers, app_user_schema, app_users_schema
-# from util.reflection import populate_object
+from util.reflection import populate_object
 # from lib.authenticate import auth
 
 
@@ -15,7 +15,7 @@ def user_add(req):
     
     new_user = AppUsers.new_user_obj()
 
-    # populate_object(new_user, post_data)
+    populate_object(new_user, post_data)
 
     new_user.password = generate_password_hash(new_user.password).decode('utf8')
 
