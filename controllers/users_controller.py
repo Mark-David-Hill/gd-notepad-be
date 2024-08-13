@@ -5,7 +5,7 @@ from uuid import UUID
 from db import db
 from models.app_users import AppUsers, app_user_schema, app_users_schema
 from util.reflection import populate_object
-# from lib.authenticate import auth
+from lib.authenticate import auth
 
 
 def user_add(req):
@@ -42,7 +42,7 @@ def users_get_all():
     return jsonify({"message": "users found", "results": app_users_schema.dump(users_query)}), 200
 
 
-# @auth
+@auth
 def user_get_by_id(user_id):
     try:
         UUID(user_id, version=4)
@@ -57,6 +57,7 @@ def user_get_by_id(user_id):
     return jsonify({"message": "user found", "result": app_user_schema.dump(user_query)}), 200
 
 
+@auth
 def user_update_by_id(req, user_id):
     post_data = req.form if req.form else req.json
 
@@ -81,6 +82,7 @@ def user_update_by_id(req, user_id):
         return jsonify({"message": "could not update user"})
 
 
+@auth
 def user_delete_by_id(user_id):
     try:
         UUID(user_id, version=4)
