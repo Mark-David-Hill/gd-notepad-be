@@ -18,8 +18,6 @@ def user_add(req):
 
     populate_object(new_user, post_data)
 
-    print("NEW USER", new_user)
-
     new_user.password = generate_password_hash(new_user.password).decode('utf8')
 
     try:
