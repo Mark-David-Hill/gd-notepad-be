@@ -14,7 +14,7 @@ class AppUsers(db.Model):
     last_name = db.Column(db.String(), nullable=False)
     email = db.Column(db.String(), nullable=False, unique=True)
     password = db.Column(db.String(), nullable=False)
-    role = db.Column(db.String(), nullable=False)
+    role = db.Column(db.String(), nullable=False, default="user")
     active = db.Column(db.Boolean(), nullable=False, default=True)
 
     auth = db.relationship("AuthTokens", back_populates="user")
@@ -28,7 +28,7 @@ class AppUsers(db.Model):
         self.active = active
 
     def new_user_obj():
-        return AppUsers("", "", "", "", "", "")
+        return AppUsers("", "", "", "", "", True)
     
 
 class AppUsersSchema(ma.Schema):
