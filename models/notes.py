@@ -11,7 +11,7 @@ class Notes(db.Model):
     __tablename__ = "Notes"
 
     note_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    user_id = db.Column(UUID(as_uuid=True), db.ForeignKey("AppUsers.user_id", ondelete="CASCADE"), nullable=False)
+    user_id = db.Column(UUID(as_uuid=True), db.ForeignKey("AppUsers.user_id"), nullable=False)
     content = db.Column(db.String(), nullable=False)
     date_time = db.Column(db.DateTime(), nullable=False, default=datetime.now())
 
