@@ -1,5 +1,4 @@
 from flask import jsonify
-from flask_bcrypt import generate_password_hash
 from uuid import UUID
 from datetime import datetime
 
@@ -9,6 +8,7 @@ from util.reflection import populate_object
 from lib.authenticate import auth
 
 
+@auth
 def note_add(req):
     post_data = req.form if req.form else req.json
 
@@ -32,6 +32,7 @@ def note_add(req):
     
     
 
+@auth
 def notes_get_all():
     notes_query = db.session.query(Notes).all()
 
@@ -94,7 +95,6 @@ def note_delete_by_id(note_id):
         return jsonify({"message": "note does not exist"}), 404
     
     try:
-        print("NOTE QUERY User ID", note_query.user_id)
         db.session.delete(note_query)
         db.session.commit()
         return jsonify({"message": "the note was deleted"}), 201
