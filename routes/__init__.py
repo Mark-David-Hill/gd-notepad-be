@@ -1,3 +1,4 @@
+from .elements_routes import *
 from .types_routes import *
 from .users_routes import *
 from .notes_routes import *
