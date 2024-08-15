@@ -11,11 +11,13 @@ class GameElements(db.Model):
 
     element_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     type_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Types.type_id"), nullable=False)
+    game_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Games.game_id"), nullable=False)
     name = db.Column(db.String(), nullable=False)
     description = db.Column(db.String())
     image_url = db.Column(db.String())
 
     type = db.relationship("Types", back_populates="elements")
+    game = db.relationship("Games", back_populates="elements")
     note = db.relationship("Notes", back_populates="element", cascade="all")
 
     def __init__(self, name, description, image_url):
@@ -29,8 +31,9 @@ class GameElements(db.Model):
 
 class GameElementsSchema(ma.Schema):
     class Meta:
-        fields = ["element_id", "name", "description", "image_url", "type"]
+        fields = ["element_id", "name", "description", "image_url", "type", "game"]
     type = ma.fields.Nested("TypesSchema")
+    game = ma.fields.Nested("GamesSchema")
 
 
 game_element_schema = GameElementsSchema()

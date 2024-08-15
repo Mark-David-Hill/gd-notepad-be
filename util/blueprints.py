@@ -6,3 +6,4 @@ def register_blueprints(app):
     app.register_blueprint(routes.notes)
     app.register_blueprint(routes.types)
     app.register_blueprint(routes.elements)
+    app.register_blueprint(routes.games)
