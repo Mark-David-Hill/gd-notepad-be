@@ -13,8 +13,7 @@ class Types(db.Model):
     name = db.Column(db.String(), nullable=False)
     description = db.Column(db.String())
 
-    # auth = db.relationship("AuthTokens", back_populates="user", cascade="all")
-    # note = db.relationship("Notes", back_populates="user", cascade="all")
+    elements = db.relationship("GameElements", foreign_keys="[GameElements.type_id]", back_populates="type", cascade='all')
 
     def __init__(self, name, description):
         self.name = name
