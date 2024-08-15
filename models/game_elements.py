@@ -15,7 +15,8 @@ class GameElements(db.Model):
     description = db.Column(db.String())
     image_url = db.Column(db.String())
 
-    type = db.relationship('Types', back_populates='elements')
+    type = db.relationship("Types", back_populates="elements")
+    note = db.relationship("Notes", back_populates="element", cascade="all")
 
     def __init__(self, name, description, image_url):
         self.name = name
@@ -28,7 +29,7 @@ class GameElements(db.Model):
 
 class GameElementsSchema(ma.Schema):
     class Meta:
-        fields = ['element_id', 'name', 'description', 'image_url', 'type']
+        fields = ["element_id", "name", "description", "image_url", "type"]
     type = ma.fields.Nested("TypesSchema")
 
 
