@@ -16,6 +16,7 @@ class Games(db.Model):
     genre = db.Column(db.String())
 
     elements = db.relationship("GameElements", foreign_keys="[GameElements.game_id]", back_populates="game", cascade='all')
+    profile = db.relationship("ReleaseProfiles", back_populates="game", cascade="all", uselist=False)
 
     def __init__(self, name, description, series, genre):
         self.name = name
@@ -30,6 +31,7 @@ class Games(db.Model):
 class GamesSchema(ma.Schema):
     class Meta:
         fields = ["game_id", "name", "description", "series", "genre"]
+    # profile = ma.fields.Nested("ReleaseProfiles")
 
 
 game_schema = GamesSchema()
