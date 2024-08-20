@@ -5,3 +5,4 @@ from .users_routes import users
 from .notes_routes import notes
 from .games_routes import games
 from .auth_routes import auth
+from .tags_routes import tags

@@ -5,3 +5,4 @@ from .users_controller import *
 from .notes_controller import *
 from .games_controller import *
 from .auth_controller import *
+from .tags_controller import *
