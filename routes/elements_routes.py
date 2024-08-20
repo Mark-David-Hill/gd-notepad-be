@@ -10,6 +10,11 @@ def element_add():
     return controllers.element_add(request)
 
 
+@elements.route("/element/tag", methods=["POST"])
+def element_tag_update():
+    return controllers.element_tag_update(request)
+
+
 @elements.route("/elements")
 def elements_get_all():
     return controllers.elements_get_all()

@@ -4,6 +4,7 @@ from sqlalchemy.dialects.postgresql import UUID
 import marshmallow as ma
 
 from db import db
+from models.game_elements_tags_xref import game_elements_tags_xref
 
 
 class GameElements(db.Model):
@@ -19,6 +20,7 @@ class GameElements(db.Model):
     type = db.relationship("Types", back_populates="elements")
     game = db.relationship("Games", back_populates="elements")
     note = db.relationship("Notes", back_populates="element", cascade="all")
+    tags = db.relationship('Tags', secondary=game_elements_tags_xref, back_populates='elements')
 
     def __init__(self, name, description, image_url):
         self.name = name
@@ -31,9 +33,10 @@ class GameElements(db.Model):
 
 class GameElementsSchema(ma.Schema):
     class Meta:
-        fields = ["element_id", "name", "description", "image_url", "type", "game"]
+        fields = ["element_id", "name", "description", "image_url", "type", "game", "tags"]
     type = ma.fields.Nested("TypesSchema")
     game = ma.fields.Nested("GamesSchema")
+    tags = ma.fields.Nested("TagsSchema", many=True, exclude=["type"])
 
 
 game_element_schema = GameElementsSchema()
