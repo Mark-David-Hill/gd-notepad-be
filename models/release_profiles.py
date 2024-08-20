@@ -10,7 +10,7 @@ class ReleaseProfiles(db.Model):
     __tablename__ = "ReleaseProfiles"
 
     profile_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    game_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Games.game_id", ondelete="CASCADE"), nullable=False)
+    game_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Games.game_id", ondelete="CASCADE"), unique=True, nullable=False)
     release_platforms = db.Column(db.String(), nullable=False)
     release_date = db.Column(db.String())
     developer = db.Column(db.String())

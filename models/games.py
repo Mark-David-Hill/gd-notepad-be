@@ -31,8 +31,6 @@ class Games(db.Model):
 class GamesSchema(ma.Schema):
     class Meta:
         fields = ["game_id", "name", "description", "series", "genre"]
-    # profile = ma.fields.Nested("ReleaseProfiles")
-
 
 game_schema = GamesSchema()
 games_schema = GamesSchema(many=True)
