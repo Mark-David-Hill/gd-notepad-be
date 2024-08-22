@@ -4,7 +4,7 @@ from uuid import UUID
 from db import db
 from models.tags import Tags, tag_schema, tags_schema
 from util.reflection import populate_object
-from lib.authenticate import auth
+from lib.authenticate import auth, validate_uuid4
 
 
 @auth
@@ -40,9 +40,7 @@ def tags_get_all():
 
 @auth
 def tag_get_by_id(tag_id):
-    try:
-        UUID(tag_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(tag_id):
         return jsonify({"message": "cannot get tag without a valid uuid"}), 400
 
     tag_query = db.session.query(Tags).filter(Tags.tag_id == tag_id).first()
@@ -57,9 +55,7 @@ def tag_get_by_id(tag_id):
 def tag_update_by_id(req, tag_id):
     post_data = req.form if req.form else req.json
 
-    try:
-        UUID(tag_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(tag_id):
         return jsonify({"message": "cannot update tag without a valid uuid"}), 400
 
     tag_query = db.session.query(Tags).filter(Tags.tag_id == tag_id).first()
@@ -80,9 +76,7 @@ def tag_update_by_id(req, tag_id):
 
 @auth
 def tag_delete_by_id(tag_id):
-    try:
-        UUID(tag_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(tag_id):
         return jsonify({"message": "cannot update tag without a valid uuid"}), 400
 
     tag_query = db.session.query(Tags).filter(Tags.tag_id == tag_id).first()

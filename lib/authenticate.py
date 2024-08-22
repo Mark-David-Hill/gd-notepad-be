@@ -49,3 +49,18 @@ def auth(function):
             return fail_response()
         
     return function_wrapper
+
+
+def authenticate_return_auth(func):
+  @functools.wraps(func)
+  def wrapper_authenticate(*args, **kwargs):
+    auth_info = validate_token(args[0])
+    kwargs["auth_info"] = auth_info
+
+    return(
+      func(
+        *args, **kwargs
+        ) if auth_info else fail_response()
+    )
+  
+  return wrapper_authenticate

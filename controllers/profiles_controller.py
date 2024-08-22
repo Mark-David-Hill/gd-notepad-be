@@ -4,7 +4,7 @@ from uuid import UUID
 from db import db
 from models.release_profiles import ReleaseProfiles, release_profile_schema, release_profiles_schema
 from util.reflection import populate_object
-from lib.authenticate import auth
+from lib.authenticate import auth, validate_uuid4
 
 
 @auth
@@ -41,9 +41,7 @@ def profiles_get_all():
 
 @auth
 def profile_get_by_id(profile_id):
-    try:
-        UUID(profile_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(profile_id):
         return jsonify({"message": "cannot get profile without a valid uuid"}), 400
 
     profile_query = db.session.query(ReleaseProfiles).filter(ReleaseProfiles.profile_id == profile_id).first()
@@ -58,9 +56,7 @@ def profile_get_by_id(profile_id):
 def profile_update_by_id(req, profile_id):
     post_data = req.form if req.form else req.json
 
-    try:
-        UUID(profile_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(profile_id):
         return jsonify({"message": "cannot update profile without a valid uuid"}), 400
 
     profile_query = db.session.query(ReleaseProfiles).filter(ReleaseProfiles.profile_id == profile_id).first()
@@ -81,9 +77,7 @@ def profile_update_by_id(req, profile_id):
 
 @auth
 def profile_delete_by_id(profile_id):
-    try:
-        UUID(profile_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(profile_id):
         return jsonify({"message": "cannot update profile without a valid uuid"}), 400
 
     profile_query = db.session.query(ReleaseProfiles).filter(ReleaseProfiles.profile_id == profile_id).first()

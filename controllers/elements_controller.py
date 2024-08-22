@@ -5,7 +5,7 @@ from db import db
 from models.game_elements import GameElements, game_element_schema, game_elements_schema
 from models.tags import Tags
 from util.reflection import populate_object
-from lib.authenticate import auth
+from lib.authenticate import auth, validate_uuid4
 
 
 @auth
@@ -69,9 +69,7 @@ def elements_get_all():
 
 @auth
 def element_get_by_id(element_id):
-    try:
-        UUID(element_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(element_id):
         return jsonify({"message": "cannot get element without a valid uuid"})
 
     element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()
@@ -86,9 +84,7 @@ def element_get_by_id(element_id):
 def element_update_by_id(req, element_id):
     post_data = req.form if req.form else req.json
 
-    try:
-        UUID(element_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(element_id):
         return jsonify({"message": "cannot update element without a valid uuid"})
 
     element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()
@@ -109,9 +105,7 @@ def element_update_by_id(req, element_id):
 
 @auth
 def element_delete_by_id(element_id):
-    try:
-        UUID(element_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(element_id):
         return jsonify({"message": "cannot update element without a valid uuid"})
 
     element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()

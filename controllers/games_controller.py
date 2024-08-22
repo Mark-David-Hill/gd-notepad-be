@@ -4,7 +4,7 @@ from uuid import UUID
 from db import db
 from models.games import Games, game_schema, games_schema
 from util.reflection import populate_object
-from lib.authenticate import auth
+from lib.authenticate import auth, validate_uuid4
 
 
 @auth
@@ -40,9 +40,7 @@ def games_get_all():
 
 @auth
 def game_get_by_id(game_id):
-    try:
-        UUID(game_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(game_id):
         return jsonify({"message": "cannot get game without a valid uuid"}), 400
 
     game_query = db.session.query(Games).filter(Games.game_id == game_id).first()
@@ -57,9 +55,7 @@ def game_get_by_id(game_id):
 def game_update_by_id(req, game_id):
     post_data = req.form if req.form else req.json
 
-    try:
-        UUID(game_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(game_id):
         return jsonify({"message": "cannot update game without a valid uuid"}), 400
 
     game_query = db.session.query(Games).filter(Games.game_id == game_id).first()
@@ -80,9 +76,7 @@ def game_update_by_id(req, game_id):
 
 @auth
 def game_delete_by_id(game_id):
-    try:
-        UUID(game_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(game_id):
         return jsonify({"message": "cannot update game without a valid uuid"}), 400
 
     game_query = db.session.query(Games).filter(Games.game_id == game_id).first()

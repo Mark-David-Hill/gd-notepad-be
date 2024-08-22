@@ -5,7 +5,7 @@ from datetime import datetime
 from db import db
 from models.notes import Notes, note_schema, notes_schema
 from util.reflection import populate_object
-from lib.authenticate import auth
+from lib.authenticate import auth, validate_uuid4
 
 
 @auth
@@ -44,9 +44,7 @@ def notes_get_all():
 
 @auth
 def note_get_by_id(note_id):
-    try:
-        UUID(note_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(note_id):
         return jsonify({"message": "cannot get note without a valid uuid"}), 400
 
     note_query = db.session.query(Notes).filter(Notes.note_id == note_id).first()
@@ -61,9 +59,7 @@ def note_get_by_id(note_id):
 def note_update_by_id(req, note_id):
     post_data = req.form if req.form else req.json
 
-    try:
-        UUID(note_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(note_id):
         return jsonify({"message": "cannot update note without a valid uuid"}), 400
 
     note_query = db.session.query(Notes).filter(Notes.note_id == note_id).first()
@@ -84,9 +80,7 @@ def note_update_by_id(req, note_id):
 
 @auth
 def note_delete_by_id(note_id):
-    try:
-        UUID(note_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(note_id):
         return jsonify({"message": "cannot update note without a valid uuid"}), 400
 
     note_query = db.session.query(Notes).filter(Notes.note_id == note_id).first()

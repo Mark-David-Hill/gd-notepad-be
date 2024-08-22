@@ -4,7 +4,7 @@ from uuid import UUID
 from db import db
 from models.types import Types, type_schema, types_schema
 from util.reflection import populate_object
-from lib.authenticate import auth
+from lib.authenticate import auth, validate_uuid4
 
 
 @auth
@@ -40,9 +40,7 @@ def types_get_all():
 
 @auth
 def type_get_by_id(type_id):
-    try:
-        UUID(type_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(type_id):
         return jsonify({"message": "cannot get type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
@@ -57,9 +55,7 @@ def type_get_by_id(type_id):
 def type_update_by_id(req, type_id):
     post_data = req.form if req.form else req.json
 
-    try:
-        UUID(type_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(type_id):
         return jsonify({"message": "cannot update type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
@@ -80,9 +76,7 @@ def type_update_by_id(req, type_id):
 
 @auth
 def type_delete_by_id(type_id):
-    try:
-        UUID(type_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(type_id):
         return jsonify({"message": "cannot update type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()

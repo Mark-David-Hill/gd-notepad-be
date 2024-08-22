@@ -5,7 +5,7 @@ from uuid import UUID
 from db import db
 from models.app_users import AppUsers, app_user_schema, app_users_schema
 from util.reflection import populate_object
-from lib.authenticate import auth
+from lib.authenticate import auth, validate_uuid4
 
 
 def user_add(req):
@@ -42,9 +42,7 @@ def users_get_all():
 
 @auth
 def user_get_by_id(user_id):
-    try:
-        UUID(user_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(user_id):
         return jsonify({"message": "cannot get user without a valid uuid"}), 400
 
     user_query = db.session.query(AppUsers).filter(AppUsers.user_id == user_id).first()
@@ -59,9 +57,7 @@ def user_get_by_id(user_id):
 def user_update_by_id(req, user_id):
     post_data = req.form if req.form else req.json
 
-    try:
-        UUID(user_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(user_id):
         return jsonify({"message": "cannot update user without a valid uuid"}), 400
 
     user_query = db.session.query(AppUsers).filter(AppUsers.user_id == user_id).first()
@@ -82,9 +78,7 @@ def user_update_by_id(req, user_id):
 
 @auth
 def user_delete_by_id(user_id):
-    try:
-        UUID(user_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(user_id):
         return jsonify({"message": "cannot update user without a valid uuid"}), 400
 
     user_query = db.session.query(AppUsers).filter(AppUsers.user_id == user_id).first()

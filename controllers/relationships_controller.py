@@ -4,7 +4,7 @@ from uuid import UUID
 from db import db
 from models.element_relationships import ElementRelationships, relationship_schema, relationships_schema
 from util.reflection import populate_object
-from lib.authenticate import auth
+from lib.authenticate import auth, validate_uuid4
 
 
 @auth
@@ -42,9 +42,7 @@ def relationships_get_all():
 
 @auth
 def relationship_get_by_id(relationship_id):
-    try:
-        UUID(relationship_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(relationship_id):
         return jsonify({"message": "cannot get relationship without a valid uuid"}), 400
 
     relationship_query = db.session.query(ElementRelationships).filter(ElementRelationships.relationship_id == relationship_id).first()
@@ -59,9 +57,7 @@ def relationship_get_by_id(relationship_id):
 def relationship_update_by_id(req, relationship_id):
     post_data = req.form if req.form else req.json
 
-    try:
-        UUID(relationship_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(relationship_id):
         return jsonify({"message": "cannot update relationship without a valid uuid"}), 400
 
     relationship_query = db.session.query(ElementRelationships).filter(ElementRelationships.relationship_id == relationship_id).first()
@@ -82,9 +78,7 @@ def relationship_update_by_id(req, relationship_id):
 
 @auth
 def relationship_delete_by_id(relationship_id):
-    try:
-        UUID(relationship_id, version=4)
-    except Exception as e:
+    if not validate_uuid4(relationship_id):
         return jsonify({"message": "cannot update relationship without a valid uuid"}), 400
 
     relationship_query = db.session.query(ElementRelationships).filter(ElementRelationships.relationship_id == relationship_id).first()
