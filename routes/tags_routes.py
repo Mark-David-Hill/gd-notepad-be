@@ -25,6 +25,6 @@ def tag_update_by_id(tag_id):
     return controllers.tag_update_by_id(request, tag_id)
 
 
-@tags.route("/tag/<tag_id>", methods=["DELETE"])
+@tags.route("/tag/delete/<tag_id>", methods=["DELETE"])
 def tag_delete_by_id(tag_id):
     return controllers.tag_delete_by_id(tag_id)

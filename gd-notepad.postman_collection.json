@@ -118,7 +118,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/user/{{recentUserId}}",
+							"raw": "http://localhost:8086/user/delete/{{recentUserId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -126,6 +126,7 @@
 							"port": "8086",
 							"path": [
 								"user",
+								"delete",
 								"{{recentUserId}}"
 							]
 						}
@@ -254,7 +255,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/type/{{recentTypeId}}",
+							"raw": "http://localhost:8086/type/delete/{{recentTypeId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -262,6 +263,7 @@
 							"port": "8086",
 							"path": [
 								"type",
+								"delete",
 								"{{recentTypeId}}"
 							]
 						}
@@ -390,7 +392,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/game/{{recentGameId}}",
+							"raw": "http://localhost:8086/game/delete/{{recentGameId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -398,6 +400,7 @@
 							"port": "8086",
 							"path": [
 								"game",
+								"delete",
 								"{{recentGameId}}"
 							]
 						}
@@ -526,15 +529,16 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/game/{{recentGameId}}",
+							"raw": "http://localhost:8086/profile/delete/{{recentProfileId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8086",
 							"path": [
-								"game",
-								"{{recentGameId}}"
+								"profile",
+								"delete",
+								"{{recentProfileId}}"
 							]
 						}
 					},
@@ -721,7 +725,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/element/{{recentElementId}}",
+							"raw": "http://localhost:8086/element/delete/{{recentElementId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -729,6 +733,7 @@
 							"port": "8086",
 							"path": [
 								"element",
+								"delete",
 								"{{recentElementId}}"
 							]
 						}
@@ -857,7 +862,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/tag/{{recentTagId}}",
+							"raw": "http://localhost:8086/tag/delete/{{recentTagId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -865,6 +870,7 @@
 							"port": "8086",
 							"path": [
 								"tag",
+								"delete",
 								"{{recentTagId}}"
 							]
 						}
@@ -993,7 +999,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/note/d6543193-57da-4b2a-b626-714a45a6e9a8",
+							"raw": "http://localhost:8086/note/delete/{{recentNoteId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1001,7 +1007,8 @@
 							"port": "8086",
 							"path": [
 								"note",
-								"d6543193-57da-4b2a-b626-714a45a6e9a8"
+								"delete",
+								"{{recentNoteId}}"
 							]
 						}
 					},
@@ -1124,12 +1131,12 @@
 					"response": []
 				},
 				{
-					"name": "Delete Note By Id",
+					"name": "Delete Relationship By Id",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/relationship/{{recentRelationshipId}}",
+							"raw": "http://localhost:8086/relationship/delete/{{recentRelationshipId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1137,6 +1144,7 @@
 							"port": "8086",
 							"path": [
 								"relationship",
+								"delete",
 								"{{recentRelationshipId}}"
 							]
 						}

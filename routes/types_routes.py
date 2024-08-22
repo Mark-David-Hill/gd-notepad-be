@@ -25,6 +25,6 @@ def type_update_by_id(type_id):
     return controllers.type_update_by_id(request, type_id)
 
 
-@types.route("/type/<type_id>", methods=["DELETE"])
+@types.route("/type/delete/<type_id>", methods=["DELETE"])
 def type_delete_by_id(type_id):
     return controllers.type_delete_by_id(type_id)

@@ -25,6 +25,6 @@ def relationship_update_by_id(relationship_id):
     return controllers.relationship_update_by_id(request, relationship_id)
 
 
-@relationships.route("/relationship/<relationship_id>", methods=["DELETE"])
+@relationships.route("/relationship/delete/<relationship_id>", methods=["DELETE"])
 def relationship_delete_by_id(relationship_id):
     return controllers.relationship_delete_by_id(relationship_id)

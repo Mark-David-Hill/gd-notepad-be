@@ -30,6 +30,6 @@ def element_update_by_id(element_id):
     return controllers.element_update_by_id(request, element_id)
 
 
-@elements.route("/element/<element_id>", methods=["DELETE"])
+@elements.route("/element/delete/<element_id>", methods=["DELETE"])
 def element_delete_by_id(element_id):
     return controllers.element_delete_by_id(element_id)

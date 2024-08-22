@@ -25,6 +25,6 @@ def note_update_by_id(note_id):
     return controllers.note_update_by_id(request, note_id)
 
 
-@notes.route("/note/<note_id>", methods=["DELETE"])
+@notes.route("/note/delete/<note_id>", methods=["DELETE"])
 def note_delete_by_id(note_id):
     return controllers.note_delete_by_id(note_id)

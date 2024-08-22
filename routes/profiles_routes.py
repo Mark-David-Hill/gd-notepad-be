@@ -25,6 +25,6 @@ def profile_update_by_id(profile_id):
     return controllers.profile_update_by_id(request, profile_id)
 
 
-@profiles.route("/profile/<profile_id>", methods=["DELETE"])
+@profiles.route("/profile/delete/<profile_id>", methods=["DELETE"])
 def profile_delete_by_id(profile_id):
     return controllers.profile_delete_by_id(profile_id)
