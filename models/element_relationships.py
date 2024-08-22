@@ -13,12 +13,12 @@ class ElementRelationships(db.Model):
     element_1_id = db.Column(UUID(as_uuid=True), db.ForeignKey("GameElements.element_id"), nullable=False)
     element_2_id = db.Column(UUID(as_uuid=True), db.ForeignKey("GameElements.element_id"), nullable=False)
     description = db.Column(db.String())
-    count = db.Column(db.Integer())
+    count = db.Column(db.Integer(), default=0)
 
     element_1 = db.relationship("GameElements", foreign_keys=[element_1_id], back_populates="related_element_1")
     element_2 = db.relationship("GameElements", foreign_keys=[element_2_id], back_populates="related_element_2")
 
-    def __init__(self, element_1_id, element_2_id, description, count):
+    def __init__(self, element_1_id, element_2_id, description, count=0):
         self.element_1_id = element_1_id
         self.element_2_id = element_2_id
         self.description = description

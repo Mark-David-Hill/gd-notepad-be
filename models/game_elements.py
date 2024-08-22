@@ -15,7 +15,7 @@ class GameElements(db.Model):
     game_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Games.game_id"), nullable=False)
     name = db.Column(db.String(), nullable=False)
     description = db.Column(db.String())
-    image_url = db.Column(db.String())
+    image_url = db.Column(db.String(), default=None)
 
     type = db.relationship("Types", back_populates="elements")
     game = db.relationship("Games", back_populates="elements")
@@ -24,7 +24,7 @@ class GameElements(db.Model):
     related_element_1 = db.relationship('ElementRelationships', foreign_keys='ElementRelationships.element_1_id', back_populates='element_1')
     related_element_2 = db.relationship('ElementRelationships', foreign_keys='ElementRelationships.element_2_id', back_populates='element_2')
 
-    def __init__(self, name, description, image_url):
+    def __init__(self, name, description, image_url=None):
         self.name = name
         self.description = description
         self.image_url = image_url
