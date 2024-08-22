@@ -12,7 +12,7 @@ def relationship_add(req):
     post_data = req.form if req.form else req.json
 
     if not post_data:
-        return jsonify({"message": "all required fields must be submitted"})
+        return jsonify({"message": "all required fields must be submitted"}), 400
     
     print("POST DATA", post_data)
     
@@ -27,7 +27,7 @@ def relationship_add(req):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not create relationship"})
+        return jsonify({"message": "could not create relationship"}), 400
     
 
 @auth
@@ -45,7 +45,7 @@ def relationship_get_by_id(relationship_id):
     try:
         UUID(relationship_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot get relationship without a valid uuid"})
+        return jsonify({"message": "cannot get relationship without a valid uuid"}), 400
 
     relationship_query = db.session.query(ElementRelationships).filter(ElementRelationships.relationship_id == relationship_id).first()
 
@@ -62,7 +62,7 @@ def relationship_update_by_id(req, relationship_id):
     try:
         UUID(relationship_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update relationship without a valid uuid"})
+        return jsonify({"message": "cannot update relationship without a valid uuid"}), 400
 
     relationship_query = db.session.query(ElementRelationships).filter(ElementRelationships.relationship_id == relationship_id).first()
 
@@ -77,7 +77,7 @@ def relationship_update_by_id(req, relationship_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not update relationship"})
+        return jsonify({"message": "could not update relationship"}), 400
 
 
 @auth
@@ -85,7 +85,7 @@ def relationship_delete_by_id(relationship_id):
     try:
         UUID(relationship_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update relationship without a valid uuid"})
+        return jsonify({"message": "cannot update relationship without a valid uuid"}), 400
 
     relationship_query = db.session.query(ElementRelationships).filter(ElementRelationships.relationship_id == relationship_id).first()
 
@@ -99,5 +99,5 @@ def relationship_delete_by_id(relationship_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not delete relationship"})
+        return jsonify({"message": "could not delete relationship"}), 400
         

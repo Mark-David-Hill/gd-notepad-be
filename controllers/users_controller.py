@@ -12,7 +12,7 @@ def user_add(req):
     post_data = req.form if req.form else req.json
 
     if not post_data:
-        return jsonify({"message": "all required fields must be submitted"})
+        return jsonify({"message": "all required fields must be submitted"}), 400
     
     new_user = AppUsers.new_user_obj()
 
@@ -27,7 +27,7 @@ def user_add(req):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not create user"})
+        return jsonify({"message": "could not create user"}), 400
     
     
 
@@ -45,7 +45,7 @@ def user_get_by_id(user_id):
     try:
         UUID(user_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot get user without a valid uuid"})
+        return jsonify({"message": "cannot get user without a valid uuid"}), 400
 
     user_query = db.session.query(AppUsers).filter(AppUsers.user_id == user_id).first()
 
@@ -62,7 +62,7 @@ def user_update_by_id(req, user_id):
     try:
         UUID(user_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update user without a valid uuid"})
+        return jsonify({"message": "cannot update user without a valid uuid"}), 400
 
     user_query = db.session.query(AppUsers).filter(AppUsers.user_id == user_id).first()
 
@@ -77,7 +77,7 @@ def user_update_by_id(req, user_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not update user"})
+        return jsonify({"message": "could not update user"}), 400
 
 
 @auth
@@ -85,7 +85,7 @@ def user_delete_by_id(user_id):
     try:
         UUID(user_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update user without a valid uuid"})
+        return jsonify({"message": "cannot update user without a valid uuid"}), 400
 
     user_query = db.session.query(AppUsers).filter(AppUsers.user_id == user_id).first()
 
@@ -99,5 +99,5 @@ def user_delete_by_id(user_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not delete user"})
+        return jsonify({"message": "could not delete user"}), 400
         

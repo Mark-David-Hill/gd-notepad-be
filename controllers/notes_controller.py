@@ -13,7 +13,7 @@ def note_add(req):
     post_data = req.form if req.form else req.json
 
     if not post_data:
-        return jsonify({"message": "all required fields must be submitted"})
+        return jsonify({"message": "all required fields must be submitted"}), 400
     
     new_note = Notes.new_note_obj()
 
@@ -28,7 +28,7 @@ def note_add(req):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not create note"})
+        return jsonify({"message": "could not create note"}), 400
     
     
 
@@ -47,7 +47,7 @@ def note_get_by_id(note_id):
     try:
         UUID(note_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot get note without a valid uuid"})
+        return jsonify({"message": "cannot get note without a valid uuid"}), 400
 
     note_query = db.session.query(Notes).filter(Notes.note_id == note_id).first()
 
@@ -64,7 +64,7 @@ def note_update_by_id(req, note_id):
     try:
         UUID(note_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update note without a valid uuid"})
+        return jsonify({"message": "cannot update note without a valid uuid"}), 400
 
     note_query = db.session.query(Notes).filter(Notes.note_id == note_id).first()
 
@@ -79,7 +79,7 @@ def note_update_by_id(req, note_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not update note"})
+        return jsonify({"message": "could not update note"}), 400
 
 
 @auth
@@ -87,7 +87,7 @@ def note_delete_by_id(note_id):
     try:
         UUID(note_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update note without a valid uuid"})
+        return jsonify({"message": "cannot update note without a valid uuid"}), 400
 
     note_query = db.session.query(Notes).filter(Notes.note_id == note_id).first()
 
@@ -101,5 +101,5 @@ def note_delete_by_id(note_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not delete note"})
+        return jsonify({"message": "could not delete note"}), 400
         

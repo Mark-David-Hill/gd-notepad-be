@@ -12,7 +12,7 @@ def game_add(req):
     post_data = req.form if req.form else req.json
 
     if not post_data:
-        return jsonify({"message": "all required fields must be submitted"})
+        return jsonify({"message": "all required fields must be submitted"}), 400
     
     new_game = Games.new_game_obj()
 
@@ -25,7 +25,7 @@ def game_add(req):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not create game"})
+        return jsonify({"message": "could not create game"}), 400
     
     
 @auth
@@ -43,7 +43,7 @@ def game_get_by_id(game_id):
     try:
         UUID(game_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot get game without a valid uuid"})
+        return jsonify({"message": "cannot get game without a valid uuid"}), 400
 
     game_query = db.session.query(Games).filter(Games.game_id == game_id).first()
 
@@ -60,7 +60,7 @@ def game_update_by_id(req, game_id):
     try:
         UUID(game_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update game without a valid uuid"})
+        return jsonify({"message": "cannot update game without a valid uuid"}), 400
 
     game_query = db.session.query(Games).filter(Games.game_id == game_id).first()
 
@@ -75,7 +75,7 @@ def game_update_by_id(req, game_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not update game"})
+        return jsonify({"message": "could not update game"}), 400
 
 
 @auth
@@ -83,7 +83,7 @@ def game_delete_by_id(game_id):
     try:
         UUID(game_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update game without a valid uuid"})
+        return jsonify({"message": "cannot update game without a valid uuid"}), 400
 
     game_query = db.session.query(Games).filter(Games.game_id == game_id).first()
 
@@ -97,5 +97,5 @@ def game_delete_by_id(game_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not delete game"})
+        return jsonify({"message": "could not delete game"}), 400
         

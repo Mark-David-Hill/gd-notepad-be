@@ -13,7 +13,7 @@ def element_add(req):
     post_data = req.form if req.form else req.json
 
     if not post_data:
-        return jsonify({"message": "all required fields must be submitted"})
+        return jsonify({"message": "all required fields must be submitted"}), 400
     
     new_element = GameElements.new_element_obj()
 

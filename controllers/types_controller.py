@@ -12,7 +12,7 @@ def type_add(req):
     post_data = req.form if req.form else req.json
 
     if not post_data:
-        return jsonify({"message": "all required fields must be submitted"})
+        return jsonify({"message": "all required fields must be submitted"}), 400
     
     new_type = Types.new_type_obj()
 
@@ -25,7 +25,7 @@ def type_add(req):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not create type"})
+        return jsonify({"message": "could not create type"}), 400
     
     
 @auth
@@ -43,7 +43,7 @@ def type_get_by_id(type_id):
     try:
         UUID(type_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot get type without a valid uuid"})
+        return jsonify({"message": "cannot get type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
 
@@ -60,7 +60,7 @@ def type_update_by_id(req, type_id):
     try:
         UUID(type_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update type without a valid uuid"})
+        return jsonify({"message": "cannot update type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
 
@@ -75,7 +75,7 @@ def type_update_by_id(req, type_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not update type"})
+        return jsonify({"message": "could not update type"}), 400
 
 
 @auth
@@ -83,7 +83,7 @@ def type_delete_by_id(type_id):
     try:
         UUID(type_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update type without a valid uuid"})
+        return jsonify({"message": "cannot update type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
 
@@ -97,5 +97,5 @@ def type_delete_by_id(type_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not delete type"})
+        return jsonify({"message": "could not delete type"}), 400
         

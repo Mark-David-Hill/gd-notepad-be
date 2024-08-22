@@ -12,7 +12,7 @@ def profile_add(req):
     post_data = req.form if req.form else req.json
 
     if not post_data:
-        return jsonify({"message": "all required fields must be submitted"})
+        return jsonify({"message": "all required fields must be submitted"}), 400
     
     new_profile = ReleaseProfiles.new_profile_obj()
 
@@ -25,7 +25,7 @@ def profile_add(req):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not create profile"})
+        return jsonify({"message": "could not create profile"}), 400
     
     
 
@@ -44,7 +44,7 @@ def profile_get_by_id(profile_id):
     try:
         UUID(profile_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot get profile without a valid uuid"})
+        return jsonify({"message": "cannot get profile without a valid uuid"}), 400
 
     profile_query = db.session.query(ReleaseProfiles).filter(ReleaseProfiles.profile_id == profile_id).first()
 
@@ -61,7 +61,7 @@ def profile_update_by_id(req, profile_id):
     try:
         UUID(profile_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update profile without a valid uuid"})
+        return jsonify({"message": "cannot update profile without a valid uuid"}), 400
 
     profile_query = db.session.query(ReleaseProfiles).filter(ReleaseProfiles.profile_id == profile_id).first()
 
@@ -76,7 +76,7 @@ def profile_update_by_id(req, profile_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not update profile"})
+        return jsonify({"message": "could not update profile"}), 400
 
 
 @auth
@@ -84,7 +84,7 @@ def profile_delete_by_id(profile_id):
     try:
         UUID(profile_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update profile without a valid uuid"})
+        return jsonify({"message": "cannot update profile without a valid uuid"}), 400
 
     profile_query = db.session.query(ReleaseProfiles).filter(ReleaseProfiles.profile_id == profile_id).first()
 
@@ -98,5 +98,5 @@ def profile_delete_by_id(profile_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not delete profile"})
+        return jsonify({"message": "could not delete profile"}), 400
         

@@ -12,7 +12,7 @@ def tag_add(req):
     post_data = req.form if req.form else req.json
 
     if not post_data:
-        return jsonify({"message": "all required fields must be submitted"})
+        return jsonify({"message": "all required fields must be submitted"}), 400
     
     new_tag = Tags.new_tag_obj()
 
@@ -25,7 +25,7 @@ def tag_add(req):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not create tag"})
+        return jsonify({"message": "could not create tag"}), 400
     
     
 @auth
@@ -43,7 +43,7 @@ def tag_get_by_id(tag_id):
     try:
         UUID(tag_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot get tag without a valid uuid"})
+        return jsonify({"message": "cannot get tag without a valid uuid"}), 400
 
     tag_query = db.session.query(Tags).filter(Tags.tag_id == tag_id).first()
 
@@ -60,7 +60,7 @@ def tag_update_by_id(req, tag_id):
     try:
         UUID(tag_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update tag without a valid uuid"})
+        return jsonify({"message": "cannot update tag without a valid uuid"}), 400
 
     tag_query = db.session.query(Tags).filter(Tags.tag_id == tag_id).first()
 
@@ -75,7 +75,7 @@ def tag_update_by_id(req, tag_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not update tag"})
+        return jsonify({"message": "could not update tag"}), 400
 
 
 @auth
@@ -83,7 +83,7 @@ def tag_delete_by_id(tag_id):
     try:
         UUID(tag_id, version=4)
     except Exception as e:
-        return jsonify({"message": "cannot update tag without a valid uuid"})
+        return jsonify({"message": "cannot update tag without a valid uuid"}), 400
 
     tag_query = db.session.query(Tags).filter(Tags.tag_id == tag_id).first()
 
@@ -97,5 +97,5 @@ def tag_delete_by_id(tag_id):
     except Exception as e:
         print(e)
         db.session.rollback()
-        return jsonify({"message": "could not delete tag"})
+        return jsonify({"message": "could not delete tag"}), 400
         
