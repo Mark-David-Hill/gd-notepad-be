@@ -1034,7 +1034,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"element_id_1\": \"{{recentElementId}}\",\n    \"element_id_2\": \"{{formerElementId}}\",\n    \"description\": \"This enemy is in this level\",\n    \"count\": 5\n}",
+							"raw": "{\n    \"element_1_id\": \"{{recentElementId}}\",\n    \"element_2_id\": \"{{formerElementId}}\",\n    \"description\": \"This enemy is in this level\",\n    \"count\": 5\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1080,7 +1080,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8086/relationship/{{recentRelationshipVariable}}",
+							"raw": "http://localhost:8086/relationship/{{recentRelationshipId}}",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1088,7 +1088,7 @@
 							"port": "8086",
 							"path": [
 								"relationship",
-								"{{recentRelationshipVariable}}"
+								"{{recentRelationshipId}}"
 							]
 						}
 					},

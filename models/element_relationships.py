@@ -30,7 +30,7 @@ class ElementRelationships(db.Model):
 
 class ElementRelationshipsSchema(ma.Schema):
     class Meta:
-        fields = ['element_1', 'element_2', 'description', 'count']
+        fields = ['relationship_id', 'element_1', 'element_2', 'description', 'count']
     element_1 = ma.fields.Nested("GameElementsSchema")
     element_2 = ma.fields.Nested("GameElementsSchema")
 
