@@ -1,3 +1,4 @@
+from .relationships_routes import relationships
 from .elements_routes import elements
 from .profiles_routes import profiles
 from .types_routes import types
