@@ -18,14 +18,9 @@ def tag_add(req):
 
     populate_object(new_tag, post_data)
 
-    try:
-        db.session.add(new_tag)
-        db.session.commit()
-        return jsonify({"message": "tag created", "result": tag_schema.dump(new_tag)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not create tag"}), 400
+    db.session.add(new_tag)
+    db.session.commit()
+    return jsonify({"message": "tag created", "result": tag_schema.dump(new_tag)}), 201
     
     
 @auth
@@ -65,13 +60,8 @@ def tag_update_by_id(req, tag_id):
     if not tag_query:
         return jsonify({"message": "tag does not exist"}), 404
     
-    try:
-        db.session.commit()
-        return jsonify({"message": "tag updated", "result": tag_schema.dump(tag_query)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not update tag"}), 400
+    db.session.commit()
+    return jsonify({"message": "tag updated", "result": tag_schema.dump(tag_query)}), 201
 
 
 @auth

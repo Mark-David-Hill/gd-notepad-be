@@ -18,14 +18,9 @@ def game_add(req):
 
     populate_object(new_game, post_data)
 
-    try:
-        db.session.add(new_game)
-        db.session.commit()
-        return jsonify({"message": "game created", "result": game_schema.dump(new_game)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not create game"}), 400
+    db.session.add(new_game)
+    db.session.commit()
+    return jsonify({"message": "game created", "result": game_schema.dump(new_game)}), 201
     
     
 @auth
@@ -65,13 +60,8 @@ def game_update_by_id(req, game_id):
     if not game_query:
         return jsonify({"message": "game does not exist"}), 404
     
-    try:
-        db.session.commit()
-        return jsonify({"message": "game updated", "result": game_schema.dump(game_query)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not update game"}), 400
+    db.session.commit()
+    return jsonify({"message": "game updated", "result": game_schema.dump(game_query)}), 201
 
 
 @auth

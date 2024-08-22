@@ -18,14 +18,9 @@ def type_add(req):
 
     populate_object(new_type, post_data)
 
-    try:
-        db.session.add(new_type)
-        db.session.commit()
-        return jsonify({"message": "type created", "result": type_schema.dump(new_type)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not create type"}), 400
+    db.session.add(new_type)
+    db.session.commit()
+    return jsonify({"message": "type created", "result": type_schema.dump(new_type)}), 201
     
     
 @auth
@@ -65,13 +60,8 @@ def type_update_by_id(req, type_id):
     if not type_query:
         return jsonify({"message": "type does not exist"}), 404
     
-    try:
-        db.session.commit()
-        return jsonify({"message": "type updated", "result": type_schema.dump(type_query)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not update type"}), 400
+    db.session.commit()
+    return jsonify({"message": "type updated", "result": type_schema.dump(type_query)}), 201
 
 
 @auth

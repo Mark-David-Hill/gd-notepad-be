@@ -18,15 +18,9 @@ def profile_add(req):
 
     populate_object(new_profile, post_data)
 
-    try:
-        db.session.add(new_profile)
-        db.session.commit()
-        return jsonify({"message": "profile created", "result": release_profile_schema.dump(new_profile)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not create profile"}), 400
-    
+    db.session.add(new_profile)
+    db.session.commit()
+    return jsonify({"message": "profile created", "result": release_profile_schema.dump(new_profile)}), 201
     
 
 @auth
@@ -66,13 +60,8 @@ def profile_update_by_id(req, profile_id):
     if not profile_query:
         return jsonify({"message": "profile does not exist"}), 404
     
-    try:
-        db.session.commit()
-        return jsonify({"message": "profile updated", "result": release_profile_schema.dump(profile_query)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not update profile"}), 400
+    db.session.commit()
+    return jsonify({"message": "profile updated", "result": release_profile_schema.dump(profile_query)}), 201
 
 
 @auth

@@ -19,14 +19,10 @@ def element_add(req):
 
     populate_object(new_element, post_data)
 
-    try:
-        db.session.add(new_element)
-        db.session.commit()
-        return jsonify({"message": "element created", "result": game_element_schema.dump(new_element)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not create element"})
+    
+    db.session.add(new_element)
+    db.session.commit()
+    return jsonify({"message": "element created", "result": game_element_schema.dump(new_element)}), 201
     
 
 @auth
@@ -94,13 +90,9 @@ def element_update_by_id(req, element_id):
     if not element_query:
         return jsonify({"message": "element does not exist"}), 404
     
-    try:
-        db.session.commit()
-        return jsonify({"message": "element updated", "result": game_element_schema.dump(element_query)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not update element"})
+    
+    db.session.commit()
+    return jsonify({"message": "element updated", "result": game_element_schema.dump(element_query)}), 201
 
 
 @auth

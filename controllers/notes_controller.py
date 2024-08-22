@@ -21,15 +21,9 @@ def note_add(req):
 
     new_note.date_time = datetime.now()
 
-    try:
-        db.session.add(new_note)
-        db.session.commit()
-        return jsonify({"message": "note created", "result": note_schema.dump(new_note)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not create note"}), 400
-    
+    db.session.add(new_note)
+    db.session.commit()
+    return jsonify({"message": "note created", "result": note_schema.dump(new_note)}), 201
     
 
 @auth
@@ -69,13 +63,8 @@ def note_update_by_id(req, note_id):
     if not note_query:
         return jsonify({"message": "note does not exist"}), 404
     
-    try:
-        db.session.commit()
-        return jsonify({"message": "note updated", "result": note_schema.dump(note_query)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not update note"}), 400
+    db.session.commit()
+    return jsonify({"message": "note updated", "result": note_schema.dump(note_query)}), 201
 
 
 @auth

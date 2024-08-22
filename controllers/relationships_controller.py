@@ -20,14 +20,9 @@ def relationship_add(req):
 
     populate_object(new_relationship, post_data)
 
-    try:
-        db.session.add(new_relationship)
-        db.session.commit()
-        return jsonify({"message": "relationship created", "result": relationship_schema.dump(new_relationship)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not create relationship"}), 400
+    db.session.add(new_relationship)
+    db.session.commit()
+    return jsonify({"message": "relationship created", "result": relationship_schema.dump(new_relationship)}), 201
     
 
 @auth
@@ -67,13 +62,8 @@ def relationship_update_by_id(req, relationship_id):
     if not relationship_query:
         return jsonify({"message": "relationship does not exist"}), 404
     
-    try:
-        db.session.commit()
-        return jsonify({"message": "relationship updated", "result": relationship_schema.dump(relationship_query)}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not update relationship"}), 400
+    db.session.commit()
+    return jsonify({"message": "relationship updated", "result": relationship_schema.dump(relationship_query)}), 201
 
 
 @auth
