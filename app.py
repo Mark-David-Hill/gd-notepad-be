@@ -8,11 +8,6 @@ from db import *
 from util.blueprints import register_blueprints
 
 database_uri = os.environ.get("DATABASE_URI")
-
-print("DATABASE URI")
-print(database_uri)
-
-
 app = Flask(__name__)
 
 CORS(app)
