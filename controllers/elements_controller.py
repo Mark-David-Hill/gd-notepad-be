@@ -5,24 +5,13 @@ from db import db
 from models.game_elements import GameElements, game_element_schema, game_elements_schema
 from models.tags import Tags
 from util.reflection import populate_object
+from util.controllers_util import record_add, records_get_all
 from lib.authenticate import auth, validate_uuid4
 
 
 @auth
 def element_add(req):
-    post_data = req.form if req.form else req.json
-
-    if not post_data:
-        return jsonify({"message": "all required fields must be submitted"}), 400
-    
-    new_element = GameElements.new_element_obj()
-
-    populate_object(new_element, post_data)
-
-    
-    db.session.add(new_element)
-    db.session.commit()
-    return jsonify({"message": "element created", "result": game_element_schema.dump(new_element)}), 201
+    return record_add(req, GameElements.new_element_obj(), game_element_schema, "element")
     
 
 @auth
@@ -55,12 +44,7 @@ def element_tag_update(req):
 
 @auth
 def elements_get_all():
-    elements_query = db.session.query(GameElements).all()
-
-    if not elements_query:
-        return jsonify({"message": "no elements found"}), 404
-    
-    return jsonify({"message": "elements found", "results": game_elements_schema.dump(elements_query)}), 200
+    return records_get_all(GameElements, game_elements_schema, "elements")
 
 
 @auth

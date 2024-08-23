@@ -5,34 +5,17 @@ from uuid import UUID
 from db import db
 from models.app_users import AppUsers, app_user_schema, app_users_schema
 from util.reflection import populate_object
+from util.controllers_util import record_add, records_get_all
 from lib.authenticate import auth, validate_uuid4, authenticate_return_auth
 
 
 def user_add(req):
-    post_data = req.form if req.form else req.json
-
-    if not post_data:
-        return jsonify({"message": "all required fields must be submitted"}), 400
-    
-    new_user = AppUsers.new_user_obj()
-
-    populate_object(new_user, post_data)
-
-    new_user.password = generate_password_hash(new_user.password).decode('utf8')
-
-    db.session.add(new_user)
-    db.session.commit()
-    return jsonify({"message": "user created", "result": app_user_schema.dump(new_user)}), 201
+    return record_add(req, AppUsers.new_user_obj(), app_user_schema, "user", True)
     
     
 @auth
 def users_get_all():
-    users_query = db.session.query(AppUsers).all()
-
-    if not users_query:
-        return jsonify({"message": "no users found"}), 404
-    
-    return jsonify({"message": "users found", "results": app_users_schema.dump(users_query)}), 200
+    return records_get_all(AppUsers, app_users_schema, "users")
 
 
 @authenticate_return_auth
