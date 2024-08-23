@@ -1,11 +1,12 @@
 from flask import jsonify
 from flask_bcrypt import generate_password_hash
+from datetime import datetime
 
 from db import db
 from util.reflection import populate_object
 
 
-def record_add(req, new_record_obj, schema, record_type, needs_password=False):
+def record_add(req, new_record_obj, schema, record_type, needs_datetime=False, needs_password=False):
     post_data = req.form if req.form else req.json
 
     if not post_data:
@@ -14,6 +15,9 @@ def record_add(req, new_record_obj, schema, record_type, needs_password=False):
     new_record = new_record_obj
 
     populate_object(new_record, post_data)
+
+    if needs_datetime:
+        new_record.date_time = datetime.now()
 
     if needs_password:
         new_record.password = generate_password_hash(new_record.password).decode('utf8')

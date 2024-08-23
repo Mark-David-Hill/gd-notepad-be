@@ -1,5 +1,4 @@
 from flask import jsonify
-from uuid import UUID
 
 from db import db
 from models.games import Games, game_schema, games_schema
@@ -14,7 +13,7 @@ def game_add(req):
     
 @auth
 def games_get_all():
-    return records_get_all(Games, games_schema, "users")
+    return records_get_all(Games, games_schema, "games")
 
 
 @auth

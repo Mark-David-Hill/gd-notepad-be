@@ -1,16 +1,15 @@
 from flask import jsonify
-from flask_bcrypt import generate_password_hash
-from uuid import UUID
 
 from db import db
 from models.app_users import AppUsers, app_user_schema, app_users_schema
 from util.reflection import populate_object
 from util.controllers_util import record_add, records_get_all
+from util.controllers_util import *
 from lib.authenticate import auth, validate_uuid4, authenticate_return_auth
 
 
 def user_add(req):
-    return record_add(req, AppUsers.new_user_obj(), app_user_schema, "user", True)
+    return record_add(req, AppUsers.new_user_obj(), app_user_schema, "user", False, True)
     
     
 @auth

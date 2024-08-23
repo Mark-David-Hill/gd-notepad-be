@@ -1,11 +1,11 @@
 from flask import jsonify
-from uuid import UUID
+# from uuid import UUID
 
 from db import db
 from models.game_elements import GameElements, game_element_schema, game_elements_schema
 from models.tags import Tags
 from util.reflection import populate_object
-from util.controllers_util import record_add, records_get_all
+from util.controllers_util import *
 from lib.authenticate import auth, validate_uuid4
 
 
@@ -53,30 +53,16 @@ def element_get_by_id(element_id):
         return jsonify({"message": "cannot get element without a valid uuid"})
 
     element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()
-
-    if not element_query:
-        return jsonify({"message": "element does not exist"}), 404
-    
-    return jsonify({"message": "element found", "result": game_element_schema.dump(element_query)}), 200
+    return record_get_by_id(element_query, game_element_schema, "element")
 
 
 @auth
 def element_update_by_id(req, element_id):
-    post_data = req.form if req.form else req.json
-
     if not validate_uuid4(element_id):
         return jsonify({"message": "cannot update element without a valid uuid"})
 
     element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()
-
-    populate_object(element_query, post_data)
-
-    if not element_query:
-        return jsonify({"message": "element does not exist"}), 404
-    
-    
-    db.session.commit()
-    return jsonify({"message": "element updated", "result": game_element_schema.dump(element_query)}), 201
+    return record_update_by_id(req, element_query, game_element_schema, "element")
 
 
 @auth
@@ -85,16 +71,5 @@ def element_delete_by_id(element_id):
         return jsonify({"message": "cannot update element without a valid uuid"})
 
     element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()
-
-    if not element_query:
-        return jsonify({"message": "element does not exist"}), 404
-    
-    try:
-        db.session.delete(element_query)
-        db.session.commit()
-        return jsonify({"message": "the element was deleted"}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not delete element"})
+    return record_delete_by_id(element_query, "element")
         

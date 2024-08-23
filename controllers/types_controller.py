@@ -1,36 +1,20 @@
 from flask import jsonify
-from uuid import UUID
 
 from db import db
 from models.types import Types, type_schema, types_schema
 from util.reflection import populate_object
+from util.controllers_util import *
 from lib.authenticate import auth, validate_uuid4
 
 
 @auth
 def type_add(req):
-    post_data = req.form if req.form else req.json
-
-    if not post_data:
-        return jsonify({"message": "all required fields must be submitted"}), 400
-    
-    new_type = Types.new_type_obj()
-
-    populate_object(new_type, post_data)
-
-    db.session.add(new_type)
-    db.session.commit()
-    return jsonify({"message": "type created", "result": type_schema.dump(new_type)}), 201
+    return record_add(req, Types.new_type_obj(), type_schema, "type")
     
     
 @auth
 def types_get_all():
-    types_query = db.session.query(Types).all()
-
-    if not types_query:
-        return jsonify({"message": "no types found"}), 404
-    
-    return jsonify({"message": "types found", "results": types_schema.dump(types_query)}), 200
+    return records_get_all(Types, types_schema, "types")
 
 
 @auth
@@ -39,29 +23,16 @@ def type_get_by_id(type_id):
         return jsonify({"message": "cannot get type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
-
-    if not type_query:
-        return jsonify({"message": "type does not exist"}), 404
-    
-    return jsonify({"message": "type found", "result": type_schema.dump(type_query)}), 200
+    return record_get_by_id(type_query, type_schema, "type")
 
 
 @auth
 def type_update_by_id(req, type_id):
-    post_data = req.form if req.form else req.json
-
     if not validate_uuid4(type_id):
         return jsonify({"message": "cannot update type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
-
-    populate_object(type_query, post_data)
-
-    if not type_query:
-        return jsonify({"message": "type does not exist"}), 404
-    
-    db.session.commit()
-    return jsonify({"message": "type updated", "result": type_schema.dump(type_query)}), 201
+    return record_update_by_id(req, type_query, type_schema, "type")
 
 
 @auth
@@ -70,16 +41,4 @@ def type_delete_by_id(type_id):
         return jsonify({"message": "cannot update type without a valid uuid"}), 400
 
     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
-
-    if not type_query:
-        return jsonify({"message": "type does not exist"}), 404
-    
-    try:
-        db.session.delete(type_query)
-        db.session.commit()
-        return jsonify({"message": "the type was deleted"}), 201
-    except Exception as e:
-        print(e)
-        db.session.rollback()
-        return jsonify({"message": "could not delete type"}), 400
-        
+    return record_delete_by_id(type_query, "type")
