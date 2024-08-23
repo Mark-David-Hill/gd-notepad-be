@@ -2,7 +2,6 @@ from flask import jsonify
 
 from db import db
 from models.types import Types, type_schema, types_schema
-from util.reflection import populate_object
 from util.controllers_util import *
 from lib.authenticate import auth, validate_uuid4
 

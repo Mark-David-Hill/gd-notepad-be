@@ -9,6 +9,11 @@ from lib.authenticate import auth, validate_uuid4, authenticate_return_auth
 
 
 def user_add(req):
+    post_data = req.form if req.form else req.json
+    user_query = db.session.query(AppUsers).filter(AppUsers.email == post_data.get("email")).first()
+    if user_query:
+        return jsonify({"message": "could not create user, email already in use"})
+    
     return record_add(req, AppUsers.new_user_obj(), app_user_schema, "user", False, True)
     
     

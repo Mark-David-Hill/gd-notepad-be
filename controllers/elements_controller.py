@@ -1,16 +1,28 @@
 from flask import jsonify
-# from uuid import UUID
 
 from db import db
 from models.game_elements import GameElements, game_element_schema, game_elements_schema
+from models.games import Games
+from models.types import Types
 from models.tags import Tags
-from util.reflection import populate_object
 from util.controllers_util import *
 from lib.authenticate import auth, validate_uuid4
 
 
 @auth
 def element_add(req):
+    post_data = req.form if req.form else req.json
+    if not validate_uuid4(post_data.get("game_id") or not validate_uuid4(post_data.get("type_id"))):
+        return jsonify({"message": "could not create element, must provide valid uuids for game id and type id"}), 400
+    
+    game_query = db.session.query(Games).filter(Games.game_id == post_data.get("game_id")).first()
+    if  not game_query:
+        return jsonify({"message": "could not create element, game does not exist"})
+    
+    type_query = db.session.query(Types).filter(Types.type_id == post_data.get("type_id")).first()
+    if  not type_query:
+        return jsonify({"message": "could not create element, type does not exist"})
+
     return record_add(req, GameElements.new_element_obj(), game_element_schema, "element")
     
 
@@ -24,6 +36,9 @@ def element_tag_update(req):
     element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()
     tag_query = db.session.query(Tags).filter(Tags.tag_id == tag_id).first()
 
+    if not validate_uuid4(element_id) or not validate_uuid4(tag_id):
+        return jsonify({"message": "cannot add tag to element without valid uuids"})
+
     if element_query:
         if tag_query:
             tag_ids = []
@@ -36,6 +51,10 @@ def element_tag_update(req):
                 element_query.tags.append(tag_query)
 
             db.session.commit()
+        else:
+            return jsonify({"message": "cannot add tag to element, tag does not exist"})
+    else:
+        return jsonify({"message": "cannot add tag, element does not exist"})
 
     element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()
 
