@@ -39,7 +39,6 @@ class GameElementsSchema(ma.Schema):
     type = ma.fields.Nested("TypesSchema")
     game = ma.fields.Nested("GamesSchema")
     tags = ma.fields.Nested("TagsSchema", many=True, exclude=["type"])
-    # related_elements = ma.fields.Nested("GameElementsSchema", many=True, exclude=["related_elements"])
 
 
 game_element_schema = GameElementsSchema()
