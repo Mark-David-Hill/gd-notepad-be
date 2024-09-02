@@ -46,10 +46,10 @@ def record_get_by_id(record_query, schema, record_type_str):
 def record_update_by_id(req, record_query, schema, record_type_str):
     post_data = req.form if req.form else req.json
 
-    populate_object(record_query, post_data)
-
     if not record_query:
         return jsonify({"message": f"{record_type_str} does not exist"}), 404
+
+    populate_object(record_query, post_data)
     
     db.session.commit()
     return jsonify({"message": f"{record_type_str} updated", "result": schema.dump(record_query)}), 201

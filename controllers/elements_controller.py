@@ -56,8 +56,6 @@ def element_tag_update(req):
     else:
         return jsonify({"message": "cannot add tag, element does not exist"})
 
-    element_query = db.session.query(GameElements).filter(GameElements.element_id == element_id).first()
-
     return jsonify({"message": "tag added to game element", "result": game_element_schema.dump(element_query)}), 200    
     
 
