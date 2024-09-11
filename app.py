@@ -5,6 +5,8 @@ from flask_cors import CORS
 import psycopg2
 
 from db import *
+
+from lib.demo_data.demo_data import run_demo_data
 from util.blueprints import register_blueprints
 
 database_uri = os.environ.get("DATABASE_URI")
@@ -24,4 +26,5 @@ if __name__ == "__main__":
         print("Creating tables...")
         db.create_all()
         print("Tables created successfully")
+        run_demo_data()
     app.run(host="127.0.0.1", port='8086')
