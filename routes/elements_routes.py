@@ -20,6 +20,11 @@ def elements_get_all():
     return controllers.elements_get_all()
 
 
+@elements.route("/elements/tag/<tag_id>")
+def elements_get_all_with_tag(tag_id):
+    return controllers.elements_get_all_with_tag(tag_id)
+
+
 @elements.route("/element/<element_id>")
 def element_get_by_id(element_id):
     return controllers.element_get_by_id(element_id)

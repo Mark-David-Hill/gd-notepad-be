@@ -65,6 +65,16 @@ def elements_get_all():
 
 
 @auth
+def elements_get_all_with_tag(tag_id):
+    elements_query = db.session.query(GameElements).filter(Tags.tag_id == tag_id).all()
+
+    if not elements_query:
+        return jsonify({"message": f"no elements found with that tag"}), 404
+    
+    return jsonify({"message": f"elements found", "results": game_elements_schema.dump(elements_query)}), 200
+
+
+@auth
 def element_get_by_id(element_id):
     if not validate_uuid4(element_id):
         return jsonify({"message": "cannot get element without a valid uuid"})
