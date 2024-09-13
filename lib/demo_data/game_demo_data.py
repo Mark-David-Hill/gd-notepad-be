@@ -37,7 +37,14 @@ games_list = [
 
 def add_games():
     for index, game in enumerate(games_list):
-        if not db.session.query(Games).filter(Games.name == name).first():
+        if not db.session.query(Games).filter(Games.name == game["name"]).first():
 
-            name = ""
+            name = game["name"]
+            description = game["description"]
+            series = game["series"]
+            genre = game["genre"]
+            new_game = Games(name, description, series, genre)
+
+            db.session.add(new_game)
+            db.session.commit()
 
