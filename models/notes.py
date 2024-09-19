@@ -1,5 +1,5 @@
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy.dialects.postgresql import UUID
 import marshmallow as ma
@@ -14,7 +14,7 @@ class Notes(db.Model):
     user_id = db.Column(UUID(as_uuid=True), db.ForeignKey("AppUsers.user_id"), nullable=False)
     element_id = db.Column(UUID(as_uuid=True), db.ForeignKey("GameElements.element_id"), nullable=False)
     content = db.Column(db.String(), nullable=False)
-    date_time = db.Column(db.DateTime(), nullable=False, default=datetime.now())
+    date_time = db.Column(db.DateTime(timezone=True), nullable=False, default=datetime.now(timezone.utc))
 
     user = db.relationship("AppUsers", back_populates="note")
     element = db.relationship("GameElements", back_populates="note")

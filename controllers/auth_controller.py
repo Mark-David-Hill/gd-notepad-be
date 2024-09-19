@@ -1,6 +1,6 @@
 from flask import jsonify
 from flask_bcrypt import check_password_hash
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from db import db
 from models.app_users import AppUsers
@@ -26,10 +26,10 @@ def auth_token_add(req):
 
             if existing_tokens:
                 for token in existing_tokens:
-                    if token.expiration < datetime.now():
+                    if token.expiration < datetime.now(timezone.utc):
                         db.session.delete(token)
 
-            expiry = datetime.now() + timedelta(hours=12)
+            expiry = datetime.now(timezone.utc) + timedelta(hours=12)
 
             new_token = AuthTokens(user_data.user_id, expiry)
             db.session.add(new_token)

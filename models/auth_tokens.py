@@ -1,4 +1,5 @@
 import uuid
+from datetime import datetime, timezone
 
 from sqlalchemy.dialects.postgresql import UUID
 import marshmallow as ma
@@ -11,7 +12,7 @@ class AuthTokens(db.Model):
 
     auth_token = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     user_id = db.Column(UUID(as_uuid=True), db.ForeignKey("AppUsers.user_id", ondelete="CASCADE"), nullable=False)
-    expiration = db.Column(db.DateTime, nullable=False)
+    expiration = db.Column(db.DateTime(timezone=True), nullable=False)
 
     user = db.relationship("AppUsers", back_populates="auth")
 

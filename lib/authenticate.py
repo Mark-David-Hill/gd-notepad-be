@@ -1,6 +1,6 @@
 from flask import jsonify, request
 import functools
-from datetime import datetime
+from datetime import datetime, timezone
 from uuid import UUID
 
 from db import db
@@ -26,7 +26,7 @@ def validate_token(req):
     existing_token = db.session.query(AuthTokens).filter(AuthTokens.auth_token == auth_token).first()
 
     if existing_token:
-        if existing_token.expiration > datetime.now():
+        if existing_token.expiration > datetime.now(timezone.utc):
             return existing_token
     else:
         print("no auth token found")

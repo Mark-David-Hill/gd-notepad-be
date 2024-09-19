@@ -1,6 +1,6 @@
 from flask import jsonify
 from flask_bcrypt import generate_password_hash
-from datetime import datetime
+from datetime import datetime, timezone
 
 from db import db
 from util.reflection import populate_object
@@ -17,7 +17,7 @@ def record_add(req, new_record_obj, schema, record_type, needs_datetime=False, n
     populate_object(new_record, post_data)
 
     if needs_datetime:
-        new_record.date_time = datetime.now()
+        new_record.date_time = datetime.now(timezone.utc)
 
     if needs_password:
         new_record.password = generate_password_hash(new_record.password).decode('utf8')
