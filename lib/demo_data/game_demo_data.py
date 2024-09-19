@@ -46,5 +46,6 @@ def add_games():
             new_game = Games(name, description, series, genre)
 
             db.session.add(new_game)
-            db.session.commit()
+            
+    db.session.commit()
 

@@ -11,4 +11,5 @@ def add_types():
             new_type = Types(name, "example_description")
 
             db.session.add(new_type)
-            db.session.commit()
+            
+    db.session.commit()

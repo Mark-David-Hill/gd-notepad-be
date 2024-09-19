@@ -36,4 +36,5 @@ def add_users():
             new_user = AppUsers(first_name, last_name, email, password, role)
 
             db.session.add(new_user)
-            db.session.commit()
+            
+    db.session.commit()
