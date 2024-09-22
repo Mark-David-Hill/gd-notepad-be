@@ -14,23 +14,25 @@ class Games(db.Model):
     description = db.Column(db.String())
     series = db.Column(db.String())
     genre = db.Column(db.String())
+    image_url = db.Column(db.String(), default="")
 
     elements = db.relationship("GameElements", foreign_keys="[GameElements.game_id]", back_populates="game", cascade='all')
     profile = db.relationship("ReleaseProfiles", back_populates="game", cascade="all", uselist=False)
 
-    def __init__(self, name, description, series, genre):
+    def __init__(self, name, description, series, genre, image_url):
         self.name = name
         self.description = description
         self.series = series
         self.genre = genre
+        self.image_url = image_url
 
     def new_game_obj():
-        return Games("", "", "", "")
+        return Games("", "", "", "", "")
     
 
 class GamesSchema(ma.Schema):
     class Meta:
-        fields = ["game_id", "name", "description", "series", "genre"]
+        fields = ["game_id", "name", "description", "series", "genre", "image_url"]
 
 game_schema = GamesSchema()
 games_schema = GamesSchema(many=True)
