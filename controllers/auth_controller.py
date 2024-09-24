@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, request, make_response
 from flask_bcrypt import check_password_hash
 from datetime import datetime, timedelta, timezone
 
@@ -34,6 +34,10 @@ def auth_token_add(req):
             new_token = AuthTokens(user_data.user_id, expiry)
             db.session.add(new_token)
             db.session.commit()
+
+            # response = make_response(jsonify({"message": "login successful", "result": self.schema_dump(AppUsers, user_data, None)}), 201)
+            # response.set_cookie("_sid", str(auth_data.token_id), httponly=True, secure=True, samesite="None")
+            # return response
         else:
             return jsonify({"message": "no user data found"}), 404
         
