@@ -3,7 +3,7 @@ from flask_bcrypt import check_password_hash
 from datetime import datetime, timedelta, timezone
 
 from db import db
-from models.app_users import AppUsers
+from models.app_users import AppUsers, app_user_schema
 from models.auth_tokens import AuthTokens, auth_token_schema
 
 
@@ -35,12 +35,17 @@ def auth_token_add(req):
             db.session.add(new_token)
             db.session.commit()
 
-            # response = make_response(jsonify({"message": "login successful", "result": self.schema_dump(AppUsers, user_data, None)}), 201)
-            # response.set_cookie("_sid", str(auth_data.token_id), httponly=True, secure=True, samesite="None")
-            # return response
+            response = make_response(jsonify({"message": "login successful", "result": app_user_schema.dump(user_data)}), 201)
+            response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=True, samesite="None")
+            return response
         else:
             return jsonify({"message": "no user data found"}), 404
-        
-        return jsonify({"message": "authorization successful", "result": auth_token_schema.dump(new_token)}), 201
+
     else:
         return jsonify({"message": "email and password are required fields"}), 400
+    
+# def logout(self, auth_info):
+#     auth_data = db.session.query(AuthTokens).filter(AppUsers.email == post_data.get("email")).first()
+
+# def check_login(self, auth_info):
+#     user_data = db.session.query(AppUsers).filter(AppUsers.email == post_data.get("email")).first()
