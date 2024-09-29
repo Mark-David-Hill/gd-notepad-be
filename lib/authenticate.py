@@ -3,8 +3,10 @@ import functools
 from datetime import datetime, timezone
 from uuid import UUID
 
-from db import db
+from flask import jsonify, request, make_response, Response
+
 from models.auth_tokens import AuthTokens
+from db import db
 
 
 def validate_uuid4(uuid_string):
@@ -17,10 +19,11 @@ def validate_uuid4(uuid_string):
     
 
 def validate_token(req):
+    _sid = request.cookies.get("_sid")
     auth_token = req.headers.get("auth")
 
-    if not auth_token or not validate_uuid4(auth_token):
-        print("error, could not validate auth token")
+    if not _sid or not auth_token or not validate_uuid4(auth_token):
+        print("error, could not validate authentication")
         return False
     
     existing_token = db.session.query(AuthTokens).filter(AuthTokens.auth_token == auth_token).first()
@@ -34,7 +37,9 @@ def validate_token(req):
     
 
 def fail_response():
-    return jsonify({"message": "authentication required"}), 401
+    response = make_response(jsonify({"message": "authentication required"}), 401)
+    response.set_cookie('_sid', "", expires=0, httponly=True, secure=True, samesite="None")
+    return response
 
 
 def auth(function):
