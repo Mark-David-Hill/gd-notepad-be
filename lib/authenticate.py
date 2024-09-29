@@ -38,7 +38,8 @@ def validate_token(req):
 
 def fail_response():
     response = make_response(jsonify({"message": "authentication required"}), 401)
-    response.set_cookie('_sid', "", expires=0, httponly=True, secure=True, samesite="None")
+    response.set_cookie('_sid', "", expires=0, httponly=True, secure=False)
+    # samesite="None"
     return response
 
 

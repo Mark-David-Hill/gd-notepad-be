@@ -36,7 +36,8 @@ def auth_token_add(req):
             db.session.commit()
 
             response = make_response(jsonify({"message": "login successful", "result": app_user_schema.dump(user_data)}), 201)
-            response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=True, samesite="None")
+            response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=False)
+            # samesite="None"
             return response
         else:
             return jsonify({"message": "no user data found"}), 404

@@ -12,7 +12,7 @@ from util.blueprints import register_blueprints
 database_uri = os.environ.get("DATABASE_URI")
 app = Flask(__name__)
 
-CORS(app)
+CORS(app, supports_credentials=True)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = database_uri
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
