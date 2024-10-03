@@ -20,13 +20,12 @@ def validate_uuid4(uuid_string):
 
 def validate_token(req):
     _sid = request.cookies.get("_sid")
-    auth_token = req.headers.get("auth")
 
-    if not _sid or not auth_token or not validate_uuid4(auth_token):
+    if not _sid or not validate_uuid4(_sid):
         print("error, could not validate authentication")
         return False
-    
-    existing_token = db.session.query(AuthTokens).filter(AuthTokens.auth_token == auth_token).first()
+
+    existing_token = db.session.query(AuthTokens).filter(AuthTokens.auth_token == _sid).first()
 
     if existing_token:
         if existing_token.expiration > datetime.now(timezone.utc):
@@ -52,7 +51,7 @@ def auth(function):
             return function(*args, **kwargs)
         else:
             return fail_response()
-        
+
     return function_wrapper
 
 

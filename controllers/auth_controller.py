@@ -36,7 +36,8 @@ def auth_token_add(req):
             db.session.commit()
 
             response = make_response(jsonify({"message": "login successful", "result": app_user_schema.dump(user_data)}), 201)
-            response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=False)
+            # response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=False)
+            response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=False, samesite='Strict')
             # samesite="None"
             return response
         else:
@@ -45,6 +46,56 @@ def auth_token_add(req):
     else:
         return jsonify({"message": "email and password are required fields"}), 400
     
+
+# def check_login(req):
+#     # Get the _sid cookie from the request
+#     auth_token = request.cookies.get('_sid')
+
+#     if not auth_token:
+#         # If the _sid cookie doesn't exist, the user is not logged in
+#         return jsonify({"message": "not authenticated"}), 401
+
+#     # Query the database for the token
+#     token_data = db.session.query(AuthTokens).filter_by(auth_token=auth_token).first()
+
+#     if not token_data:
+#         # No token found for the given _sid
+#         return jsonify({"message": "invalid token"}), 401
+
+#     # Check if the token is expired
+#     if token_data.expiration < datetime.now(timezone.utc):
+#         # Token is expired
+#         return jsonify({"message": "token expired"}), 401
+
+#     # If the token is valid, return success with the auth token
+#     return jsonify({
+#         "message": "authenticated", 
+#         "user_id": token_data.user_id,
+#         "auth_token": token_data.auth_token  # Include the token in the response
+#     }), 200
+
+    # post_data = req.form if req.form else req.json
+    # user_id = post_data.get('user_id')
+
+    # if not user_id:
+    #     return jsonify({"message": "user_id is a required field"})
+
+    # existing_tokens = db.session.query(AuthTokens).filter(AuthTokens.user_id == user_id).all()
+
+    # if existing_tokens:
+    #     try:
+    #         for token in existing_tokens:
+    #             db.session.delete(token)
+
+    #         db.session.commit()
+    #         return ({"message": f"user with id {user_id} has been logged out"})
+    #     except:
+    #         db.session.rollback()
+    #         return jsonify({"message": f"unable to logout user with id {user_id}"}), 400
+    # else:
+    #     return jsonify({"message": f"user with id {user_id} has been logged out"})
+
+
 # def logout(self, auth_info):
 #     auth_data = db.session.query(AuthTokens).filter(AppUsers.email == post_data.get("email")).first()
 

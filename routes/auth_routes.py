@@ -9,8 +9,10 @@ auth = Blueprint("auth", __name__)
 def auth_token_add():
     return controllers.auth_token_add(request)
 
+# @auth.route("/user/logout", methods=["POST"])
 # def logout(self):
 #     return self.controller.logout()
 
-# def check_login(self):
-#     return self.controller.check_login()
+# @auth.route("/user/check-login", methods=["GET"])
+# def check_login_route():
+#     return controllers.check_login()
