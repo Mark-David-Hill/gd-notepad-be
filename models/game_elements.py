@@ -24,13 +24,15 @@ class GameElements(db.Model):
     related_element_1 = db.relationship('ElementRelationships', foreign_keys='ElementRelationships.element_1_id', back_populates='element_1')
     related_element_2 = db.relationship('ElementRelationships', foreign_keys='ElementRelationships.element_2_id', back_populates='element_2')
 
-    def __init__(self, name, description, image_url=None):
+    def __init__(self, name, description, type_id, game_id, image_url=""):
         self.name = name
         self.description = description
+        self.type_id = type_id
+        self.game_id = game_id
         self.image_url = image_url
 
     def new_element_obj():
-        return GameElements("", "", "")
+        return GameElements("", "", None, None, "")
     
 
 class GameElementsSchema(ma.Schema):
