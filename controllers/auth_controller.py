@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 
 from db import db
 from models.app_users import AppUsers, app_user_schema
-from models.auth_tokens import AuthTokens, auth_token_schema
+from models.auth_tokens import AuthTokens
 
 
 def auth_token_add(req):
@@ -36,7 +36,6 @@ def auth_token_add(req):
             db.session.commit()
 
             response = make_response(jsonify({"message": "login successful", "result": app_user_schema.dump(user_data)}), 201)
-            # response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=False)
             response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=False, samesite='Strict')
             # samesite="None"
             return response
@@ -47,57 +46,24 @@ def auth_token_add(req):
         return jsonify({"message": "email and password are required fields"}), 400
     
 
-# def check_login(req):
-#     # Get the _sid cookie from the request
-#     auth_token = request.cookies.get('_sid')
+def check_login():
+    token = request.cookies.get("_sid")
 
-#     if not auth_token:
-#         # If the _sid cookie doesn't exist, the user is not logged in
-#         return jsonify({"message": "not authenticated"}), 401
+    if not token:
+        return jsonify({"message": "No session token found"}), 401
 
-#     # Query the database for the token
-#     token_data = db.session.query(AuthTokens).filter_by(auth_token=auth_token).first()
+    auth_token_data = db.session.query(AuthTokens).filter(AuthTokens.auth_token == token).first()
 
-#     if not token_data:
-#         # No token found for the given _sid
-#         return jsonify({"message": "invalid token"}), 401
+    if auth_token_data and auth_token_data.expiration > datetime.now(timezone.utc):
+        user_data = db.session.query(AppUsers).filter(AppUsers.user_id == auth_token_data.user_id).first()
 
-#     # Check if the token is expired
-#     if token_data.expiration < datetime.now(timezone.utc):
-#         # Token is expired
-#         return jsonify({"message": "token expired"}), 401
-
-#     # If the token is valid, return success with the auth token
-#     return jsonify({
-#         "message": "authenticated", 
-#         "user_id": token_data.user_id,
-#         "auth_token": token_data.auth_token  # Include the token in the response
-#     }), 200
-
-    # post_data = req.form if req.form else req.json
-    # user_id = post_data.get('user_id')
-
-    # if not user_id:
-    #     return jsonify({"message": "user_id is a required field"})
-
-    # existing_tokens = db.session.query(AuthTokens).filter(AuthTokens.user_id == user_id).all()
-
-    # if existing_tokens:
-    #     try:
-    #         for token in existing_tokens:
-    #             db.session.delete(token)
-
-    #         db.session.commit()
-    #         return ({"message": f"user with id {user_id} has been logged out"})
-    #     except:
-    #         db.session.rollback()
-    #         return jsonify({"message": f"unable to logout user with id {user_id}"}), 400
-    # else:
-    #     return jsonify({"message": f"user with id {user_id} has been logged out"})
+        if user_data:
+            return jsonify({"message": "User is logged in", "result": app_user_schema.dump(user_data)}), 200
+        else:
+            return jsonify({"message": "User not found"}), 404
+    else:
+        return jsonify({"message": "Invalid or expired session token"}), 401
 
 
 # def logout(self, auth_info):
 #     auth_data = db.session.query(AuthTokens).filter(AppUsers.email == post_data.get("email")).first()
-
-# def check_login(self, auth_info):
-#     user_data = db.session.query(AppUsers).filter(AppUsers.email == post_data.get("email")).first()
