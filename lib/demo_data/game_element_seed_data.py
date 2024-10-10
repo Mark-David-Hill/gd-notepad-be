@@ -238,3 +238,154 @@ enemies_list = [
         "name": "Lakitu"
     }
 ]
+
+level_elements = [
+    {
+        "description": "A basic brick block that can be broken by Mario when he's Super Mario.",
+        "image_url": "",
+        "name": "Brick Block"
+    },
+    {
+        "description": "A block that contains a power-up, coin, or other item when hit from below.",
+        "image_url": "",
+        "name": "Question Block"
+    },
+    {
+        "description": "A solid block that Mario can stand on but can't break.",
+        "image_url": "",
+        "name": "Solid Block"
+    },
+    {
+        "description": "A special block that releases a vine when hit, allowing Mario to climb upward.",
+        "image_url": "",
+        "name": "Vine Block"
+    },
+    {
+        "description": "A green pipe that Mario can enter to warp to a different area.",
+        "image_url": "",
+        "name": "Pipe"
+    },
+    {
+        "description": "A flagpole at the end of each overworld or sky level that completes the level when touched.",
+        "image_url": "",
+        "name": "Flagpole"
+    },
+    {
+        "description": "A simple wooden platform suspended in the air, often moving.",
+        "image_url": "",
+        "name": "Platform"
+    },
+    {
+        "description": "A moving lift that transports Mario horizontally or vertically.",
+        "image_url": "",
+        "name": "Lift"
+    },
+    {
+        "description": "A block containing a power-up like a Super Mushroom or Fire Flower.",
+        "image_url": "",
+        "name": "Power-Up Block"
+    },
+    {
+        "description": "A rotating beam of fire that Mario must avoid in castle levels.",
+        "image_url": "",
+        "name": "Firebar"
+    },
+    {
+        "description": "A cannon that shoots Bullet Bills at Mario.",
+        "image_url": "",
+        "name": "Bill Blaster"
+    },
+    {
+        "description": "A group of coins that Mario can collect for extra points.",
+        "image_url": "",
+        "name": "Coins"
+    },
+    {
+        "description": "A block that contains a hidden 1-Up Mushroom.",
+        "image_url": "",
+        "name": "1-Up Block"
+    },
+    {
+        "description": "A trampoline that Mario can jump on to reach high places.",
+        "image_url": "",
+        "name": "Trampoline"
+    },
+    {
+        "description": "A movable platform often used in tricky sky or underground levels.",
+        "image_url": "",
+        "name": "Moving Platform"
+    },
+    {
+        "description": "A spring that propels Mario high into the air when he jumps on it.",
+        "image_url": "",
+        "name": "Spring"
+    },
+    {
+        "description": "An axe at the end of castle levels used to drop the bridge and defeat Bowser.",
+        "image_url": "",
+        "name": "Axe"
+    },
+    {
+        "description": "Provides an extra life when collected.",
+        "image_url": "",
+        "name": "1-Up Mushroom"
+    },
+    {
+        "description": "A hidden power-up in certain levels that provides additional points when collected.",
+        "image_url": "",
+        "name": "Coin"
+    }
+]
+
+
+power_ups = [
+    {
+        "description": "Transforms Mario into Super Mario, making him larger and able to break brick blocks.",
+        "image_url": "",
+        "name": "Super Mushroom"
+    },
+    {
+        "description": "Grants Mario the ability to shoot fireballs and defeat enemies from a distance.",
+        "image_url": "",
+        "name": "Fire Flower"
+    },
+    {
+        "description": "Makes Mario temporarily invincible, allowing him to defeat enemies on contact.",
+        "image_url": "",
+        "name": "Starman"
+    },
+]
+
+
+mechanics = [
+    {
+        "description": "Mario moves left or right when the player presses the directional pad.",
+        "image_url": "",
+        "name": "Run"
+    },
+    {
+        "description": "Mario moves at a faster speed when the player holds down the dash button while moving.",
+        "image_url": "",
+        "name": "Dash"
+    },
+    {
+        "description": "Mario jumps when the player presses the jump button, with height and distance depending on how long the button is held.",
+        "image_url": "",
+        "name": "Jump"
+    },
+    {
+        "description": "When Mario is Fire Mario, pressing the fireball button launches a fireball.",
+        "image_url": "",
+        "name": "Shoot Fireball"
+    },
+    {
+        "description": "In underwater levels, Mario swims upward by pressing the jump button, controlling his movement in the water.",
+        "image_url": "",
+        "name": "Swim"
+    },
+    {
+        "description": "Mario can climb vines when the player presses up on the directional pad.",
+        "image_url": "",
+        "name": "Climb"
+    }
+]
