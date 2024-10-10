@@ -361,12 +361,12 @@ mechanics = [
     {
         "description": "Mario moves left or right when the player presses the directional pad.",
         "image_url": "",
-        "name": "Run"
+        "name": "Walk"
     },
     {
-        "description": "Mario moves at a faster speed when the player holds down the dash button while moving.",
+        "description": "Mario moves at a faster speed when the player holds down the run button while moving.",
         "image_url": "",
-        "name": "Dash"
+        "name": "Run"
     },
     {
         "description": "Mario jumps when the player presses the jump button, with height and distance depending on how long the button is held.",
