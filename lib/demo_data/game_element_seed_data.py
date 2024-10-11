@@ -341,17 +341,17 @@ level_elements = [
 power_ups = [
     {
         "description": "Transforms Mario into Super Mario, making him larger and able to break brick blocks.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/6/66/SMB_Supermushroom.png",
         "name": "Super Mushroom"
     },
     {
         "description": "Grants Mario the ability to shoot fireballs and defeat enemies from a distance.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/b/b3/Fire_Flower_SMB.gif",
         "name": "Fire Flower"
     },
     {
         "description": "Makes Mario temporarily invincible, allowing him to defeat enemies on contact.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/d/db/Starman.gif",
         "name": "Starman"
     },
 ]
