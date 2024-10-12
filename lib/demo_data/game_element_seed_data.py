@@ -41,42 +41,42 @@ levels_list = [
     },
     {
         "description": "An overworld level introducing more enemies and tougher platforming.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/1/17/SMB_NES_World_3-1_Screenshot.png",
         "name": "3-1"
     },
     {
         "description": "An underwater level with Bloopers and Cheep Cheeps.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/e/e1/SMB_NES_World_3-2_Screenshot.png",
         "name": "3-2"
     },
     {
         "description": "Another sky level with more challenging platforming.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/c/c8/SMB_NES_World_3-3_Screenshot.png",
         "name": "3-3"
     },
     {
         "description": "A castle level with firebars, lava, and Bowser.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/7/7b/SMB_NES_World_3_Bowser_Screenshot.png",
         "name": "3-4"
     },
     {
         "description": "A difficult overworld level with Lakitus and Spinies.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/2/25/Lakitu_throwing_Spiny_SMB1.png",
         "name": "4-1"
     },
     {
         "description": "A second underground level with many Piranha Plants.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/f/fc/SMB_NES_World_4-2_Screenshot.png",
         "name": "4-2"
     },
     {
         "description": "A platform-heavy sky level with moving platforms.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/f/f7/SMB_World_4-3_Screenshot.png",
         "name": "4-3"
     },
     {
         "description": "A tricky castle level with more firebars and Bowser.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/6/62/SMB_World_4-4_Screenshot.png",
         "name": "4-4"
     },
     {
