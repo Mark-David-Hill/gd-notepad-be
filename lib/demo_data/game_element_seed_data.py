@@ -1,42 +1,42 @@
 levels_list = [
     {
         "description": "The first level, a grassy overworld with Goombas and Koopas.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
         "name": "1-1"
     },
     {
         "description": "An underground level featuring pipes and Piranha Plants.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/1/14/FireMarioSMB.png",
         "name": "1-2"
     },
     {
         "description": "An above-ground level with platforms and bridges.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/5/53/SMB_NES_World_1-3_Screenshot.png",
         "name": "1-3"
     },
     {
         "description": "The first castle level, with firebars and Bowser at the end.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/7/73/SMB_W1-4_Fake_Bowser_Screenshot.png",
         "name": "1-4"
     },
     {
         "description": "Another overworld level, similar to 1-1 but slightly harder.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/0/0f/SMB_NES_2-1_Level_Screenshot.png",
         "name": "2-1"
     },
     {
         "description": "An underground level with more pipes and tricky platforming.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/3/3e/SMB_NES_World_2-2_Screenshot.png",
         "name": "2-2"
     },
     {
         "description": "A sky level with platforms and moving lifts.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/3/39/SMB_NES_World_2-3_Screenshot.png",
         "name": "2-3"
     },
     {
         "description": "A castle level with a more difficult layout and Bowser.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/9/9d/SMB_NES_World_2-4_Screenshot.png",
         "name": "2-4"
     },
     {
