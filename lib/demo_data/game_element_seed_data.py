@@ -360,32 +360,32 @@ power_ups = [
 mechanics = [
     {
         "description": "Mario moves left or right when the player presses the directional pad.",
-        "image_url": "",
+        "image_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dee38e10-db68-462d-9df7-46b87d4c7876/ddxh2tf-fc8fc42e-8794-4501-8621-31a4e68a25b5.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RlZTM4ZTEwLWRiNjgtNDYyZC05ZGY3LTQ2Yjg3ZDRjNzg3NlwvZGR4aDJ0Zi1mYzhmYzQyZS04Nzk0LTQ1MDEtODYyMS0zMWE0ZTY4YTI1YjUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.k7me-PhiUBQjnEu0a2FMUBFCjo5wljCAeBiTCry6ykg",
         "name": "Walk"
     },
     {
         "description": "Mario moves at a faster speed when the player holds down the run button while moving.",
-        "image_url": "",
+        "image_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dee38e10-db68-462d-9df7-46b87d4c7876/ddxh2tf-fc8fc42e-8794-4501-8621-31a4e68a25b5.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RlZTM4ZTEwLWRiNjgtNDYyZC05ZGY3LTQ2Yjg3ZDRjNzg3NlwvZGR4aDJ0Zi1mYzhmYzQyZS04Nzk0LTQ1MDEtODYyMS0zMWE0ZTY4YTI1YjUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.k7me-PhiUBQjnEu0a2FMUBFCjo5wljCAeBiTCry6ykg",
         "name": "Run"
     },
     {
         "description": "Mario jumps when the player presses the jump button, with height and distance depending on how long the button is held.",
-        "image_url": "",
+        "image_url": "data:image/png;base64,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",
         "name": "Jump"
     },
     {
         "description": "When Mario is Fire Mario, pressing the fireball button launches a fireball.",
-        "image_url": "",
+        "image_url": "https://retrovolve.com/wp-content/uploads/2015/12/mariofirebig.jpg",
         "name": "Shoot Fireball"
     },
     {
         "description": "In underwater levels, Mario swims upward by pressing the jump button, controlling his movement in the water.",
-        "image_url": "",
+        "image_url": "https://cdn.vectorstock.com/i/1000v/34/86/set-of-mario-swimming-moves-art-super-vector-47023486.jpg",
         "name": "Swim"
     },
     {
         "description": "Mario can climb vines when the player presses up on the directional pad.",
-        "image_url": "",
+        "image_url": "https://i.pinimg.com/736x/4c/4e/bc/4c4ebc1b6b8346b953906b721692abe2.jpg",
         "name": "Climb"
     }
 ]
