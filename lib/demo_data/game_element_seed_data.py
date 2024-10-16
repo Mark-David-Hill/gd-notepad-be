@@ -242,97 +242,67 @@ enemies_list = [
 level_elements = [
     {
         "description": "A basic brick block that can be broken by Mario when he's Super Mario.",
-        "image_url": "",
+        "image_url": "https://www.vhv.rs/dpng/d/564-5645230_mario-brick-png-super-mario-bros-block-pixel.png",
         "name": "Brick Block"
     },
     {
         "description": "A block that contains a power-up, coin, or other item when hit from below.",
-        "image_url": "",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
         "name": "Question Block"
     },
     {
-        "description": "A solid block that Mario can stand on but can't break.",
-        "image_url": "",
-        "name": "Solid Block"
-    },
-    {
         "description": "A special block that releases a vine when hit, allowing Mario to climb upward.",
-        "image_url": "",
+        "image_url": "https://themushroomkingdom.net/images/bugs/smb_vine_of_the_dead_1.png",
         "name": "Vine Block"
     },
     {
         "description": "A green pipe that Mario can enter to warp to a different area.",
-        "image_url": "",
+        "image_url": "https://e7.pngegg.com/pngimages/326/204/png-clipart-green-pipe-super-mario-bros-3-super-mario-bros-2-8-bit-angle-text.png",
         "name": "Pipe"
     },
     {
         "description": "A flagpole at the end of each overworld or sky level that completes the level when touched.",
-        "image_url": "",
+        "image_url": "https://www.midwestgamingclassic.com/wp-content/uploads/2020/03/mario-square.png",
         "name": "Flagpole"
     },
     {
-        "description": "A simple wooden platform suspended in the air, often moving.",
-        "image_url": "",
-        "name": "Platform"
-    },
-    {
-        "description": "A moving lift that transports Mario horizontally or vertically.",
-        "image_url": "",
-        "name": "Lift"
-    },
-    {
         "description": "A block containing a power-up like a Super Mushroom or Fire Flower.",
-        "image_url": "",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
         "name": "Power-Up Block"
     },
     {
-        "description": "A rotating beam of fire that Mario must avoid in castle levels.",
-        "image_url": "",
-        "name": "Firebar"
-    },
-    {
         "description": "A cannon that shoots Bullet Bills at Mario.",
-        "image_url": "",
+        "image_url": "https://cdn.staticneo.com/w/mario/5/5c/Supermario-43.png",
         "name": "Bill Blaster"
     },
     {
-        "description": "A group of coins that Mario can collect for extra points.",
-        "image_url": "",
-        "name": "Coins"
-    },
-    {
         "description": "A block that contains a hidden 1-Up Mushroom.",
-        "image_url": "",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
         "name": "1-Up Block"
     },
     {
         "description": "A trampoline that Mario can jump on to reach high places.",
-        "image_url": "",
+        "image_url": "https://pixelatedarcade.objects-us-east-1.dream.io/screenshots/2442/2502/screenshot_9db-super-mario-bros-use-the-spring-to-leap-over-this-high-wall.png",
         "name": "Trampoline"
     },
     {
         "description": "A movable platform often used in tricky sky or underground levels.",
-        "image_url": "",
+        "image_url": "https://64.media.tumblr.com/69fe92a987eb8fa5c54164e7316f89eb/3158994ecd1fa263-80/s400x600/7dec53da5bedfcf85361984bad37c64c55eb1123.gif",
         "name": "Moving Platform"
     },
     {
-        "description": "A spring that propels Mario high into the air when he jumps on it.",
-        "image_url": "",
-        "name": "Spring"
-    },
-    {
         "description": "An axe at the end of castle levels used to drop the bridge and defeat Bowser.",
-        "image_url": "",
+        "image_url": "https://preview.redd.it/why-does-bowser-keep-an-axe-behind-him-to-destroy-the-v0-wwzlpj82lsoa1.jpg?auto=webp&s=608ad48d954f6d1c1c88eb5b9e058c3f0f1a7471",
         "name": "Axe"
     },
     {
         "description": "Provides an extra life when collected.",
-        "image_url": "",
+        "image_url": "https://images.stephenlindholm.com/VJhfNbPE.png",
         "name": "1-Up Mushroom"
     },
     {
         "description": "A hidden power-up in certain levels that provides additional points when collected.",
-        "image_url": "",
+        "image_url": "https://ih1.redbubble.net/image.4269270247.3340/fposter,small,wall_texture,product,750x1000.jpg",
         "name": "Coin"
     }
 ]
