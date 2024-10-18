@@ -81,42 +81,42 @@ levels_list = [
     },
     {
         "description": "An overworld level with Hammer Bros and tricky jumps.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/6/6b/SMB_NES_World_5-1_Screenshot.png",
         "name": "5-1"
     },
     {
         "description": "An underground level featuring Bullet Bills.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/0/09/SMB_NES_World_5-2_Screenshot.png",
         "name": "5-2"
     },
     {
         "description": "A bridge level with many Cheep Cheeps.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/e/eb/SMB_NES_World_5-3_Screenshot.png",
         "name": "5-3"
     },
     {
         "description": "A castle level with more complex firebar patterns and Bowser.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/1/12/SMB_NES_World_5-4_Screenshot.png",
         "name": "5-4"
     },
     {
         "description": "An overworld level with harder platforming and enemies.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_6-1_Screenshot.png",
         "name": "6-1"
     },
     {
         "description": "Another underground level with tricky platforming.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/d/d5/SMB_NES_World_6-2_Screenshot.png",
         "name": "6-2"
     },
     {
         "description": "A sky level with more moving platforms and lifts.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/0/0f/SMB_NES_World_6-3_Screenshot.png",
         "name": "6-3"
     },
     {
         "description": "A castle level with a maze-like structure and Bowser.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/b/bd/SMB_NES_World_6_Bowser_Screenshot.png",
         "name": "6-4"
     },
     {
