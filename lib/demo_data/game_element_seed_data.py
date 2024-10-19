@@ -121,42 +121,42 @@ levels_list = [
     },
     {
         "description": "An overworld level with more enemies and obstacles.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/0/06/SMB_NES_World_7-1_Screenshot.png",
         "name": "7-1"
     },
     {
         "description": "An underground level with more pipes and enemies.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/3/34/SMB_NES_World_7-2_Screenshot.png",
         "name": "7-2"
     },
     {
         "description": "A sky level with many moving platforms.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/b/b4/SMB_NES_World_7-3_Screenshot.png",
         "name": "7-3"
     },
     {
         "description": "A castle level with more firebars and Bowser.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/e/e5/SMB_NES_World_7-4_Screenshot.png",
         "name": "7-4"
     },
     {
         "description": "An overworld level with Hammer Bros and tricky platforming.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/d/d5/SMB_World_8-1_Screenshot.png",
         "name": "8-1"
     },
     {
         "description": "A very challenging underground level with many enemies.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/8/88/SMB_World_8-2_Screenshot.png",
         "name": "8-2"
     },
     {
         "description": "A sky level with precise platforming and enemies.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/5/59/SMB_World_8-3_Screenshot.png",
         "name": "8-3"
     },
     {
         "description": "The final castle level, with a maze and Bowser as the final boss.",
-        "image_url": "",
+        "image_url": "https://mario.wiki.gallery/images/2/28/SMB_NES_Bowser_Screenshot.png",
         "name": "8-4"
     }
 ]
