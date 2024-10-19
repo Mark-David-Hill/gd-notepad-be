@@ -43,42 +43,42 @@ games_list = [
         "description": "The original Mega Man game, introducing the series' signature gameplay and six Robot Masters.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/9/9b/Rockman_1987.jpg"
     },
     {
         "name": "Mega Man 2",
         "description": "The second game in the series, widely regarded as one of the best, featuring eight Robot Masters and refined gameplay.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/Rockman_2_1988.jpg/220px-Rockman_2_1988.jpg"
     },
     {
         "name": "Mega Man 3",
         "description": "The third entry in the series, introducing the slide mechanic and Proto Man.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://preview.redd.it/qqep1bbbf8f81.jpg?width=640&crop=smart&auto=webp&s=339b9726731d920de81967f970f475290a0550d7"
     },
     {
         "name": "Mega Man 4",
         "description": "Mega Man's fourth adventure, which introduces the charge shot ability.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://e.snmc.io/lk/fv/x/8098e505aeb6ce3c2e10953ae78d2423/11877607"
     },
     {
         "name": "Mega Man 5",
         "description": "The fifth installment, with new gameplay tweaks and eight new Robot Masters.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://www.sprites-inc.co.uk/files/Classic/MMLC/Artwork/BoxArt/04-MM5.png"
     },
     {
         "name": "Mega Man 6",
         "description": "The sixth entry, which was the last Mega Man game for the NES, featuring Rush Adaptors for more versatile gameplay.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://e.snmc.io/lk/lv/x/889b818c5be6f3ce308bc85b7c9625d5/11877333"
     },
     {
         "name": "Mega Man 7",
