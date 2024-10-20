@@ -59,12 +59,12 @@ def element_tag_update(req):
     return jsonify({"message": "tag added to game element", "result": game_element_schema.dump(element_query)}), 200    
     
 
-@auth
+# @auth
 def elements_get_all():
     return records_get_all(GameElements, game_elements_schema, "elements")
 
 
-@auth
+# @auth
 def elements_get_all_with_tag(tag_id):
     elements_query = db.session.query(GameElements).filter(Tags.tag_id == tag_id).all()
 
@@ -74,7 +74,7 @@ def elements_get_all_with_tag(tag_id):
     return jsonify({"message": f"elements found", "results": game_elements_schema.dump(elements_query)}), 200
 
 
-@auth
+# @auth
 def element_get_by_id(element_id):
     if not validate_uuid4(element_id):
         return jsonify({"message": "cannot get element without a valid uuid"})

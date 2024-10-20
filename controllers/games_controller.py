@@ -11,12 +11,12 @@ def game_add(req):
     return record_add(req, Games.new_game_obj(), game_schema, "game")
     
     
-@auth
+# @auth
 def games_get_all():
     return records_get_all(Games, games_schema, "games")
 
 
-@auth
+# @auth
 def game_get_by_id(game_id):
     if not validate_uuid4(game_id):
         return jsonify({"message": f"cannot get game without a valid uuid"}), 400

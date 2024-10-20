@@ -21,12 +21,12 @@ def relationship_add(req):
     return record_add(req, ElementRelationships.new_relationship_obj(), relationship_schema, "relationship")
     
 
-@auth
+# @auth
 def relationships_get_all():
     return records_get_all(ElementRelationships, relationships_schema, "relationships")
 
 
-@auth
+# @auth
 def relationship_get_by_id(relationship_id):
     if not validate_uuid4(relationship_id):
         return jsonify({"message": "cannot get relationship without a valid uuid"}), 400

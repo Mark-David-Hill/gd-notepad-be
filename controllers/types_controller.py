@@ -11,12 +11,12 @@ def type_add(req):
     return record_add(req, Types.new_type_obj(), type_schema, "type")
     
     
-@auth
+# @auth
 def types_get_all():
     return records_get_all(Types, types_schema, "types")
 
 
-@auth
+# @auth
 def type_get_by_id(type_id):
     if not validate_uuid4(type_id):
         return jsonify({"message": "cannot get type without a valid uuid"}), 400

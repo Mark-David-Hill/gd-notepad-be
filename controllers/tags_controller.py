@@ -20,12 +20,12 @@ def tag_add(req):
     return record_add(req, Tags.new_tag_obj(), tag_schema, "tag")
     
     
-@auth
+# @auth
 def tags_get_all():
     return records_get_all(Tags, tags_schema, "tags")
 
 
-@auth
+# @auth
 def tag_get_by_id(tag_id):
     if not validate_uuid4(tag_id):
         return jsonify({"message": "cannot get tag without a valid uuid"}), 400
