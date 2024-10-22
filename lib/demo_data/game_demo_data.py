@@ -85,42 +85,42 @@ games_list = [
         "description": "The first Mega Man game for the Super NES, featuring more detailed sprites and a storyline involving Bass and Treble.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/2/27/Mega_Man_7_Coverart.jpg"
     },
     {
         "name": "Mega Man 8",
         "description": "The first and only Mega Man game on the original PlayStation, featuring 2.5D graphics and eight Robot Masters.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://e.snmc.io/lk/lv/x/fbfb242394c60fd6ce3d9953884bd837/5277365"
     },
     {
         "name": "Mega Man 9",
         "description": "The ninth entry returns to 8-bit graphics and mechanics, bringing back the classic NES-style gameplay.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtRH7KEmJxp6rfE8bla5LYrhJ7HF_Okl99QWemCbHENvh5xlMpSlY-TCeuq_Wy5VkXGXGFBIV4frIBKrAaLGgYhuUpLodnyV7CwJwyTumaUc1ANe_r5qT4uWpQ27XM8AlNbHax6fi7ORZx/s1600/mega+man+9+title+screen.jpg"
     },
     {
         "name": "Mega Man 10",
         "description": "The tenth game, also in 8-bit style, featuring a harder difficulty mode and extra playable characters.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://i.ytimg.com/vi/0c701F1t950/hqdefault.jpg"
     },
     {
         "name": "Mega Man 11",
         "description": "The latest entry in the series, featuring a 2.5D style, the Double Gear system, and vibrant graphics.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000003964/50637ae3b8fe8d88c7617d9fa10f8a13ddad1c3e3066d4342f286771c6403c5f"
     },
     {
         "name": "Mega Man & Bass",
         "description": "A spin-off game that allows players to choose between Mega Man and Bass, with different abilities for each character.",
         "series": "Mega Man",
         "genre": "Action/Platformer",
-        "image_url": ""
+        "image_url": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/virtual_console_wii_u_7/SI_WiiUVC_MegamanAndBass_image1600w.jpg"
     }
     
 ]
