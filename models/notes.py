@@ -21,8 +21,9 @@ class Notes(db.Model):
     user = db.relationship("AppUsers", back_populates="note")
     element = db.relationship("GameElements", back_populates="note")
 
-    def __init__(self, user_id, content, link_url, link_type, date_time):
+    def __init__(self, user_id, element_id, content, link_url, link_type, date_time):
         self.user_id = user_id
+        self.element_id = element_id
         self.content = content
         self.link_url = link_url
         self.link_type = link_type
@@ -30,7 +31,7 @@ class Notes(db.Model):
 
 
     def new_note_obj():
-        return Notes("", "", "", "", "")
+        return Notes("", "", "", "", "", "")
     
 
 class NotesSchema(ma.Schema):

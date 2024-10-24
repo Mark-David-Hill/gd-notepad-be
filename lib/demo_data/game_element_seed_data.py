@@ -336,7 +336,8 @@ mechanics = [
     {
         "description": "Mario moves at a faster speed when the player holds down the run button while moving.",
         "image_url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dee38e10-db68-462d-9df7-46b87d4c7876/ddxh2tf-fc8fc42e-8794-4501-8621-31a4e68a25b5.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2RlZTM4ZTEwLWRiNjgtNDYyZC05ZGY3LTQ2Yjg3ZDRjNzg3NlwvZGR4aDJ0Zi1mYzhmYzQyZS04Nzk0LTQ1MDEtODYyMS0zMWE0ZTY4YTI1YjUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.k7me-PhiUBQjnEu0a2FMUBFCjo5wljCAeBiTCry6ykg",
-        "name": "Run"
+        "name": "Run",
+        "note": "There are very few levels (I want to say just 2?) that require running jumps to proceed. For the most part it is optional"
     },
     {
         "description": "Mario jumps when the player presses the jump button, with height and distance depending on how long the button is held.",
@@ -346,7 +347,8 @@ mechanics = [
     {
         "description": "When Mario is Fire Mario, pressing the fireball button launches a fireball.",
         "image_url": "https://retrovolve.com/wp-content/uploads/2015/12/mariofirebig.jpg",
-        "name": "Shoot Fireball"
+        "name": "Shoot Fireball",
+        "note": "Given its arc, throwing a fireball helps emphasize jumping as the core mechanic, since jumping is often an important part of hitting your desired target"
     },
     {
         "description": "In underwater levels, Mario swims upward by pressing the jump button, controlling his movement in the water.",
