@@ -312,19 +312,35 @@ power_ups = [
     {
         "description": "Transforms Mario into Super Mario, making him larger and able to break brick blocks.",
         "image_url": "https://mario.wiki.gallery/images/6/66/SMB_Supermushroom.png",
-        "name": "Super Mushroom"
+        "name": "Super Mushroom",
+        "notes": [
+            "Encourages exploration, as players actively seek it out for its benefits.",
+            "Adds a layer of risk/reward, making Mario more resilient but also a larger target.",
+            "The visual size increase immediately communicates enhanced abilities to the player."
+        ]
     },
     {
         "description": "Grants Mario the ability to shoot fireballs and defeat enemies from a distance.",
         "image_url": "https://mario.wiki.gallery/images/b/b3/Fire_Flower_SMB.gif",
-        "name": "Fire Flower"
+        "name": "Fire Flower",
+        "notes": [
+            "Allows for varied play styles by enabling ranged attacks, expanding combat options.",
+            "Provides an advantage against hard-to-reach enemies, reducing the need for close combat.",
+            "Adds a level of strategy, as players choose when and how to use fireballs."
+        ]
     },
     {
         "description": "Makes Mario temporarily invincible, allowing him to defeat enemies on contact.",
         "image_url": "https://mario.wiki.gallery/images/d/db/Starman.gif",
-        "name": "Starman"
-    },
+        "name": "Starman",
+        "notes": [
+            "Encourages players to engage with enemies and obstacles more aggressively.",
+            "Creates dynamic moments in gameplay, often leading players to speed up and take risks.",
+            "Temporary effect adds urgency, encouraging fast decision-making and movement."
+        ]
+    }
 ]
+
 
 
 mechanics = [
