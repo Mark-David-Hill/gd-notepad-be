@@ -1,5 +1,6 @@
 from db import db
 
+from models.element_relationships import ElementRelationships
 from models.game_elements import GameElements
 from models.app_users import AppUsers
 from models.games import Games
@@ -24,8 +25,20 @@ def add_game_elements(game_name, type_name, elements_list):
 
             if "notes" in game_element and game_element["notes"]:
                 for note in game_element["notes"]:
-                    new_note_element = Notes(user_query.user_id, None, note, "", "", None)
-                    new_note_element.element_id = new_game_element.element_id
-                    db.session.add(new_note_element)
+                    new_note = Notes(user_query.user_id, None, note, "", "", None)
+                    new_note.element_id = new_game_element.element_id
+                    db.session.add(new_note)
+            
             
     db.session.commit()
+
+    for index, game_element in enumerate(elements_list):
+        
+        if "relationships" in game_element and game_element["relationships"]:
+            for relationship in game_element["relationships"]:
+                count = relationship["count"] if "count" in relationship else 0
+                element_id_query = db.session.query(GameElements).filter(GameElements.name == relationship["name"]).first().element_id
+                new_relationship = ElementRelationships(new_game_element.element_id, element_id_query, relationship["description"], count)
+                db.session.add(new_relationship)
+
+        db.session.commit()
