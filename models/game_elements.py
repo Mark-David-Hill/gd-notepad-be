@@ -19,7 +19,7 @@ class GameElements(db.Model):
 
     type = db.relationship("Types", back_populates="elements")
     game = db.relationship("Games", back_populates="elements")
-    note = db.relationship("Notes", back_populates="element", cascade="all")
+    notes = db.relationship("Notes", back_populates="element", cascade="all")
     tags = db.relationship('Tags', secondary=game_elements_tags_xref, back_populates='elements')
     related_element_1 = db.relationship('ElementRelationships', foreign_keys='ElementRelationships.element_1_id', back_populates='element_1')
     related_element_2 = db.relationship('ElementRelationships', foreign_keys='ElementRelationships.element_2_id', back_populates='element_2')
@@ -37,10 +37,11 @@ class GameElements(db.Model):
 
 class GameElementsSchema(ma.Schema):
     class Meta:
-        fields = ["element_id", "name", "description", "image_url", "type", "game", "tags"]
+        fields = ["element_id", "name", "description", "image_url", "type", "game", "tags", "notes"]
     type = ma.fields.Nested("TypesSchema")
     game = ma.fields.Nested("GamesSchema")
     tags = ma.fields.Nested("TagsSchema", many=True, exclude=["type"])
+    notes = ma.fields.Nested("NotesSchema", many=True, exclude=["element"])
 
 
 game_element_schema = GameElementsSchema()

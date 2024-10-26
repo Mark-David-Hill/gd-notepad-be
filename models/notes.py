@@ -19,7 +19,7 @@ class Notes(db.Model):
     date_time = db.Column(db.DateTime(timezone=True), nullable=False, default=datetime.now(timezone.utc))
 
     user = db.relationship("AppUsers", back_populates="note")
-    element = db.relationship("GameElements", back_populates="note")
+    element = db.relationship("GameElements", back_populates="notes")
 
     def __init__(self, user_id, element_id, content, link_url, link_type, date_time):
         self.user_id = user_id

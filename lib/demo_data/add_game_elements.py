@@ -22,9 +22,10 @@ def add_game_elements(game_name, type_name, elements_list):
             db.session.add(new_game_element)
             db.session.flush()
 
-            if "note" in game_element and game_element["note"]:
-                new_note_element = Notes(user_query.user_id, None, game_element["note"], "", "", None)
-                new_note_element.element_id = new_game_element.element_id
-                db.session.add(new_note_element)
+            if "notes" in game_element and game_element["notes"]:
+                for note in game_element["notes"]:
+                    new_note_element = Notes(user_query.user_id, None, note, "", "", None)
+                    new_note_element.element_id = new_game_element.element_id
+                    db.session.add(new_note_element)
             
     db.session.commit()
