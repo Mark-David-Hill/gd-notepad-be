@@ -10,7 +10,7 @@ def add_game_elements(game_name, type_name, elements_list):
     game_query = db.session.query(Games).filter(Games.name == game_name).first()
     type_query = db.session.query(Types).filter(Types.name == type_name).first()
     user_query = db.session.query(AppUsers).filter(AppUsers.email == "super@test.com").first()
-    for game_element in enumerate(elements_list):
+    for game_element in elements_list:
         if not db.session.query(GameElements).filter(GameElements.name == game_element["name"]).first():
             name = game_element["name"]
             description = game_element["description"]
