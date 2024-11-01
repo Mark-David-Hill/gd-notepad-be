@@ -19,5 +19,5 @@ def __init__(self, type_id, tag_name, description):
         self.tag_name = tag_name
         self.description = description
 
-    def new_tag_obj():
-        return Tags("", "", "")
+def new_tag_obj():
+    return Tags("", "", "")
