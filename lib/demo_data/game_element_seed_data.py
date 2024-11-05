@@ -2,7 +2,8 @@ levels_list = [
     {
         "description": "The first level, a grassy overworld with Goombas and Koopas.",
         "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
-        "name": "1-1"
+        "name": "1-1",
+        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopas"}]
     },
     {
         "description": "An underground level featuring pipes and Piranha Plants.",
@@ -170,7 +171,7 @@ enemies_list = [
     {
         "description": "A turtle-like enemy that can be kicked",
         "image_url": "https://s2.aminoapps.com/image/4ppllvib5f6h47b5fcjjdcv6b2fvpmh5_hq.jpg",
-        "name": "Green Shell Koopa Troopa"
+        "name": "Green Shell Koopa"
     },
     {
         "description": "A turtle-like enemy that can be kicked. Unlike Green Shell Koopas, will not walk off edges",
