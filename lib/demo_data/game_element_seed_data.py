@@ -375,7 +375,7 @@ mechanics = [
         "description": "In underwater levels, Mario swims upward by pressing the jump button, controlling his movement in the water.",
         "image_url": "https://cdn.vectorstock.com/i/1000v/34/86/set-of-mario-swimming-moves-art-super-vector-47023486.jpg",
         "notes": ["Used in underwater levels.", "Requires careful control to avoid hazards."],
-        "relationships": [{"name": "3-2", "description": "3-2 is one of the few levels where Mario can swim"}, {"name": "8-4", "description": "8-4 includes a swimming section near the end of the level"}]
+        "relationships": [{"name": "2-2", "description": "a water level with bloopers and cheep-cheeps"}, {"name": "3-2", "description": "3-2 is one of the few levels where Mario can swim"}, {"name": "5-2", "description": "Level 5-2 has a pipe that leads to an optional underwater section"}, {"name": "6-2", "description": "Level 6-2 has a pipe that leads to an optional underwater section"}, {"name": "7-2", "description" : "A water level"}, {"name": "8-4", "description": "8-4 includes a swimming section near the end of the level"}]
     },
     {
         "name": "Climb",
