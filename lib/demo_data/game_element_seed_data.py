@@ -3,7 +3,7 @@ levels_list = [
         "description": "The first level, a grassy overworld with Goombas and Koopas.",
         "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
         "name": "1-1",
-        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopas"}]
+        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, {"name": "Pit", "description": "Level 1-1 has 3 small pits"}]
     },
     {
         "description": "An underground level featuring pipes and Piranha Plants.",
@@ -182,6 +182,11 @@ enemies_list = [
         "description": "A faster, winged version of Koopa Troopa",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv_eZNRtLD7Z5u0ce2vEr73VfNmjOB80bMgA&s",
         "name": "Koopa Paratroopa"
+    },
+    {
+        "description": "If Mario falls into a pit he loses a life",
+        "image_url": "https://tvobsessive.com/wp-content/uploads/2019/12/1-1-Pits-700x315.jpg",
+        "name": "Pit"
     },
     {
         "description": "A spiked enemy that cannot be jumped on",
