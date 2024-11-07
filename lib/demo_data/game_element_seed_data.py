@@ -3,7 +3,7 @@ levels_list = [
         "description": "The first level, a grassy overworld with Goombas and Koopas.",
         "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
         "name": "1-1",
-        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, {"name": "Pit", "description": "Level 1-1 has 3 small pits"}]
+        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, {"name": "Pit", "description": "Level 1-1 has 3 small pits"}, {"name": "Coin", "description": "Level 1-1 has 19 free-floating coins hidden in a bonus room"}, {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1"}, {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1"}, {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1"}]
     },
     {
         "description": "An underground level featuring pipes and Piranha Plants.",
@@ -307,7 +307,7 @@ level_elements = [
         "name": "1-Up Mushroom"
     },
     {
-        "description": "A hidden power-up in certain levels that provides additional points when collected.",
+        "description": "Free-floating coins are a collectable that provide an extra life when 100 are collected.",
         "image_url": "https://ih1.redbubble.net/image.4269270247.3340/fposter,small,wall_texture,product,750x1000.jpg",
         "name": "Coin"
     }
