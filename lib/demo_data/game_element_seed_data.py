@@ -3,7 +3,19 @@ levels_list = [
         "description": "The first level, a grassy overworld with Goombas and Koopas.",
         "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
         "name": "1-1",
-        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, {"name": "Pit", "description": "Level 1-1 has 3 small pits"}, {"name": "Floating Coin", "description": "Level 1-1 has 19 free-floating coins hidden in a bonus room"}, {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1"}, {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1"}, {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1"}, {"name": "Warp Pipe", "description": "Level 1-1 has a warp pipe that leads to a bonus room"}]
+        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, 
+                          {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, 
+                          {"name": "Pit", "description": "Level 1-1 has 3 small pits"}, 
+                          {"name": "Floating Coin", "description": "Level 1-1 has 19 free-floating coins hidden in a bonus room"}, 
+                          {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1"}, 
+                          {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1"}, 
+                          {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1"}, 
+                          {"name": "Warp Pipe", "description": "Level 1-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles"},
+                          {"name": "? Block", "description": "There are several ? blocks in Level 1-1, containing coins and power-ups"},
+                          {"name": "Brick Block", "description": "There are several brick blocks in Level 1-1"},
+                          {"name": "Hard Block", "description": "There are hard blocks forming staircases in Level 1-1"},
+                          {"name": "Hidden Block", "description": "There is 1 invisible 1-up block in Level 1-1"},
+                          {"name": "Flagpole", "description": "There is a flagpole at the end of Level 1-1"}]
     },
     {
         "description": "An underground level featuring pipes and Piranha Plants.",
@@ -252,25 +264,19 @@ level_elements = [
         "name": "Brick Block"
     },
     {
-        "description": "A block that contains 1 coin",
+        "description": "A block that contains either 1 coin, 10 coins, a 1-up, a super mushroom, a fire flower, or a starman",
         "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
-        "name": "1-coin Block"
-    }
-    {
-        "description": "A block that contains about 10 coins",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
-        "name": "10-coin Block"
-    }
-    {
-        "description": "A block that contains a power-up, coin, or other item when hit from below.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
-        "name": "Question Block"
+        "name": "? Block"
     },
-    {}
     {
-        "description": "A special block that releases a vine when hit, allowing Mario to climb upward.",
-        "image_url": "https://themushroomkingdom.net/images/bugs/smb_vine_of_the_dead_1.png",
-        "name": "Vine Block"
+        "description": "A hard block that cannot be destroyed and which can be used as a platform",
+        "image_url": "https://mario.wiki.gallery/images/e/ec/SMB_Hard_Block_Sprite.png",
+        "name": "Hard Block"
+    },
+    {
+        "description": "An invisible block that contains a coin, a 1-Up Mushroom, or a vine.",
+        "image_url": "https://images.stephenlindholm.com/VJhfNbPE.png",
+        "name": "Hidden Block"
     },
     {
         "description": "A green pipe that Mario can enter to warp to a different area.",
@@ -283,19 +289,9 @@ level_elements = [
         "name": "Flagpole"
     },
     {
-        "description": "A block containing a power-up like a Super Mushroom or Fire Flower.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
-        "name": "Power-Up Block"
-    },
-    {
         "description": "A cannon that shoots Bullet Bills at Mario.",
         "image_url": "https://cdn.staticneo.com/w/mario/5/5c/Supermario-43.png",
         "name": "Bill Blaster"
-    },
-    {
-        "description": "A block that contains a hidden 1-Up Mushroom.",
-        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
-        "name": "1-Up Block"
     },
     {
         "description": "A trampoline that Mario can jump on to reach high places.",
@@ -357,8 +353,6 @@ power_ups = [
         ]
     }
 ]
-
-
 
 mechanics = [
     {

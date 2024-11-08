@@ -1,4 +1,7 @@
 import sys
+from db import db
+
+from models.element_relationships import ElementRelationships
 
 from lib.demo_data.game_element_demo_data import add_game_elements
 from lib.demo_data.game_element_seed_data import levels_list, enemies_list, level_elements, power_ups, mechanics
@@ -18,8 +21,12 @@ def run_demo_data():
         add_game_elements("Super Mario Bros.", "Level Element", level_elements)
         add_game_elements("Super Mario Bros.", "Power Up", power_ups)
         add_game_elements("Super Mario Bros.", "Mechanic", mechanics)
-        add_relationships(levels_list)
-        add_relationships(enemies_list)
-        add_relationships(level_elements)
-        add_relationships(power_ups)
-        add_relationships(mechanics)
+
+        relationships_query = db.session.query(ElementRelationships).all()
+
+        if not relationships_query:
+            add_relationships(levels_list)
+            add_relationships(enemies_list)
+            add_relationships(level_elements)
+            add_relationships(power_ups)
+            add_relationships(mechanics)
