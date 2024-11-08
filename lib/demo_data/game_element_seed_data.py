@@ -3,7 +3,7 @@ levels_list = [
         "description": "The first level, a grassy overworld with Goombas and Koopas.",
         "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
         "name": "1-1",
-        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, {"name": "Pit", "description": "Level 1-1 has 3 small pits"}, {"name": "Coin", "description": "Level 1-1 has 19 free-floating coins hidden in a bonus room"}, {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1"}, {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1"}, {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1"}]
+        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, {"name": "Pit", "description": "Level 1-1 has 3 small pits"}, {"name": "Floating Coin", "description": "Level 1-1 has 19 free-floating coins hidden in a bonus room"}, {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1"}, {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1"}, {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1"}, {"name": "Warp Pipe", "description": "Level 1-1 has a warp pipe that leads to a bonus room"}]
     },
     {
         "description": "An underground level featuring pipes and Piranha Plants.",
@@ -252,10 +252,21 @@ level_elements = [
         "name": "Brick Block"
     },
     {
+        "description": "A block that contains 1 coin",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
+        "name": "1-coin Block"
+    }
+    {
+        "description": "A block that contains about 10 coins",
+        "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
+        "name": "10-coin Block"
+    }
+    {
         "description": "A block that contains a power-up, coin, or other item when hit from below.",
         "image_url": "https://techcrunch.com/wp-content/uploads/2015/09/mario-block-nes.png",
         "name": "Question Block"
     },
+    {}
     {
         "description": "A special block that releases a vine when hit, allowing Mario to climb upward.",
         "image_url": "https://themushroomkingdom.net/images/bugs/smb_vine_of_the_dead_1.png",
@@ -264,7 +275,7 @@ level_elements = [
     {
         "description": "A green pipe that Mario can enter to warp to a different area.",
         "image_url": "https://e7.pngegg.com/pngimages/326/204/png-clipart-green-pipe-super-mario-bros-3-super-mario-bros-2-8-bit-angle-text.png",
-        "name": "Pipe"
+        "name": "Warp Pipe"
     },
     {
         "description": "A flagpole at the end of each overworld or sky level that completes the level when touched.",
@@ -307,10 +318,10 @@ level_elements = [
         "name": "1-Up Mushroom"
     },
     {
-        "description": "Free-floating coins are a collectable that provide an extra life when 100 are collected.",
+        "description": "A collectable that provides an extra life when 100 are collected. They can be found in coin blocks or free-floating in bonus",
         "image_url": "https://ih1.redbubble.net/image.4269270247.3340/fposter,small,wall_texture,product,750x1000.jpg",
-        "name": "Coin"
-    }
+        "name": "Floating Coin"
+    },
 ]
 
 
