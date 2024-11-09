@@ -3,6 +3,7 @@ levels_list = [
         "description": "The first level, a grassy overworld with Goombas and Koopas.",
         "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
         "name": "1-1",
+        "notes": ["Level 1-1 introduces all of the game's power ups, the 2 most basic enemies, hidden secrets, and the general flow of gameplay"],
         "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, 
                           {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, 
                           {"name": "Pit", "description": "Level 1-1 has 3 small pits"}, 
