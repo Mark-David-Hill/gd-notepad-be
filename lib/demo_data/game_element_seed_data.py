@@ -4,18 +4,19 @@ levels_list = [
         "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
         "name": "1-1",
         "notes": ["Level 1-1 introduces all of the game's power ups, the 2 most basic enemies, hidden secrets, and the general flow of gameplay"],
-        "relationships": [{"name": "Goomba", "description": "Level 1-1 has 16 Goombas"}, 
-                          {"name": "Green Shell Koopa", "description": "Level 1-1 has 1 green shell koopa"}, 
-                          {"name": "Pit", "description": "Level 1-1 has 3 small pits"}, 
-                          {"name": "Floating Coin", "description": "Level 1-1 has 19 free-floating coins hidden in a bonus room"}, 
-                          {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1"}, 
-                          {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1"}, 
-                          {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1"}, 
-                          {"name": "Warp Pipe", "description": "Level 1-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles"},
+        "relationships": [{"name": "Goomba", "description": "Level 1-1 has several Goomba enemies", "count": 16}, 
+                          {"name": "Green Shell Koopa", "description": "Level 1-1 has a green shell koopa", "count": 1}, 
+                          {"name": "Pit", "description": "Level 1-1 has 3 small pits", "count": 3}, 
+                          {"name": "Coin", "description": "Level 1-1 has several coins both floating in a bonus room and inside of blocks", "count": 39}, 
+                          {"name": "1-Up Mushroom", "description": "Level 1-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
+                          {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1", "count": 3}, 
+                          {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1", "count": 2}, 
+                          {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1", "count": 1}, 
+                          {"name": "Warp Pipe", "description": "Level 1-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles", "count": 2},
                           {"name": "? Block", "description": "There are several ? blocks in Level 1-1, containing coins and power-ups"},
                           {"name": "Brick Block", "description": "There are several brick blocks in Level 1-1"},
                           {"name": "Hard Block", "description": "There are hard blocks forming staircases in Level 1-1"},
-                          {"name": "Hidden Block", "description": "There is 1 invisible 1-up block in Level 1-1"},
+                          {"name": "Hidden Block", "description": "There is 1 invisible 1-up block in Level 1-1", "count": 1},
                           {"name": "Flagpole", "description": "There is a flagpole at the end of Level 1-1"}]
     },
     {
@@ -309,16 +310,7 @@ level_elements = [
         "image_url": "https://preview.redd.it/why-does-bowser-keep-an-axe-behind-him-to-destroy-the-v0-wwzlpj82lsoa1.jpg?auto=webp&s=608ad48d954f6d1c1c88eb5b9e058c3f0f1a7471",
         "name": "Axe"
     },
-    {
-        "description": "Provides an extra life when collected.",
-        "image_url": "https://images.stephenlindholm.com/VJhfNbPE.png",
-        "name": "1-Up Mushroom"
-    },
-    {
-        "description": "A collectable that provides an extra life when 100 are collected. They can be found in coin blocks or free-floating in bonus",
-        "image_url": "https://ih1.redbubble.net/image.4269270247.3340/fposter,small,wall_texture,product,750x1000.jpg",
-        "name": "Floating Coin"
-    },
+    
 ]
 
 
@@ -352,6 +344,16 @@ power_ups = [
             "Creates dynamic moments in gameplay, often leading players to speed up and take risks.",
             "Temporary effect adds urgency, encouraging fast decision-making and movement."
         ]
+    },
+    {
+        "description": "A collectable that provides an extra life when 100 are collected. They can be found in blocks or free-floating in bonus rooms",
+        "image_url": "https://ih1.redbubble.net/image.4269270247.3340/fposter,small,wall_texture,product,750x1000.jpg",
+        "name": "Coin"
+    },
+    {
+        "description": "Provides an extra life when collected.",
+        "image_url": "https://images.stephenlindholm.com/VJhfNbPE.png",
+        "name": "1-Up Mushroom"
     }
 ]
 
