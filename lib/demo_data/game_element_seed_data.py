@@ -3,26 +3,45 @@ levels_list = [
         "description": "The first level, a grassy overworld with Goombas and Koopas.",
         "image_url": "https://mario.wiki.gallery/images/1/13/SMB_NES_World_1-1_Screenshot.png",
         "name": "1-1",
-        "notes": ["Level 1-1 introduces all of the game's power ups, the 2 most basic enemies, hidden secrets, and the general flow of gameplay"],
-        "relationships": [{"name": "Goomba", "description": "Level 1-1 has several Goomba enemies", "count": 16}, 
-                          {"name": "Green Shell Koopa", "description": "Level 1-1 has a green shell koopa", "count": 1}, 
-                          {"name": "Pit", "description": "Level 1-1 has 3 small pits", "count": 3}, 
-                          {"name": "Coin", "description": "Level 1-1 has several coins both floating in a bonus room and inside of blocks", "count": 39}, 
-                          {"name": "1-Up Mushroom", "description": "Level 1-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
-                          {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1", "count": 3}, 
-                          {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1", "count": 2}, 
-                          {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1", "count": 1}, 
-                          {"name": "Warp Pipe", "description": "Level 1-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles", "count": 2},
-                          {"name": "? Block", "description": "There are several ? blocks in Level 1-1, containing coins and power-ups"},
-                          {"name": "Brick Block", "description": "There are several brick blocks in Level 1-1"},
-                          {"name": "Hard Block", "description": "There are hard blocks forming staircases in Level 1-1"},
-                          {"name": "Hidden Block", "description": "There is 1 invisible 1-up block in Level 1-1", "count": 1},
-                          {"name": "Flagpole", "description": "There is a flagpole at the end of Level 1-1"}]
+        "notes": ["Level 1-1 introduces all of the game's power ups, the 2 most basic enemies, the basics of jumping, hidden secrets, and the general flow of gameplay"],
+        "relationships": [
+            {"name": "Goomba", "description": "Level 1-1 has several Goomba enemies", "count": 16}, 
+            {"name": "Green Shell Koopa", "description": "Level 1-1 has a green shell koopa", "count": 1}, 
+            {"name": "Pit", "description": "Level 1-1 has 3 small pits", "count": 3}, 
+            {"name": "Coin", "description": "Level 1-1 has several coins both floating in a bonus room and inside of blocks", "count": 39}, 
+            {"name": "1-Up Mushroom", "description": "Level 1-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
+            {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-1", "count": 3}, 
+            {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 1-1", "count": 2}, 
+            {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-1", "count": 1}, 
+            {"name": "Warp Pipe", "description": "Level 1-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles", "count": 2},
+            {"name": "? Block", "description": "There are several ? blocks in Level 1-1, containing coins and power-ups", "count": 12},
+            {"name": "Brick Block", "description": "There are several brick blocks in Level 1-1"},
+            {"name": "Hard Block", "description": "There are hard blocks forming staircases in Level 1-1"},
+            {"name": "Hidden Block", "description": "There is 1 invisible 1-up block in Level 1-1", "count": 1},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 1-1"}
+        ]
     },
     {
         "description": "An underground level featuring pipes and Piranha Plants.",
         "image_url": "https://mario.wiki.gallery/images/1/14/FireMarioSMB.png",
-        "name": "1-2"
+        "name": "1-2",
+        "relationships": [
+            {"name": "Goomba", "description": "Level 1-2 has several Goombas", "count": 13},
+            {"name": "Green Shell Koopa", "description": "Level 1-2 has a few green shell koopas", "count": 3}, 
+            {"name": "Piranha Plant", "description": "Level 1-2 has a few piranha plants", "count": 4}, 
+            {"name": "Pit", "description": "Level 1-2 has a few pits", "count": 5},
+            {"name": "Coin", "description": "Level 1-2 has several coins both free-floating, sitting on blocks, and inside of blocks", "count": 68}, 
+            {"name": "1-Up Mushroom", "description": "Level 1-2 has 1 1-up mushroom hidden in an ordinary looiking brick block", "count": 1}, 
+            {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 1-2", "count": 3}, 
+            {"name": "Fire Flower", "description": "There are 3 blocks that can have fire flowers in them in Level 1-2", "count": 3}, 
+            {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-2", "count": 1}, 
+            {"name": "Warp Pipe", "description": "Level 1-2 has a warp pipe that leads to a bonus room, 1 that leads to the end of the level, and 3 warp room warp pipes", "count": 6},
+            {"name": "? Block", "description": "There are a few ? blocks in Level 1-2, containing coins and power-ups", "count": 4},
+            {"name": "Brick Block", "description": "There are a lot of brick blocks in Level 1-2"},
+            {"name": "Hard Block", "description": "There are hard blocks forming staircases and obstacles in Level 1-2"},
+            {"name": "Moving Platform", "description": "There is a section in Level 1-2 that has moving platforms above pits"},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 1-2"},
+        ]
     },
     {
         "description": "An above-ground level with platforms and bridges.",
@@ -301,7 +320,7 @@ level_elements = [
         "name": "Trampoline"
     },
     {
-        "description": "A movable platform often used in tricky sky or underground levels.",
+        "description": "A platform that moves up and down continually, going between the top and bottom of the screen",
         "image_url": "https://64.media.tumblr.com/69fe92a987eb8fa5c54164e7316f89eb/3158994ecd1fa263-80/s400x600/7dec53da5bedfcf85361984bad37c64c55eb1123.gif",
         "name": "Moving Platform"
     },
