@@ -28,6 +28,7 @@ levels_list = [
         "relationships": [
             {"name": "Goomba", "description": "Level 1-2 has several Goombas", "count": 13},
             {"name": "Green Shell Koopa", "description": "Level 1-2 has a few green shell koopas", "count": 3}, 
+            {"name": "Red Shell Koopa", "description": "Level 1-2 has a red shell koopa", "count": 1}, 
             {"name": "Piranha Plant", "description": "Level 1-2 has a few piranha plants", "count": 4}, 
             {"name": "Pit", "description": "Level 1-2 has a few pits", "count": 5},
             {"name": "Coin", "description": "Level 1-2 has several coins both free-floating, sitting on blocks, and inside of blocks", "count": 68}, 
@@ -46,7 +47,20 @@ levels_list = [
     {
         "description": "An above-ground level with platforms and bridges.",
         "image_url": "https://mario.wiki.gallery/images/5/53/SMB_NES_World_1-3_Screenshot.png",
-        "name": "1-3"
+        "name": "1-3",
+        "relationships": [
+            {"name": "Goomba", "description": "Level 1-3 has a few Goombas", "count": 3},
+            {"name": "Red Shell Koopa", "description": "Level 1-3 has a few red shell koopas", "count": 3}, 
+            {"name": "Red Shell Koopa Paratroopa", "description": "Level 1-3 has 2 red shell koopa paratroopas", "count": 2}, 
+            {"name": "Pit", "description": "Level 1-3 has one large pit spanning most of the level", "count": 1},
+            {"name": "Coin", "description": "Level 1-3 has several free-floating coins", "count": 23}, 
+            {"name": "Super Mushroom", "description": "There is 1 block that can have a Super Mushroom power-up in Level 1-3", "count": 1}, 
+            {"name": "Fire Flower", "description": "There is 1 block that can have a Fire Flower power-up in it in Level 1-3", "count": 1}, 
+            {"name": "? Block", "description": "There is 1 ? block in Level 1-3, containing either a Super Mushroom or a Fire Flower", "count": 1},
+            {"name": "Hard Block", "description": "There are hard blocks forming a staircase at the end of Level 1-3"},
+            {"name": "Moving Platform", "description": "There are 4 moving platforms in Level 1-3", "count": 4},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 1-3"},
+        ]
     },
     {
         "description": "The first castle level, with firebars and Bowser at the end.",
@@ -209,12 +223,17 @@ enemies_list = [
     {
         "description": "A turtle-like enemy that can be kicked. Unlike Green Shell Koopas, will not walk off edges",
         "image_url": "https://cdn3.iconfinder.com/data/icons/pixel-nes-mario-characters/105/Super_Mario_Bros_Page_28-512.png",
-        "name": "Red Shell Koopa Troopa"
+        "name": "Red Shell Koopa"
     },
     {
         "description": "A faster, winged version of Koopa Troopa",
         "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv_eZNRtLD7Z5u0ce2vEr73VfNmjOB80bMgA&s",
-        "name": "Koopa Paratroopa"
+        "name": "Green Shell Koopa Paratroopa"
+    },
+    {
+        "description": "A faster, winged version of Koopa Troopa",
+        "image_url": "https://i.etsystatic.com/16022531/r/il/762350/2096237486/il_fullxfull.2096237486_8pfb.jpg",
+        "name": "Red Shell Koopa Paratroopa"
     },
     {
         "description": "If Mario falls into a pit he loses a life",
@@ -320,7 +339,7 @@ level_elements = [
         "name": "Trampoline"
     },
     {
-        "description": "A platform that moves up and down continually, going between the top and bottom of the screen",
+        "description": "A platform that moves, either up, down, up and down, or left and right",
         "image_url": "https://64.media.tumblr.com/69fe92a987eb8fa5c54164e7316f89eb/3158994ecd1fa263-80/s400x600/7dec53da5bedfcf85361984bad37c64c55eb1123.gif",
         "name": "Moving Platform"
     },
