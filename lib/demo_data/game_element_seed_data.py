@@ -38,6 +38,7 @@ levels_list = [
             {"name": "Starman", "description": "There is 1 Starman powerup in Level 1-2", "count": 1}, 
             {"name": "Warp Pipe", "description": "Level 1-2 has a warp pipe that leads to a bonus room, 1 that leads to the end of the level, and 3 warp room warp pipes", "count": 6},
             {"name": "? Block", "description": "There are a few ? blocks in Level 1-2, containing coins and power-ups", "count": 4},
+            {"name": "Hidden Block", "description": "There are a few invisible 1-up blocks in Level 1-4", "count": 6},
             {"name": "Brick Block", "description": "There are a lot of brick blocks in Level 1-2"},
             {"name": "Hard Block", "description": "There are hard blocks forming staircases and obstacles in Level 1-2"},
             {"name": "Moving Platform", "description": "There is a section in Level 1-2 that has moving platforms above pits"},
@@ -65,7 +66,18 @@ levels_list = [
     {
         "description": "The first castle level, with firebars and Bowser at the end.",
         "image_url": "https://mario.wiki.gallery/images/7/73/SMB_W1-4_Fake_Bowser_Screenshot.png",
-        "name": "1-4"
+        "name": "1-4",
+        "relationships": [
+            {"name": "Pit", "description": "Level 1-4 has a few pits with lava in them", "count": 3},
+            {"name": "Firebar", "description": "Level 1-4 has several firebars", "count": 7},
+            {"name": "Moving Platform", "description": "There is a moving platform above Bowser at the end of Level 1-4", "count": 1},
+            {"name": "? Block", "description": "There is 1 ? block in Level 1-4, containing either a Super Mushroom or a Fire Flower", "count": 1},
+            {"name": "Super Mushroom", "description": "There is 1 block that can have a Super Mushroom power-up in Level 1-4", "count": 1}, 
+            {"name": "Fire Flower", "description": "There is 1 block that can have a Fire Flower power-up in it in Level 1-4", "count": 1}, 
+            {"name": "Coin", "description": "Level 1-4 has a few coins in hidden blocks", "count": 6}, 
+            {"name": "Hard Block", "description": "There are a few hard blocks in Level 1-4"},
+            {"name": "Axe", "description": "Level 1-4 has an axe at the end of the level", "count": 1},
+        ]
     },
     {
         "description": "Another overworld level, similar to 1-1 but slightly harder.",
