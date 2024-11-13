@@ -82,7 +82,24 @@ levels_list = [
     {
         "description": "Another overworld level, similar to 1-1 but slightly harder.",
         "image_url": "https://mario.wiki.gallery/images/0/0f/SMB_NES_2-1_Level_Screenshot.png",
-        "name": "2-1"
+        "name": "2-1",
+        "relationships": [
+            {"name": "Goomba", "description": "Level 2-1 has several Goombas", "count": 16}, 
+            {"name": "Green Shell Koopa", "description": "Level 2-1 has a few green shell koopas", "count": 6}, 
+            {"name": "Pit", "description": "Level 2-1 has 4 small pits", "count": 4}, 
+            {"name": "Coin", "description": "Level 2-1 has several coins both floating in the sky and in an underground bonus room as well as inside of blocks", "count": 89}, 
+            {"name": "1-Up Mushroom", "description": "Level 2-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
+            {"name": "Super Mushroom", "description": "There are 4 blocks that can contain Super Mushroom power-ups in Level 2-1", "count": 4}, 
+
+            # {"name": "Fire Flower", "description": "You can find up to 2 fire flowers in blocks in Level 2-1", "count": 2}, 
+            # {"name": "Starman", "description": "There is 1 Starman powerup in Level 2-1", "count": 1}, 
+            # {"name": "Warp Pipe", "description": "Level 2-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles", "count": 2},
+            # {"name": "? Block", "description": "There are several ? blocks in Level 2-1, containing coins and power-ups", "count": 12},
+            # {"name": "Brick Block", "description": "There are several brick blocks in Level 2-1"},
+            # {"name": "Hard Block", "description": "There are hard blocks forming staircases in Level 2-1"},
+            # {"name": "Hidden Block", "description": "There is 1 invisible 1-up block in Level 2-1", "count": 1},
+            # {"name": "Flagpole", "description": "There is a flagpole at the end of Level 2-1"}
+        ]
     },
     {
         "description": "An underground level with more pipes and tricky platforming.",
