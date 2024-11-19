@@ -392,6 +392,9 @@ power_ups = [
             "Encourages exploration, as players actively seek it out for its benefits.",
             "Adds a layer of risk/reward, making Mario more resilient but also a larger target.",
             "The visual size increase immediately communicates enhanced abilities to the player."
+        ],
+        "relationships": [
+            {"name": "Brick Block", "description": "Brick Blocks can only be broken by jumping into them if Mario has the super mushroom power up"}
         ]
     },
     {
