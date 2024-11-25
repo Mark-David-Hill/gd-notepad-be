@@ -43,6 +43,7 @@ levels_list = [
             {"name": "Hard Block", "description": "There are hard blocks forming staircases and obstacles in Level 1-2"},
             {"name": "Moving Platform", "description": "There is a section in Level 1-2 that has moving platforms above pits"},
             {"name": "Flagpole", "description": "There is a flagpole at the end of Level 1-2"},
+            {"name": "4-2", "description": "Levels 1-2 and 4-2 are the only underground levels in the game"},
         ]
     },
     {
@@ -61,6 +62,7 @@ levels_list = [
             {"name": "Hard Block", "description": "There are hard blocks forming a staircase at the end of Level 1-3"},
             {"name": "Moving Platform", "description": "There are 4 moving platforms in Level 1-3", "count": 4},
             {"name": "Flagpole", "description": "There is a flagpole at the end of Level 1-3"},
+            {"name": "5-3", "description": "Levels 1-3 and 5-3 have basically identical layouts. Level 5-3 just adds bullet bills and smaller moving platforms"},
         ]
     },
     {
@@ -77,6 +79,7 @@ levels_list = [
             {"name": "Coin", "description": "Level 1-4 has a few coins in hidden blocks", "count": 6}, 
             {"name": "Hard Block", "description": "There are a few hard blocks in Level 1-4"},
             {"name": "Axe", "description": "Level 1-4 has an axe at the end of the level", "count": 1},
+            {"name": "6-4", "description": "Levels 1-4 and 6-4 have almost identical layouts, but 6-4 has additional firebars, adds podoboos, and Bowser also throws hammers"},
         ]
     },
     {
@@ -122,6 +125,7 @@ levels_list = [
         "description": "A sky level with platforms and moving lifts.",
         "image_url": "https://mario.wiki.gallery/images/3/39/SMB_NES_World_2-3_Screenshot.png",
         "name": "2-3"
+        [{"name": "7-3", "description": "Levels 2-3 and 7-3 have identical layouts, but 7-3 adds several types of koopa enemies to the level"}]
     },
     {
         "description": "A castle level with a more difficult layout and Bowser.",
