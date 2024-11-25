@@ -124,8 +124,8 @@ levels_list = [
     {
         "description": "A sky level with platforms and moving lifts.",
         "image_url": "https://mario.wiki.gallery/images/3/39/SMB_NES_World_2-3_Screenshot.png",
-        "name": "2-3"
-        [{"name": "7-3", "description": "Levels 2-3 and 7-3 have identical layouts, but 7-3 adds several types of koopa enemies to the level"}]
+        "name": "2-3",
+        "relationships": [{"name": "7-3", "description": "Levels 2-3 and 7-3 have identical layouts, but 7-3 adds several types of koopa enemies to the level"}]
     },
     {
         "description": "A castle level with a more difficult layout and Bowser.",
