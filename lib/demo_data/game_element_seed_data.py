@@ -114,7 +114,7 @@ levels_list = [
             {"name": "Pit", "description": "There are a few underwater pits in Level 2-2", "count": 3},
             {"name": "Warp Pipe", "description": "There is 1 warp pipe in Level 2-2 leading to the end of the level", "count": 1},
             {"name": "Hard Block", "description": "There are several hard blocks forming a staircase at the end of Level 2-2",},
-            {"name": "Flagpole", "description": "There is a flagpole at the end of level 2-1", "count": 1},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of level 2-2", "count": 1},
             {"name": "Coin", "description": "There are several underwater floating coins in level 2-2", "count": 28},
         ]
     },
@@ -216,7 +216,19 @@ levels_list = [
     {
         "description": "An underground level with more pipes and enemies.",
         "image_url": "https://mario.wiki.gallery/images/3/34/SMB_NES_World_7-2_Screenshot.png",
-        "name": "7-2"
+        "name": "7-2",
+        "relationships": [
+            {"name": "Blooper", "description": "Level 7-3 has several Blooper enemies", "count": 13},
+            {"name": "Green Cheep Cheep", "description": "Level 7-3 has several Green Cheep Cheep enemies", "count": 11},
+            {"name": "Red Cheep Cheep", "description": "Level 7-3 has some Green Cheep Cheep enemies", "count": 6},
+            {"name": "Piranha Plant", "description": "Level 7-3 has a single Piranha Plant enemy at the end of the level", "count": 1},
+            {"name": "Pit", "description": "There are a few underwater pits in Level 7-3", "count": 3},
+            {"name": "Warp Pipe", "description": "There is 1 warp pipe in Level 7-3 leading to the end of the level", "count": 1},
+            {"name": "Hard Block", "description": "There are several hard blocks forming a staircase at the end of Level 7-3",},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of level 7-3", "count": 1},
+            {"name": "Coin", "description": "There are several underwater floating coins in level 7-3", "count": 28},
+            {"name": "2-2", "description": "Level 2-2 and 7-2 are almost identical in layout and element placement, but 7-2 has several more Blooper enemies"}
+        ]
     },
     {
         "description": "A sky level with many moving platforms.",
