@@ -100,13 +100,23 @@ levels_list = [
             {"name": "Hard Block", "description": "There are hard blocks forming staircases in Level 2-1"},
             {"name": "Hidden Block", "description": "There is 1 invisible coin block in Level 2-1", "count": 1},
             {"name": "Flagpole", "description": "There is a flagpole at the end of Level 2-1"}
-
         ]
     },
     {
         "description": "An underground level with more pipes and tricky platforming.",
         "image_url": "https://mario.wiki.gallery/images/3/3e/SMB_NES_World_2-2_Screenshot.png",
-        "name": "2-2"
+        "name": "2-2",
+        "relationships": [
+            {"name": "Blooper", "description": "Level 2-2 has some Blooper enemies", "count": 6},
+            {"name": "Green Cheep Cheep", "description": "Level 2-2 has several Green Cheep Cheep enemies", "count": 11},
+            {"name": "Red Cheep Cheep", "description": "Level 2-2 has some Green Cheep Cheep enemies", "count": 6},
+            {"name": "Piranha Plant", "description": "Level 2-2 has a single Piranha Plant enemy at the end of the level", "count": 1},
+            {"name": "Pit", "description": "There are a few underwater pits in Level 2-2", "count": 3},
+            {"name": "Warp Pipe", "description": "There is 1 warp pipe in Level 2-2 leading to the end of the level", "count": 1},
+            {"name": "Hard Block", "description": "There are several hard blocks forming a staircase at the end of Level 2-2",},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of level 2-1", "count": 1},
+            {"name": "Coin", "description": "There are several underwater floating coins in level 2-2", "count": 28},
+        ]
     },
     {
         "description": "A sky level with platforms and moving lifts.",
