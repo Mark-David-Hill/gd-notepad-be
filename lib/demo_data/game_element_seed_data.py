@@ -130,7 +130,20 @@ levels_list = [
     {
         "description": "A castle level with a more difficult layout and Bowser.",
         "image_url": "https://mario.wiki.gallery/images/9/9d/SMB_NES_World_2-4_Screenshot.png",
-        "name": "2-4"
+        "name": "2-4",
+        "relationships": [
+            {"name": "Pit", "description": "Level 2-4 has a few pits with lava in them and 1 with moving lifts", "count": 4},
+            {"name": "Firebar", "description": "Level 2-4 has some firebars", "count": 6},
+            {"name": "Podoboo", "description": "Level 2-4 has 2 Podoboos that jump out of a lava pit near the start of the level", "count": 2},
+            {"name": "Moving Platform", "description": "There is horizontally moving platform above Bowser at the end of Level 2-4 and moving platforms moving vertically above a pit", "count": 1},
+            {"name": "? Block", "description": "There is 1 ? block in Level 2-4, containing either a Super Mushroom or a Fire Flower", "count": 1},
+            {"name": "Super Mushroom", "description": "There is 1 block that can have a Super Mushroom power-up in Level 2-4", "count": 1}, 
+            {"name": "Fire Flower", "description": "There is 1 block that can have a Fire Flower power-up in it in Level 2-4", "count": 1}, 
+            {"name": "Coin", "description": "Level 2-4 has a few floating coins", "count": 6}, 
+            {"name": "Brick Block", "description": "There are a few brick blocks above bowser near the end of Level 2-4"},
+            {"name": "Hard Block", "description": "There are a few hard blocks in Level 2-4"},
+            {"name": "Axe", "description": "Level 2-4 has an axe at the end of the level", "count": 1},
+        ]
     },
     {
         "description": "An overworld level introducing more enemies and tougher platforming.",
@@ -326,6 +339,11 @@ enemies_list = [
         "description": "A rotating bar of fireballs, often found in castles",
         "image_url": "https://44.media.tumblr.com/8671968088cb6b7a7b445eadd4a4d731/tumblr_mhti0bb55b1rrftcdo1_250.gif",
         "name": "Firebar"
+    },
+    {
+        "description": "A Fireball enemy that jumps up from lava pits", 
+        "image_url": "https://www.giantbomb.com/a/uploads/square_medium/3/33787/956208-podoboo.png", 
+        "name": "Podoboo"
     },
     {
         "description": "A hammer-throwing enemy",
