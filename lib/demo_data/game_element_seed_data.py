@@ -80,6 +80,7 @@ levels_list = [
             {"name": "Hard Block", "description": "There are a few hard blocks in Level 1-4"},
             {"name": "Axe", "description": "Level 1-4 has an axe at the end of the level", "count": 1},
             {"name": "6-4", "description": "Levels 1-4 and 6-4 have almost identical layouts, but 6-4 has additional firebars, adds podoboos, and Bowser also throws hammers"},
+            {"name": "Bowser", "description": "Level 1-4 has Bowser as a final challenge at the end of the level", "count": 1}
         ]
     },
     {
@@ -143,6 +144,7 @@ levels_list = [
             {"name": "Brick Block", "description": "There are a few brick blocks above bowser near the end of Level 2-4"},
             {"name": "Hard Block", "description": "There are a few hard blocks in Level 2-4"},
             {"name": "Axe", "description": "Level 2-4 has an axe at the end of the level", "count": 1},
+            {"name": "Bowser", "description": "Level 1-4 has Bowser as a final challenge at the end of the level", "count": 1}
         ]
     },
     {
@@ -163,7 +165,20 @@ levels_list = [
     {
         "description": "A castle level with firebars, lava, and Bowser.",
         "image_url": "https://mario.wiki.gallery/images/7/7b/SMB_NES_World_3_Bowser_Screenshot.png",
-        "name": "3-4"
+        "name": "3-4",
+        "relationships": [
+            {"name": "Pit", "description": "Level 3-4 has a few pits with lava in them and a few pits with no lava", "count": 8},
+            {"name": "Firebar", "description": "Level 3-4 has several firebars", "count": 9},
+            {"name": "Podoboo", "description": "Level 3-4 has some Podoboos that jump out of lava pits", "count": 6},
+            {"name": "Moving Platform", "description": "There is a moving platform above Bowser at the end of Level 3-4", "count": 1},
+            {"name": "? Block", "description": "There are a few ? blocks in Level 3-4, 1 of which contains either a Super Mushroom or a Fire Flower", "count": 3},
+            {"name": "Brick Block", "description": "There are a few brick blocks above bowser near the end of Level 3-4"},
+            {"name": "Super Mushroom", "description": "There is 1 block that can have a Super Mushroom power-up in Level 3-4", "count": 1}, 
+            {"name": "Fire Flower", "description": "There is 1 block that can have a Fire Flower power-up in it in Level 3-4", "count": 1}, 
+            {"name": "Coin", "description": "Level 3-4 has a few floating coins and a couple of coins in ? Blocks", "count": 5}, 
+            {"name": "Axe", "description": "Level 3-4 has an axe at the end of the level", "count": 1},
+            {"name": "Bowser", "description": "Level 3-4 has Bowser as a final challenge at the end of the level", "count": 1}
+        ]
     },
     {
         "description": "A difficult overworld level with Lakitus and Spinies.",
