@@ -150,7 +150,27 @@ levels_list = [
     {
         "description": "An overworld level introducing more enemies and tougher platforming.",
         "image_url": "https://mario.wiki.gallery/images/1/17/SMB_NES_World_3-1_Screenshot.png",
-        "name": "3-1"
+        "name": "3-1",
+        "relationships": [
+            {"name": "Goomba", "description": "Level 3-1 has several Goombas", "count": 12}, 
+            {"name": "Green Shell Koopa", "description": "Level 3-1 has some green shell koopas", "count": 8}, 
+            {"name": "Green Shell Koopa Paratroopa", "description": "Level 3-1 has a few green shell koopa paratroopas", "count": 4},
+            {"name": "Piranha Plant", "description": "Level 3-1 has a few piranha plants", "count": 5}, 
+            {"name": "Hammer Bro", "description": "Level 3-1 has 2 Hammer Bros.", "count": 2}, 
+            {"name": "Pit", "description": "Level 3-1 has 4 small pits", "count": 5}, 
+            {"name": "Coin", "description": "Level 3-1 has several coins both floating in the sky, in an underground bonus room as well as inside of blocks", "count": 79}, 
+            {"name": "1-Up Mushroom", "description": "Level 3-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
+            {"name": "Super Mushroom", "description": "There are 3 blocks that can contain Super Mushroom power-ups in Level 3-1", "count": 3}, 
+            {"name": "Fire Flower", "description": "There are 3 blocks that can contain Super Mushroom power-ups in Level 3-1", "count": 3}, 
+            {"name": "Starman", "description": "There is 1 Starman powerup in Level 3-1", "count": 1}, 
+            {"name": "Warp Pipe", "description": "Level 3-1 has a warp pipe that leads to a bonus room", "count": 2},
+            {"name": "? Block", "description": "There are some ? blocks in Level 3-1, containing coins and power-ups", "count": 9},
+            {"name": "Brick Block", "description": "There are several brick blocks in Level 3-1, one of which contains releases a vine when hit"},
+            {"name": "Hard Block", "description": "There are hard blocks forming staircases and platforms in Level 3-1"},
+            {"name": "Cloud Block", "description": "There are cloud blocks serving as platforms in a hidden area in the sky of Level 3-1"},
+            {"name": "Hidden Block", "description": "There is 1 invisible coin block in Level 3-1", "count": 1},
+            {"name": "Trampoline", "description": "There is 1 trampoline in Level 3-1"}
+        ]
     },
     {
         "description": "An underwater level with Bloopers and Cheep Cheeps.",
@@ -402,6 +422,11 @@ level_elements = [
         "description": "A hard block that cannot be destroyed and which can be used as a platform",
         "image_url": "https://mario.wiki.gallery/images/e/ec/SMB_Hard_Block_Sprite.png",
         "name": "Hard Block"
+    },
+    {
+        "description": "A block that serves as a platform in the sky",
+        "image_url": "https://i.ytimg.com/vi/sCXIycE9gxc/maxresdefault.jpg",
+        "name": "Cloud Block"
     },
     {
         "description": "An invisible block that contains a coin, a 1-Up Mushroom, or a vine.",
