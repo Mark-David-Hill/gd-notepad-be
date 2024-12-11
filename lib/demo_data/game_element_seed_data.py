@@ -126,7 +126,14 @@ levels_list = [
         "description": "A sky level with platforms and moving lifts.",
         "image_url": "https://mario.wiki.gallery/images/3/39/SMB_NES_World_2-3_Screenshot.png",
         "name": "2-3",
-        "relationships": [{"name": "7-3", "description": "Levels 2-3 and 7-3 have identical layouts, but 7-3 adds several types of koopa enemies to the level"}]
+        "relationships": [
+            {"name": "7-3", "description": "Levels 2-3 and 7-3 have identical layouts, but 7-3 adds several types of koopa enemies to the level"},
+            {"name": "Flying Cheep Cheep", "description": "Level 2-3 has an endless number of Flying Cheep Cheeps"},
+            {"name": "Pit", "description": "Level 2-3 has one large pit spanning most of the level with bridges above it"},
+            {"name": "Coin", "description": "Level 2-3 has several free-floating coins", "count": 35}, 
+            {"name": "Hard Block", "description": "There are hard blocks forming a staircase at the end of Level 2-3"},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 2-3"},
+        ]
     },
     {
         "description": "A castle level with a more difficult layout and Bowser.",
@@ -369,6 +376,11 @@ enemies_list = [
         "description": "A fish that swims in underwater levels",
         "image_url": "https://cdn3.iconfinder.com/data/icons/pixel-nes-mario-characters/105/Super_Mario_Bros_Page_31-512.png",
         "name": "Green Cheep Cheep"
+    },
+    {
+        "description": "A fish enemy that flies up from the bottom of the screen",
+        "image_url": "https://i0.wp.com/farm1.staticflickr.com/76/194963886_f6818b589d.jpg",
+        "name": "Flying Cheep Cheep"
     },
     {
         "description": "A rotating bar of fireballs, often found in castles",
