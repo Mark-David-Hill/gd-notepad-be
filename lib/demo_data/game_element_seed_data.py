@@ -553,6 +553,12 @@ mechanics = [
         "relationships": [{"name": "Fire Flower", "description": "The Fire Flower powerup is needed in order to throw fireballs"}, {"name": "Buzzy Beetle", "description": "The Buzzy Beetle is immune to Mario's fireballs"}]
     },
     {
+        "name": "Crouch",
+        "description": "Mario can crouch to dodge or enter pipes",
+        "image_url": "https://i.redd.it/qfv82d8v5g731.jpg",
+        "relationships": [{"name": "Run", "description": "If you crouch while running with enough momentum you can slide into narrow spaces"}]
+    },
+    {
         "name": "Swim",
         "description": "In underwater levels, Mario swims upward by pressing the jump button, controlling his movement in the water.",
         "image_url": "https://cdn.vectorstock.com/i/1000v/34/86/set-of-mario-swimming-moves-art-super-vector-47023486.jpg",
