@@ -182,7 +182,22 @@ levels_list = [
     {
         "description": "An underwater level with Bloopers and Cheep Cheeps.",
         "image_url": "https://mario.wiki.gallery/images/e/e1/SMB_NES_World_3-2_Screenshot.png",
-        "name": "3-2"
+        "name": "3-2",
+        "relationships": [
+            {"name": "Goomba", "description": "Level 3-2 has several Goomba enemies", "count": 15}, 
+            {"name": "Green Shell Koopa", "description": "Level 3-2 has several green shell koopas", "count": 19}, 
+            {"name": "Green Shell Koopa Paratroopa", "description": "Level 3-2 has 1 green shell koopa paratroopa", "count": 1},
+            {"name": "Piranha Plant", "description": "Level 3-2 has 1 piranha plant", "count": 1}, 
+            {"name": "Pit", "description": "Level 3-2 has 3 small pits", "count": 3},
+            {"name": "Coin", "description": "Level 3-2 has coins both floating in the air and inside of blocks", "count": 17}, 
+            {"name": "Super Mushroom", "description": "There is 1 block with a Super Mushroom power-up in Level 3-2", "count": 1}, 
+            {"name": "Fire Flower", "description": "There is 1 block with a Fire Flower power-up in Level 3-2", "count": 1}, 
+            {"name": "Starman", "description": "There is 1 Starman powerup in Level 3-2", "count": 1}, 
+            {"name": "? Block", "description": "There is 1 ? blocks in Level 3-2, containing either a Super Mushroom or a Fire Flower", "count": 1},
+            {"name": "Brick Block", "description": "There are a few brick blocks in Level 3-2, 1 with a starman power up and 1 with 10 coins", "count": 3},
+            {"name": "Hard Block", "description": "There are hard blocks forming obstacles and a staircase in Level 3-2"},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 3-2"}
+        ]
     },
     {
         "description": "Another sky level with more challenging platforming.",
