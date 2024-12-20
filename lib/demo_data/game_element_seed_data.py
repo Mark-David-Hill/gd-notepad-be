@@ -202,7 +202,19 @@ levels_list = [
     {
         "description": "Another sky level with more challenging platforming.",
         "image_url": "https://mario.wiki.gallery/images/c/c8/SMB_NES_World_3-3_Screenshot.png",
-        "name": "3-3"
+        "name": "3-3",
+        "relationships": [
+            {"name": "Goomba", "description": "Level 3-3 has 1 Goomba near the start of the level", "count": 1},
+            {"name": "Red Shell Koopa", "description": "Level 3-3 has a few red shell koopas", "count": 5}, 
+            {"name": "Red Shell Koopa Paratroopa", "description": "Level 3-3 has 1 red shell koopa paratroopa", "count": 1}, 
+            {"name": "Pit", "description": "Level 3-3 has one large pit spanning most of the level", "count": 1},
+            {"name": "Coin", "description": "Level 3-3 has several free-floating coins", "count": 22}, 
+            {"name": "Super Mushroom", "description": "There is 1 block that can have a Super Mushroom power-up in Level 3-3", "count": 1}, 
+            {"name": "Fire Flower", "description": "There is 1 block that can have a Fire Flower power-up in it in Level 3-3", "count": 1}, 
+            {"name": "? Block", "description": "There is 1 ? block in Level 3-3, containing either a Super Mushroom or a Fire Flower", "count": 1},
+            {"name": "Moving Platform", "description": "There are several moving platforms in Level 3-3, both falling platforms and see-saw platforms", "count": 11},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 3-3"},
+        ]
     },
     {
         "description": "A castle level with firebars, lava, and Bowser.",
