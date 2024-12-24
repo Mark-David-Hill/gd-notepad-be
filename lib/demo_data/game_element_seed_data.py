@@ -258,7 +258,26 @@ levels_list = [
     {
         "description": "A second underground level with many Piranha Plants.",
         "image_url": "https://mario.wiki.gallery/images/f/fc/SMB_NES_World_4-2_Screenshot.png",
-        "name": "4-2"
+        "name": "4-2",
+        "relationships": [
+            {"name": "Goomba", "description": "Level 4-2 has a few Goombas", "count": 3},
+            {"name": "Green Shell Koopa", "description": "Level 4-2 has a few green shell koopas", "count": 6}, 
+            {"name": "Buzzy Beetle", "description": "Level 4-2 has a few Buzzy Beetles", "count": 4}, 
+            {"name": "Piranha Plant", "description": "Level 4-2 has some piranha plants", "count": 8}, 
+            {"name": "Pit", "description": "Level 4-2 has several pits", "count": 11},
+            {"name": "Coin", "description": "Level 4-2 has several coins both free-floating, sitting on blocks, and inside of blocks, in bonus areas in the sky and in a hidden bonus room underground", "count": 72}, 
+            {"name": "Super Mushroom", "description": "There are 4 blocks with Super Mushroom power-ups in Level 4-2", "count": 4}, 
+            {"name": "Fire Flower", "description": "There are 4 blocks that can have fire flowers in them in Level 4-2", "count": 4}, 
+            {"name": "Starman", "description": "There are a few Starman powerups in Level 4-2", "count": 4}, 
+            {"name": "Warp Pipe", "description": "Level 4-2 has a warp pipe that leads to a bonus room, 1 that leads to the end of the level, and 4 warp room warp pipes", "count": 7},
+            {"name": "? Block", "description": "There are a few ? blocks in Level 4-2, containing coins and power-ups", "count": 7},
+            {"name": "Hidden Block", "description": "There are a few invisible 1-up blocks in Level 4-2 that help you access a vine block", "count": 6},
+            {"name": "Brick Block", "description": "There are a lot of brick blocks in Level 4-2"},
+            {"name": "Hard Block", "description": "There are hard blocks forming staircases and obstacles in Level 4-2"},
+            {"name": "Moving Platform", "description": "There are a few section in Level 4-2 that have moving platforms above pits"},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 4-2"},
+
+        ]
     },
     {
         "description": "A platform-heavy sky level with moving platforms.",
