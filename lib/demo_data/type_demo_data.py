@@ -17,8 +17,6 @@ def add_types():
                 "example_description",
                 type["image_url"],
                 "#cccccc",
-                "#444444",
-                "dddddd"
             )
             db.session.add(new_type)
     

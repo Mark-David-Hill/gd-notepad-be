@@ -18,21 +18,19 @@ class Types(db.Model):
     elements = db.relationship("GameElements", foreign_keys="[GameElements.type_id]", back_populates="type", cascade='all')
     tags = db.relationship("Tags", foreign_keys="[Tags.type_id]", back_populates="type", cascade='all')
 
-    def __init__(self, name, description, image_url, color, light_color, dark_color):
+    def __init__(self, name, description, image_url, color):
         self.name = name
         self.description = description
         self.image_url = image_url
         self.color = color
-        self.light_color = light_color
-        self.dark_color = dark_color
 
     def new_type_obj():
-        return Types("", "", "", "", "", "", "", "")
+        return Types("", "", "", "", "", "")
     
 
 class TypesSchema(ma.Schema):
     class Meta:
-        fields = ['type_id', 'name', 'description', 'image_url', 'color', 'light_color', 'dark_color']
+        fields = ['type_id', 'name', 'description', 'image_url', 'color']
 
 
 type_schema = TypesSchema()
