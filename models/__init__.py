@@ -1,5 +1,4 @@
 from models.element_relationships import *
-from models.release_profiles import *
 from models.game_elements import *
 from models.auth_tokens import *
 from models.app_users import *

@@ -1,6 +1,5 @@
 from .relationships_routes import relationships
 from .elements_routes import elements
-from .profiles_routes import profiles
 from .types_routes import types
 from .users_routes import users
 from .notes_routes import notes

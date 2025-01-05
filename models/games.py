@@ -17,7 +17,6 @@ class Games(db.Model):
     image_url = db.Column(db.String(), default="")
 
     elements = db.relationship("GameElements", foreign_keys="[GameElements.game_id]", back_populates="game", cascade='all')
-    profile = db.relationship("ReleaseProfiles", back_populates="game", cascade="all", uselist=False)
 
     def __init__(self, name, description, series, genre, image_url):
         self.name = name
