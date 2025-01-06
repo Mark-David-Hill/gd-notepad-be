@@ -16,7 +16,7 @@ class Collections(db.Model):
     genre = db.Column(db.String())
     image_url = db.Column(db.String(), default="")
 
-    elements = db.relationship("GameElements", foreign_keys="[GameElements.collection_id]", back_populates="collection", cascade='all')
+    items = db.relationship("Items", foreign_keys="[Items.collection_id]", back_populates="collection", cascade='all')
 
     def __init__(self, name, description, series, genre, image_url):
         self.name = name

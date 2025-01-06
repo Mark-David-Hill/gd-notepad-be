@@ -1,16 +1,16 @@
 from db import db
 
-from models.element_relationships import ElementRelationships
-from models.game_elements import GameElements
+from models.relationships import Relationships
+from models.items import Items
 
-def add_relationships(elements_list):
-    for game_element in elements_list:
-        if "relationships" in game_element and game_element["relationships"]:
-            for relationship in game_element["relationships"]:
+def add_relationships(items_list):
+    for item in items_list:
+        if "relationships" in item and item["relationships"]:
+            for relationship in item["relationships"]:
                 count = relationship["count"] if "count" in relationship else 0
-                element_1_id_query = db.session.query(GameElements).filter(GameElements.name == game_element["name"]).first().element_id
-                element_2_id_query = db.session.query(GameElements).filter(GameElements.name == relationship["name"]).first().element_id
-                new_relationship = ElementRelationships(element_1_id_query, element_2_id_query, relationship["description"], count)
+                item_1_id_query = db.session.query(Items).filter(Items.name == item["name"]).first().item_id
+                item_2_id_query = db.session.query(Items).filter(Items.name == relationship["name"]).first().item_id
+                new_relationship = Relationships(item_1_id_query, item_2_id_query, relationship["description"], count)
                 db.session.add(new_relationship)
     
         db.session.commit()

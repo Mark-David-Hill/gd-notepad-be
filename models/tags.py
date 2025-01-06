@@ -4,7 +4,7 @@ from sqlalchemy.dialects.postgresql import UUID
 import marshmallow as ma
 
 from db import db
-from models.game_elements_tags_xref import game_elements_tags_xref
+from models.items_tags_xref import items_tags_xref
 
 
 class Tags(db.Model):
@@ -16,7 +16,7 @@ class Tags(db.Model):
     description = db.Column(db.String())
 
     type = db.relationship("Types", back_populates="tags")
-    elements = db.relationship('GameElements', secondary=game_elements_tags_xref, back_populates='tags')
+    items = db.relationship('Items', secondary=items_tags_xref, back_populates='tags')
 
     def __init__(self, type_id, tag_name, description):
         self.type_id = type_id

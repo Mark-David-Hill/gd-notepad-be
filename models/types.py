@@ -15,7 +15,7 @@ class Types(db.Model):
     image_url = db.Column(db.String())
     color = db.Column(db.String())
 
-    elements = db.relationship("GameElements", foreign_keys="[GameElements.type_id]", back_populates="type", cascade='all')
+    items = db.relationship("Items", foreign_keys="[Items.type_id]", back_populates="type", cascade='all')
     tags = db.relationship("Tags", foreign_keys="[Tags.type_id]", back_populates="type", cascade='all')
 
     def __init__(self, name, description, image_url, color):

@@ -1,13 +1,13 @@
 from db import db
 
-from models.game_elements import GameElements
+from models.items import Items
 from models.tags import Tags
 
-def add_tags(elements_list):
-    for game_element in elements_list:
-        if "tags" in game_element and game_element["tags"]:
-            for tag in game_element["tags"]:
-                element_1_id_query = db.session.query(GameElements).filter(GameElements.name == game_element["name"]).first().element_id
+def add_tags(items_list):
+    for item in items_list:
+        if "tags" in item and item["tags"]:
+            for tag in item["tags"]:
+                # item_1_id_query = db.session.query(Items).filter(Items.name == item["name"]).first().item_id
                 new_tag = Tags("", tag.name, tag.description)
                 db.session.add(new_tag)
 
