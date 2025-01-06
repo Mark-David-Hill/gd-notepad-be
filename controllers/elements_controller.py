@@ -2,7 +2,7 @@ from flask import jsonify
 
 from db import db
 from models.game_elements import GameElements, game_element_schema, game_elements_schema
-from models.games import Games
+from models.collections import Collections
 from models.types import Types
 from models.tags import Tags
 from util.controllers_util import *
@@ -12,12 +12,12 @@ from lib.authenticate import auth, validate_uuid4
 @auth
 def element_add(req):
     post_data = req.form if req.form else req.json
-    if not validate_uuid4(post_data.get("game_id") or not validate_uuid4(post_data.get("type_id"))):
-        return jsonify({"message": "could not create element, must provide valid uuids for game id and type id"}), 400
+    if not validate_uuid4(post_data.get("collection_id") or not validate_uuid4(post_data.get("type_id"))):
+        return jsonify({"message": "could not create element, must provide valid uuids for collection id and type id"}), 400
     
-    game_query = db.session.query(Games).filter(Games.game_id == post_data.get("game_id")).first()
-    if  not game_query:
-        return jsonify({"message": "could not create element, game does not exist"})
+    collection_query = db.session.query(Collections).filter(Collections.collection_id == post_data.get("collection_id")).first()
+    if  not collection_query:
+        return jsonify({"message": "could not create element, collection does not exist"})
     
     type_query = db.session.query(Types).filter(Types.type_id == post_data.get("type_id")).first()
     if  not type_query:

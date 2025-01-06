@@ -1,8 +1,8 @@
 from db import db
 
-from models.games import Games
+from models.collections import Collections
 
-games_list = [
+collections_list = [
     {
         "name": "Super Mario Bros.",
         "description": "A classic platformer where Mario embarks on a quest to rescue Princess Peach from Bowser.",
@@ -125,18 +125,18 @@ games_list = [
     
 ]
 
-def add_games():
-    for index, game in enumerate(games_list):
-        if not db.session.query(Games).filter(Games.name == game["name"]).first():
+def add_collections():
+    for index, collection in enumerate(collections_list):
+        if not db.session.query(Collections).filter(Collections.name == collection["name"]).first():
 
-            name = game["name"]
-            description = game["description"]
-            series = game["series"]
-            genre = game["genre"]
-            image_url = game["image_url"]
-            new_game = Games(name, description, series, genre, image_url)
+            name = collection["name"]
+            description = collection["description"]
+            series = collection["series"]
+            genre = collection["genre"]
+            image_url = collection["image_url"]
+            new_collection = Collections(name, description, series, genre, image_url)
 
-            db.session.add(new_game)
+            db.session.add(new_collection)
             
     db.session.commit()
 
