@@ -282,7 +282,18 @@ levels_list = [
     {
         "description": "A platform-heavy sky level with moving platforms.",
         "image_url": "https://mario.wiki.gallery/images/f/f7/SMB_World_4-3_Screenshot.png",
-        "name": "4-3"
+        "name": "4-3",
+        "relationships": [
+            {"name": "Red Shell Koopa", "description": "Level 4-3 has a few red shell koopas", "count": 5}, 
+            {"name": "Red Shell Koopa Paratroopa", "description": "Level 4-3 has 1 red shell koopa paratroopa", "count": 1}, 
+            {"name": "Pit", "description": "Level 4-3 has one large pit spanning most of the level", "count": 1},
+            {"name": "Coin", "description": "Level 4-3 has several free-floating coins", "count": 26}, 
+            {"name": "Super Mushroom", "description": "There is 1 block that can have a Super Mushroom power-up in Level 4-3", "count": 1}, 
+            {"name": "Fire Flower", "description": "There is 1 block that can have a Fire Flower power-up in it in Level 4-3", "count": 1}, 
+            {"name": "? Block", "description": "There is 1 ? block in Level 4-3, containing either a Super Mushroom or a Fire Flower", "count": 1},
+            {"name": "Moving Platform", "description": "There are several moving platforms in Level 4-3, both ones that go back and forth and ones attached by pulleys", "count": 11},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 4-3"},
+        ]
     },
     {
         "description": "A tricky castle level with more firebars and Bowser.",
