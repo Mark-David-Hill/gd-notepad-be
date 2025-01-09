@@ -298,7 +298,15 @@ levels_list = [
     {
         "description": "A tricky castle level with more firebars and Bowser.",
         "image_url": "https://mario.wiki.gallery/images/6/62/SMB_World_4-4_Screenshot.png",
-        "name": "4-4"
+        "name": "4-4",
+        "relationships": [
+            {"name": "Pit", "description": "Level 4-4 has a few pits with lava in them and a few pits with no lava", "count": 4},
+            {"name": "Piranha Plant", "description": "Level 4-4 has 1 Piranha Plant coming out of a pipe", "count": 1},
+            {"name": "Firebar", "description": "Level 4-4 has a few firebars", "count": 5},
+            {"name": "Podoboo", "description": "Level 4-4 has a Podoboo that jump out of the lava pit below Bowser", "count": 1},
+            {"name": "Axe", "description": "Level 4-4 has an axe at the end of the level", "count": 1},
+            {"name": "Bowser", "description": "Level 4-4 has Bowser as a final challenge at the end of the level", "count": 1}
+        ]
     },
     {
         "description": "An overworld level with Hammer Bros and tricky jumps.",
