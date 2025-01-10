@@ -17,6 +17,7 @@ class Collections(db.Model):
     image_url = db.Column(db.String(), default="")
 
     items = db.relationship("Items", foreign_keys="[Items.collection_id]", back_populates="collection", cascade='all')
+    types = db.relationship("Types", foreign_keys="[Types.collection_id]", back_populates="collection", cascade='all')
 
     def __init__(self, name, description, series, genre, image_url):
         self.name = name

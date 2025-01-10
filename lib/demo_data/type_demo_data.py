@@ -1,5 +1,8 @@
 from db import db
+
+from models.collections import Collections
 from models.types import Types
+
 
 types_list = [
     {"name": "Mechanic", "image_url": "https://www.pngall.com/wp-content/uploads/5/Game-Controller-PNG-Clipart.png"},
@@ -10,6 +13,8 @@ types_list = [
 ]
 
 def add_types():
+    collection_query = db.session.query(Collections).filter(Collections.name == "Super Mario Bros.").first()
+
     for type in types_list:
         if not db.session.query(Types).filter(Types.name == type["name"]).first():
             new_type = Types(
@@ -17,7 +22,12 @@ def add_types():
                 "example_description",
                 type["image_url"],
                 "#cccccc",
+                None
             )
+
+            new_type.collection_id = collection_query.collection_id
+
             db.session.add(new_type)
-    
+
     db.session.commit()
+
