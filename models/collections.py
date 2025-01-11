@@ -15,6 +15,7 @@ class Collections(db.Model):
     description = db.Column(db.String())
     image_url = db.Column(db.String(), default="")
     date_created = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), nullable=False)
+    date_updated = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), nullable=False)
 
     items = db.relationship("Items", foreign_keys="[Items.collection_id]", back_populates="collection", cascade='all')
     types = db.relationship("Types", foreign_keys="[Types.collection_id]", back_populates="collection", cascade='all')
@@ -30,7 +31,7 @@ class Collections(db.Model):
 
 class CollectionsSchema(ma.Schema):
     class Meta:
-        fields = ["collection_id", "name", "description", "image_url", "date_created"]
+        fields = ["collection_id", "name", "description", "image_url", "date_created", "date_updated"]
 
 
 collection_schema = CollectionsSchema()
