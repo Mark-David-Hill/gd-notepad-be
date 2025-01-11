@@ -1,6 +1,7 @@
 from db import db
 
 from models.collections import Collections
+from models.app_users import AppUsers
 
 collections_list = [
     {
@@ -92,6 +93,8 @@ collections_list = [
 ]
 
 def add_collections():
+    user_query = db.session.query(AppUsers).filter(AppUsers.email == "super@test.com").first()
+
     for index, collection in enumerate(collections_list):
         if not db.session.query(Collections).filter(Collections.name == collection["name"]).first():
 
@@ -99,6 +102,8 @@ def add_collections():
             description = collection["description"]
             image_url = collection["image_url"]
             new_collection = Collections(name, description, image_url, False)
+
+            new_collection.owner_id = user_query.user_id
 
             db.session.add(new_collection)
             

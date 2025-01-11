@@ -6,7 +6,6 @@ import marshmallow as ma
 
 from db import db
 
-# Add owner_id
 
 class Collections(db.Model):
     __tablename__ = "Collections"
@@ -19,7 +18,9 @@ class Collections(db.Model):
     date_updated = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc), nullable=False)
     private = db.Column(db.Boolean(), nullable=False, default=False)
     active = db.Column(db.Boolean(), nullable=False, default=True)
+    owner_id = db.Column(UUID(as_uuid=True), db.ForeignKey("AppUsers.user_id"), nullable=False)
 
+    owner = db.relationship("AppUsers", back_populates="collections_owned")
     items = db.relationship("Items", foreign_keys="[Items.collection_id]", back_populates="collection", cascade='all')
     types = db.relationship("Types", foreign_keys="[Types.collection_id]", back_populates="collection", cascade='all')
 
@@ -35,8 +36,17 @@ class Collections(db.Model):
 
 class CollectionsSchema(ma.Schema):
     class Meta:
-        fields = ["collection_id", "name", "description", "image_url", "date_created", "date_updated", "private", "active"]
-
+        fields = [
+            "collection_id",
+            "name",
+            "description",
+            "image_url",
+            "date_created",
+            "date_updated",
+            "private",
+            "active",
+            "owner_id",
+        ]
 
 
 collection_schema = CollectionsSchema()
