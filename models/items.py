@@ -40,7 +40,7 @@ class ItemsSchema(ma.Schema):
         fields = ["item_id", "name", "description", "image_url", "type", "collection", "tags", "notes"]
     type = ma.fields.Nested("TypesSchema")
     collection = ma.fields.Nested("CollectionsSchema")
-    tags = ma.fields.Nested("TagsSchema", many=True, exclude=["type"])
+    tags = ma.fields.Nested("TagsSchema", many=True)
     notes = ma.fields.Nested("NotesSchema", many=True, exclude=["item"])
 
 

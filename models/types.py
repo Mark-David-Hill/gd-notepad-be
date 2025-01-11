@@ -18,7 +18,6 @@ class Types(db.Model):
 
     items = db.relationship("Items", foreign_keys="[Items.type_id]", back_populates="type", cascade='all')
     collection = db.relationship("Collections", back_populates="types")
-    tags = db.relationship("Tags", foreign_keys="[Tags.type_id]", back_populates="type", cascade='all')
 
     def __init__(self, name, description, image_url, color, collection_id):
         self.name = name
