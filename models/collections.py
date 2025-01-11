@@ -6,6 +6,7 @@ import marshmallow as ma
 
 from db import db
 
+# Add owner_id
 
 class Collections(db.Model):
     __tablename__ = "Collections"
@@ -15,23 +16,27 @@ class Collections(db.Model):
     description = db.Column(db.String())
     image_url = db.Column(db.String(), default="")
     date_created = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), nullable=False)
-    date_updated = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), nullable=False)
+    date_updated = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc), nullable=False)
+    private = db.Column(db.Boolean(), nullable=False, default=False)
+    active = db.Column(db.Boolean(), nullable=False, default=True)
 
     items = db.relationship("Items", foreign_keys="[Items.collection_id]", back_populates="collection", cascade='all')
     types = db.relationship("Types", foreign_keys="[Types.collection_id]", back_populates="collection", cascade='all')
 
-    def __init__(self, name, description, image_url):
+    def __init__(self, name, description, image_url, private=False):
         self.name = name
         self.description = description
         self.image_url = image_url
+        self.private = private
 
     def new_collection_obj():
-        return Collections("", "", "")
+        return Collections("", "", "", False)
 
 
 class CollectionsSchema(ma.Schema):
     class Meta:
-        fields = ["collection_id", "name", "description", "image_url", "date_created", "date_updated"]
+        fields = ["collection_id", "name", "description", "image_url", "date_created", "date_updated", "private", "active"]
+
 
 
 collection_schema = CollectionsSchema()

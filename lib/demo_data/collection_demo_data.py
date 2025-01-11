@@ -98,7 +98,7 @@ def add_collections():
             name = collection["name"]
             description = collection["description"]
             image_url = collection["image_url"]
-            new_collection = Collections(name, description, image_url)
+            new_collection = Collections(name, description, image_url, False)
 
             db.session.add(new_collection)
             
