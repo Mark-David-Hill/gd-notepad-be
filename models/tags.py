@@ -11,9 +11,11 @@ class Tags(db.Model):
     __tablename__ = "Tags"
 
     tag_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    collection_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Collections.collection_id"), nullable=False)
     tag_name = db.Column(db.String(), nullable=False)
     description = db.Column(db.String())
 
+    collection = db.relationship("Collections", back_populates="tags")
     items = db.relationship('Items', secondary=items_tags_xref, back_populates='tags')
 
     def __init__(self, tag_name, description):
@@ -27,6 +29,8 @@ class Tags(db.Model):
 class TagsSchema(ma.Schema):
     class Meta:
         fields = ['tag_id', 'tag_name', 'description']
+        
+    collection = ma.fields.Nested("CollectionsSchema")
 
 
 tag_schema = TagsSchema()

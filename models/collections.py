@@ -23,6 +23,7 @@ class Collections(db.Model):
     owner = db.relationship("AppUsers", back_populates="collections_owned")
     items = db.relationship("Items", foreign_keys="[Items.collection_id]", back_populates="collection", cascade='all')
     types = db.relationship("Types", foreign_keys="[Types.collection_id]", back_populates="collection", cascade='all')
+    tags = db.relationship("Tags", foreign_keys="[Tags.collection_id]", back_populates="collection", cascade='all')
 
     def __init__(self, name, description, image_url, private=False):
         self.name = name
