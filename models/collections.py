@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 import uuid
 
 from sqlalchemy.dialects.postgresql import UUID
@@ -15,6 +16,7 @@ class Collections(db.Model):
     series = db.Column(db.String())
     genre = db.Column(db.String())
     image_url = db.Column(db.String(), default="")
+    date_created = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), nullable=False)
 
     items = db.relationship("Items", foreign_keys="[Items.collection_id]", back_populates="collection", cascade='all')
     types = db.relationship("Types", foreign_keys="[Types.collection_id]", back_populates="collection", cascade='all')
@@ -28,11 +30,12 @@ class Collections(db.Model):
 
     def new_collection_obj():
         return Collections("", "", "", "", "")
-    
+
 
 class CollectionsSchema(ma.Schema):
     class Meta:
-        fields = ["collection_id", "name", "description", "series", "genre", "image_url"]
+        fields = ["collection_id", "name", "description", "series", "genre", "image_url", "date_created"]
+
 
 collection_schema = CollectionsSchema()
 collections_schema = CollectionsSchema(many=True)
