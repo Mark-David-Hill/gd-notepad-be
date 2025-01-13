@@ -1,7 +1,7 @@
 from db import db
 
 from models.collections import Collections
-from models.app_users import AppUsers
+from models.users import Users
 
 collections_list = [
     {
@@ -93,7 +93,7 @@ collections_list = [
 ]
 
 def add_collections():
-    user_query = db.session.query(AppUsers).filter(AppUsers.email == "super@test.com").first()
+    user_query = db.session.query(Users).filter(Users.email == "super@test.com").first()
 
     for index, collection in enumerate(collections_list):
         if not db.session.query(Collections).filter(Collections.name == collection["name"]).first():

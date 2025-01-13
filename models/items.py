@@ -13,7 +13,7 @@ class Items(db.Model):
     item_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     type_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Types.type_id"), nullable=False)
     collection_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Collections.collection_id"), nullable=False)
-    user_created_by_id = db.Column(UUID(as_uuid=True), db.ForeignKey("AppUsers.user_id"), nullable=False)
+    user_created_by_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Users.user_id"), nullable=False)
     # date_created
     # date_updated
     name = db.Column(db.String(), nullable=False)
@@ -23,7 +23,7 @@ class Items(db.Model):
 
     type = db.relationship("Types", back_populates="items")
     collection = db.relationship("Collections", back_populates="items")
-    user_created_by = db.relationship("AppUsers", back_populates="items")
+    user_created_by = db.relationship("Users", back_populates="items")
     notes = db.relationship("Notes", back_populates="item", cascade="all")
     tags = db.relationship('Tags', secondary=items_tags_xref, back_populates='items')
     related_item_1 = db.relationship('Relationships', foreign_keys='Relationships.item_1_id', back_populates='item_1')
@@ -45,7 +45,7 @@ class ItemsSchema(ma.Schema):
         fields = ["item_id", "name", "description", "image_url", "type", "collection", "user_created_by", "tags", "notes"]
     type = ma.fields.Nested("TypesSchema")
     collection = ma.fields.Nested("CollectionsSchema")
-    user_created_by = ma.fields.Nested("AppUsersSchema")
+    user_created_by = ma.fields.Nested("UsersSchema")
     tags = ma.fields.Nested("TagsSchema", many=True)
     notes = ma.fields.Nested("NotesSchema", many=True, exclude=["item"])
 

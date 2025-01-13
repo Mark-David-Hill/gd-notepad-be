@@ -3,7 +3,7 @@ from flask_bcrypt import check_password_hash
 from datetime import datetime, timedelta, timezone
 
 from db import db
-from models.app_users import AppUsers, app_user_schema
+from models.users import Users, user_schema
 from models.auth_tokens import AuthTokens
 
 
@@ -14,7 +14,7 @@ def auth_token_add(req):
     password = post_data.get("password")
 
     if email and password:
-        user_data = db.session.query(AppUsers).filter(AppUsers.email == post_data.get("email")).first()
+        user_data = db.session.query(Users).filter(Users.email == post_data.get("email")).first()
 
         if user_data:
             valid_password = check_password_hash(user_data.password, password)
@@ -35,7 +35,7 @@ def auth_token_add(req):
             db.session.add(new_token)
             db.session.commit()
 
-            response = make_response(jsonify({"message": "login successful", "result": app_user_schema.dump(user_data)}), 201)
+            response = make_response(jsonify({"message": "login successful", "result": user_schema.dump(user_data)}), 201)
             response.set_cookie("_sid", str(new_token.auth_token), httponly=True, secure=False, samesite='Strict')
             # samesite="None"
             return response
@@ -55,10 +55,10 @@ def check_login():
     auth_token_data = db.session.query(AuthTokens).filter(AuthTokens.auth_token == token).first()
 
     if auth_token_data and auth_token_data.expiration > datetime.now(timezone.utc):
-        user_data = db.session.query(AppUsers).filter(AppUsers.user_id == auth_token_data.user_id).first()
+        user_data = db.session.query(Users).filter(Users.user_id == auth_token_data.user_id).first()
 
         if user_data:
-            return jsonify({"message": "User is logged in", "result": app_user_schema.dump(user_data)}), 200
+            return jsonify({"message": "User is logged in", "result": user_schema.dump(user_data)}), 200
         else:
             return jsonify({"message": "User not found"}), 404
     else:
@@ -66,4 +66,4 @@ def check_login():
 
 
 # def logout(self, auth_info):
-#     auth_data = db.session.query(AuthTokens).filter(AppUsers.email == post_data.get("email")).first()
+#     auth_data = db.session.query(AuthTokens).filter(Users.email == post_data.get("email")).first()

@@ -18,9 +18,9 @@ class Collections(db.Model):
     date_updated = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc), nullable=False)
     private = db.Column(db.Boolean(), nullable=False, default=False)
     active = db.Column(db.Boolean(), nullable=False, default=True)
-    owner_id = db.Column(UUID(as_uuid=True), db.ForeignKey("AppUsers.user_id"), nullable=False)
+    owner_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Users.user_id"), nullable=False)
 
-    owner = db.relationship("AppUsers", back_populates="collections_owned")
+    owner = db.relationship("Users", back_populates="collections_owned")
     items = db.relationship("Items", foreign_keys="[Items.collection_id]", back_populates="collection", cascade='all')
     types = db.relationship("Types", foreign_keys="[Types.collection_id]", back_populates="collection", cascade='all')
     tags = db.relationship("Tags", foreign_keys="[Tags.collection_id]", back_populates="collection", cascade='all')

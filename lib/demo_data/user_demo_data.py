@@ -1,7 +1,7 @@
 from flask_bcrypt import generate_password_hash
 
 from db import db
-from models.app_users import AppUsers
+from models.users import Users
 
 users_list = [
     {
@@ -26,14 +26,14 @@ users_list = [
 
 def add_users():
     for index, user in enumerate(users_list):
-        if not db.session.query(AppUsers).filter(AppUsers.email == user["email"]).first():
+        if not db.session.query(Users).filter(Users.email == user["email"]).first():
 
             first_name = user["first_name"]
             last_name = user["last_name"]
             email = user["email"]
             password = generate_password_hash("1234").decode('utf8')
             role = user["role"]
-            new_user = AppUsers(first_name, last_name, email, password, role)
+            new_user = Users(first_name, last_name, email, password, role)
 
             db.session.add(new_user)
             

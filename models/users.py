@@ -6,8 +6,8 @@ import marshmallow as ma
 from db import db
 
 
-class AppUsers(db.Model):
-    __tablename__ = "AppUsers"
+class Users(db.Model):
+    __tablename__ = "Users"
 
     user_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     first_name = db.Column(db.String(), nullable=False)
@@ -32,13 +32,13 @@ class AppUsers(db.Model):
         self.active = active
 
     def new_user_obj():
-        return AppUsers("", "", "", "", "", True)
+        return Users("", "", "", "", "", True)
     
 
-class AppUsersSchema(ma.Schema):
+class UsersSchema(ma.Schema):
     class Meta:
         fields = ['user_id', 'first_name', 'last_name', 'email', 'role', 'active']
 
 
-app_user_schema = AppUsersSchema()
-app_users_schema = AppUsersSchema(many=True)
+user_schema = UsersSchema()
+users_schema = UsersSchema(many=True)

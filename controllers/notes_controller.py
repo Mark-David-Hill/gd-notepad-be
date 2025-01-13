@@ -2,7 +2,7 @@ from flask import jsonify
 
 from db import db
 from models.notes import Notes, note_schema, notes_schema
-from models.app_users import AppUsers
+from models.users import Users
 from models.items import Items
 from util.controllers_util import *
 from lib.authenticate import auth, validate_uuid4
@@ -14,7 +14,7 @@ def note_add(req):
     if not validate_uuid4(post_data.get("user_id")) or not validate_uuid4(post_data.get("item_id")):
         return jsonify({"message": "could not create note, must provide valid uuids for user id and item id"}), 400
     
-    user_query = db.session.query(AppUsers).filter(AppUsers.user_id == post_data.get("user_id")).first()
+    user_query = db.session.query(Users).filter(Users.user_id == post_data.get("user_id")).first()
     if  not user_query:
         return jsonify({"message": "could not create note, user does not exist"})
     
