@@ -20,6 +20,7 @@ class AppUsers(db.Model):
     auth = db.relationship("AuthTokens", back_populates="user", cascade="all")
     note = db.relationship("Notes", back_populates="user", cascade="all")
     collections_owned = db.relationship("Collections", back_populates="owner")
+    items = db.relationship("Items", back_populates="user_created_by")
 
 
     def __init__(self, first_name, last_name, email, password, role="user", active=True):

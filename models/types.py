@@ -27,7 +27,7 @@ class Types(db.Model):
         self.collection_id = collection_id
 
     def new_type_obj():
-        return Types("", "", "", "", "", "", None)
+        return Types("", "", "", "", None)
     
 
 class TypesSchema(ma.Schema):

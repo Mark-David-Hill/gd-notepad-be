@@ -6,11 +6,11 @@ from models.collections import Collections
 from models.types import Types
 from models.tags import Tags
 from util.controllers_util import *
-from lib.authenticate import auth, validate_uuid4
+from lib.authenticate import auth, authenticate_return_auth, validate_uuid4
 
 
-@auth
-def item_add(req):
+@authenticate_return_auth
+def item_add(req, auth_info):
     post_data = req.form if req.form else req.json
     if not validate_uuid4(post_data.get("collection_id") or not validate_uuid4(post_data.get("type_id"))):
         return jsonify({"message": "could not create item, must provide valid uuids for collection id and type id"}), 400
@@ -18,12 +18,17 @@ def item_add(req):
     collection_query = db.session.query(Collections).filter(Collections.collection_id == post_data.get("collection_id")).first()
     if  not collection_query:
         return jsonify({"message": "could not create item, collection does not exist"})
-    
+
     type_query = db.session.query(Types).filter(Types.type_id == post_data.get("type_id")).first()
     if  not type_query:
         return jsonify({"message": "could not create item, type does not exist"})
 
-    return record_add(req, Items.new_item_obj(), item_schema, "item")
+    user_id = str(auth_info.user.user_id)
+
+    item = Items.new_item_obj()
+    item.user_created_by_id = user_id
+
+    return record_add(req, item, item_schema, "item")
     
 
 @auth
