@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 import uuid
 
 from sqlalchemy.dialects.postgresql import UUID
@@ -14,8 +15,8 @@ class Items(db.Model):
     type_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Types.type_id"), nullable=False)
     collection_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Collections.collection_id"), nullable=False)
     user_created_by_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Users.user_id"), nullable=False)
-    # date_created
-    # date_updated
+    date_created = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), nullable=False)
+    date_updated = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc), nullable=False)
     name = db.Column(db.String(), nullable=False)
     description = db.Column(db.String())
     image_url = db.Column(db.String(), default=None)
@@ -43,12 +44,14 @@ class Items(db.Model):
 
 class ItemsSchema(ma.Schema):
     class Meta:
-        fields = ["item_id", "name", "description", "image_url", "active", "type", "collection", "user_created_by", "tags", "notes"]
+        fields = ["item_id", "name", "description", "image_url", "active", "date_created",
+            "date_updated", "type", "collection", "user_created_by", "tags", "notes"]
     type = ma.fields.Nested("TypesSchema")
     collection = ma.fields.Nested("CollectionsSchema")
     user_created_by = ma.fields.Nested("UsersSchema")
     tags = ma.fields.Nested("TagsSchema", many=True)
     notes = ma.fields.Nested("NotesSchema", many=True, exclude=["item"])
+    
 
 
 item_schema = ItemsSchema()
