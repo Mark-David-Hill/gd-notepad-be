@@ -19,7 +19,7 @@ class Items(db.Model):
     name = db.Column(db.String(), nullable=False)
     description = db.Column(db.String())
     image_url = db.Column(db.String(), default=None)
-    # active
+    active = db.Column(db.Boolean(), nullable=False, default=True)
 
     type = db.relationship("Types", back_populates="items")
     collection = db.relationship("Collections", back_populates="items")
@@ -29,20 +29,21 @@ class Items(db.Model):
     related_item_1 = db.relationship('Relationships', foreign_keys='Relationships.item_1_id', back_populates='item_1')
     related_item_2 = db.relationship('Relationships', foreign_keys='Relationships.item_2_id', back_populates='item_2')
 
-    def __init__(self, name, description, type_id, collection_id, image_url=""):
+    def __init__(self, name, description, type_id, collection_id, image_url="", active=True):
         self.name = name
         self.description = description
         self.type_id = type_id
         self.collection_id = collection_id
         self.image_url = image_url
+        self.active = active
 
     def new_item_obj():
-        return Items("", "", None, None, "")
+        return Items("", "", None, None, "", True)
     
 
 class ItemsSchema(ma.Schema):
     class Meta:
-        fields = ["item_id", "name", "description", "image_url", "type", "collection", "user_created_by", "tags", "notes"]
+        fields = ["item_id", "name", "description", "image_url", "active", "type", "collection", "user_created_by", "tags", "notes"]
     type = ma.fields.Nested("TypesSchema")
     collection = ma.fields.Nested("CollectionsSchema")
     user_created_by = ma.fields.Nested("UsersSchema")

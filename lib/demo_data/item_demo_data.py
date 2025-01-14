@@ -16,7 +16,7 @@ def add_items(collection_name, type_name, items_list):
             name = item["name"]
             description = item["description"]
             image_url = item["image_url"]
-            new_item = Items(name, description, None, None, image_url)
+            new_item = Items(name, description, None, None, image_url, True)
             new_item.collection_id = collection_query.collection_id
             new_item.type_id = type_query.type_id
             new_item.user_created_by_id = user_query.user_id
