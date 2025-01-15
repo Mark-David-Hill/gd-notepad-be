@@ -1,6 +1,7 @@
 from models.relationships import *
 from models.collections import *
 from models.auth_tokens import *
+from models.change_logs import *
 from models.users import *
 from models.items import *
 from models.types import *
