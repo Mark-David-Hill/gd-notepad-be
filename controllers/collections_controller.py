@@ -3,7 +3,7 @@ from flask import jsonify
 from db import db
 from models.collections import Collections, collection_schema, collections_schema
 from util.controllers_util import *
-from lib.authenticate import auth, authenticate_return_auth
+from lib.authenticate import auth, authenticate_return_auth, validate_uuid4
 
 
 @authenticate_return_auth

@@ -36,6 +36,19 @@ def records_get_all(table, schema, records_type_str):
     return jsonify({"message": f"{records_type_str} found", "results": schema.dump(records_query)}), 200
 
 
+def records_get_by_collection(table, schema, records_type_str, collection_id):
+    records_query = db.session.query(table).filter(table.collection_id == collection_id).all()
+
+    if not records_query:
+        return jsonify({"message": f"No {records_type_str} found for the given collection"}), 404
+
+    return jsonify({
+        "message": f"{records_type_str} found",
+        "results": schema.dump(records_query)
+    }), 200
+
+
+
 def record_get_by_id(record_query, schema, record_type_str):
     if not record_query:
         return jsonify({"message": f"{record_type_str} does not exist"}), 404

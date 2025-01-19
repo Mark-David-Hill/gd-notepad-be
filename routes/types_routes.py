@@ -15,6 +15,11 @@ def types_get_all():
     return controllers.types_get_all()
 
 
+@types.route("/types/collection/<collection_id>")
+def types_get_by_collection(collection_id):
+    return controllers.types_get_by_collection(collection_id)
+
+
 @types.route("/type/<type_id>")
 def type_get_by_id(type_id):
     return controllers.type_get_by_id(type_id)

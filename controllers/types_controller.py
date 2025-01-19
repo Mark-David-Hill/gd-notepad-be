@@ -16,6 +16,10 @@ def types_get_all():
     return records_get_all(Types, types_schema, "types")
 
 
+def types_get_by_collection(collection_id):
+    return records_get_by_collection(Types, types_schema, "types", collection_id)
+
+
 # @auth
 def type_get_by_id(type_id):
     if not validate_uuid4(type_id):
