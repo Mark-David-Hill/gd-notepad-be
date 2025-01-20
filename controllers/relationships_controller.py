@@ -26,6 +26,10 @@ def relationships_get_all():
     return records_get_all(Relationships, relationships_schema, "relationships")
 
 
+def relationships_get_by_collection(collection_id):
+    return records_get_by_collection(Relationships, relationships_schema, "relationships", collection_id)
+
+
 # @auth
 def relationship_get_by_id(relationship_id):
     if not validate_uuid4(relationship_id):

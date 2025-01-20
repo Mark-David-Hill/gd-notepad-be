@@ -69,6 +69,10 @@ def items_get_all():
     return records_get_all(Items, items_schema, "items")
 
 
+def items_get_by_collection(collection_id):
+    return records_get_by_collection(Items, items_schema, "items", collection_id)
+
+
 # @auth
 def items_get_all_with_tag(tag_id):
     items_query = db.session.query(Items).filter(Tags.tag_id == tag_id).all()

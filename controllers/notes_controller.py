@@ -30,6 +30,10 @@ def notes_get_all():
     return records_get_all(Notes, notes_schema, "notes")
 
 
+def notes_get_by_collection(collection_id):
+    return records_get_by_collection(Notes, notes_schema, "notes", collection_id)
+
+
 @auth
 def note_get_by_id(note_id):
     if not validate_uuid4(note_id):
