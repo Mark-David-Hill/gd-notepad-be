@@ -20,6 +20,11 @@ def items_get_all():
     return controllers.items_get_all()
 
 
+@items.route("/items/collection/<collection_id>")
+def items_get_by_collection(collection_id):
+    return controllers.items_get_by_collection(collection_id)
+
+
 @items.route("/items/tag/<tag_id>")
 def items_get_all_with_tag(tag_id):
     return controllers.items_get_all_with_tag(tag_id)

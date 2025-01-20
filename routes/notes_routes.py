@@ -15,6 +15,11 @@ def notes_get_all():
     return controllers.notes_get_all()
 
 
+@notes.route("/notes/collection/<collection_id>")
+def notes_get_by_collection(collection_id):
+    return controllers.notes_get_by_collection(collection_id)
+
+
 @notes.route("/note/<note_id>")
 def note_get_by_id(note_id):
     return controllers.note_get_by_id(note_id)

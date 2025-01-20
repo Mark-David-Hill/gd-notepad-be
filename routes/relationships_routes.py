@@ -15,6 +15,11 @@ def relationships_get_all():
     return controllers.relationships_get_all()
 
 
+@relationships.route("/relationships/collection/<collection_id>")
+def relationships_get_by_collection(collection_id):
+    return controllers.relationships_get_by_collection(collection_id)
+
+
 @relationships.route("/relationship/<relationship_id>")
 def relationship_get_by_id(relationship_id):
     return controllers.relationship_get_by_id(relationship_id)
