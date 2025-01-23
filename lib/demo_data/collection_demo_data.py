@@ -10,6 +10,11 @@ collections_list = [
         "image_url": "https://i.ebayimg.com/images/g/eV8AAOSweOhh5i-k/s-l1200.jpg"
     },
     {
+        "name": "Watership Down",
+        "description": "A book by Richard Adams published in 1972",
+        "image_url": "https://cdn.penguin.co.uk/dam-assets/books/9780241953235/9780241953235-jacket-large.jpg"
+    },
+    {
         "name": "Super Mario Bros. 3",
         "description": "An iconic platformer that introduces new power-ups and an overworld map.",
         "image_url": "https://preview.redd.it/title-screen-from-super-mario-bros-3-id-0mdjyp7t-v0-619xejuerjka1.png?width=512&format=png&auto=webp&s=b4c082e51250c2739671f7fd4333f79b8b8c214f"
