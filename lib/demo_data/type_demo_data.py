@@ -23,36 +23,55 @@ wd_types_list = [
     {"name": "Time", "image_url": "https://media.istockphoto.com/id/964947830/vector/calendar.jpg?s=612x612&w=0&k=20&c=O8oeRZpK_gTshy-acC0PkRZSrih9KXULv7ZNfLwCyHU="},
 ]
 
+mmc_series_types_list = [
+    {"name": "Game", "image_url": ""},
+    {"name": "Mode", "image_url": ""},
+    {"name": "Character", "image_url": ""},
+    {"name": "Mechanic", "image_url": "https://www.pngall.com/wp-content/uploads/5/Game-Controller-PNG-Clipart.png"},
+    {"name": "Level", "image_url": "https://www.shutterstock.com/image-vector/2d-arcade-game-level-cartoon-260nw-2259956823.jpg"},
+    {"name": "Level Element", "image_url": "https://i.pinimg.com/564x/6e/e9/b5/6ee9b5fdd1f67fbac5fd80445be55245.jpg"},
+    {"name": "Enemy Element", "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyFefeRiOb3lbMSFGyX6SGFnRD39v7GOr-mg&s"},
+    {"name": "Power Up", "image_url": "https://static.vecteezy.com/system/resources/previews/026/973/044/non_2x/3d-icon-video-games-rendered-isolated-on-the-transparent-background-power-up-icon-for-your-design-png.png"},
+    {"name": "Property", "image_url": ""},
+    {"name": "", "image_url": ""},
+]
+
+chinese_characters_type_list = [
+    {"name": "Chinese Character", "image_url": ""},
+    {"name": "Radical", "image_url": ""},
+    {"name": "Meaning", "image_url": ""},
+    {"name": "Pronunciation", "image_url": ""},
+    {"name": "Character Set", "image_url": ""}
+]
+
 def add_types():
-    smb_collection_query = db.session.query(Collections).filter(Collections.name == "Super Mario Bros.").first()
-    wd_collection_query = db.session.query(Collections).filter(Collections.name == "Watership Down").first()
+    collections_to_types = {
+        "Super Mario Bros.": smb_types_list,
+        "Watership Down": wd_types_list,
+        "Mega Man Classic Series": mmc_series_types_list,
+        "Chinese Characters": chinese_characters_type_list,
+    }
 
+    for collection_name, types_list in collections_to_types.items():
+        collection_query = db.session.query(Collections).filter(Collections.name == collection_name).first()
 
-    for type in smb_types_list:
-        if not db.session.query(Types).filter(Types.name == type["name"]).first():
+        if not collection_query:
+            print(f"Collection '{collection_name}' not found.")
+            continue
+
+        for type_data in types_list:
+            if db.session.query(Types).filter(Types.name == type_data["name"]).first():
+                continue
+
             new_type = Types(
-                type["name"],
+                type_data["name"],
                 "example_description",
-                type["image_url"],
+                type_data["image_url"],
                 "#cccccc",
                 None
             )
 
-            new_type.collection_id = smb_collection_query.collection_id
-
-            db.session.add(new_type)
-
-    for type in wd_types_list:
-        if not db.session.query(Types).filter(Types.name == type["name"]).first():
-            new_type = Types(
-                type["name"],
-                "example_description",
-                type["image_url"],
-                "#cccccc",
-                None
-            )
-
-            new_type.collection_id = wd_collection_query.collection_id
+            new_type.collection_id = collection_query.collection_id
 
             db.session.add(new_type)
 

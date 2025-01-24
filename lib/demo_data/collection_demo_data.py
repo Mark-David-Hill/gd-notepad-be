@@ -15,6 +15,16 @@ collections_list = [
         "image_url": "https://cdn.penguin.co.uk/dam-assets/books/9780241953235/9780241953235-jacket-large.jpg"
     },
     {
+        "name": "Mega Man Classic Series",
+        "description": "A series of action platformers",
+        "image_url": "https://i.ytimg.com/vi/9P2fVmh-hV4/maxresdefault.jpg"
+    },
+    {
+        "name": "Chinese Characters",
+        "description": "Component parts of the Chinese writing system, also used to a lesser extent in Japanese and Korean",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Hanzi.svg/800px-Hanzi.svg.png"
+    },
+    {
         "name": "Super Mario Bros. 3",
         "description": "An iconic platformer that introduces new power-ups and an overworld map.",
         "image_url": "https://preview.redd.it/title-screen-from-super-mario-bros-3-id-0mdjyp7t-v0-619xejuerjka1.png?width=512&format=png&auto=webp&s=b4c082e51250c2739671f7fd4333f79b8b8c214f"
