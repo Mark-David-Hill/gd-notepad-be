@@ -23,6 +23,21 @@ wd_types_list = [
     {"name": "Time", "image_url": "https://media.istockphoto.com/id/964947830/vector/calendar.jpg?s=612x612&w=0&k=20&c=O8oeRZpK_gTshy-acC0PkRZSrih9KXULv7ZNfLwCyHU="},
 ]
 
+chinese_characters_types_list = [
+    {"name": "Chinese Character", "image_url": ""},
+    {"name": "Radical", "image_url": ""},
+    {"name": "Meaning", "image_url": ""},
+    {"name": "Pronunciation", "image_url": ""},
+    {"name": "Character Set", "image_url": ""}
+]
+
+programming_technology_types_list = [
+    {"name": "Language", "image_url": ""},
+    {"name": "Library or Framework", "image_url": ""},
+    {"name": "Property", "image_url": ""},
+    {"name": "Data Type", "image_url": ""}
+]
+
 mmc_series_types_list = [
     {"name": "Game", "image_url": ""},
     {"name": "Mode", "image_url": ""},
@@ -36,20 +51,14 @@ mmc_series_types_list = [
     {"name": "", "image_url": ""},
 ]
 
-chinese_characters_type_list = [
-    {"name": "Chinese Character", "image_url": ""},
-    {"name": "Radical", "image_url": ""},
-    {"name": "Meaning", "image_url": ""},
-    {"name": "Pronunciation", "image_url": ""},
-    {"name": "Character Set", "image_url": ""}
-]
 
 def add_types():
     collections_to_types = {
         "Super Mario Bros.": smb_types_list,
         "Watership Down": wd_types_list,
+        "Chinese Characters": chinese_characters_types_list,
+        "Programming Technologies": programming_technology_types_list,
         "Mega Man Classic Series": mmc_series_types_list,
-        "Chinese Characters": chinese_characters_type_list,
     }
 
     for collection_name, types_list in collections_to_types.items():
@@ -76,4 +85,3 @@ def add_types():
             db.session.add(new_type)
 
     db.session.commit()
-
