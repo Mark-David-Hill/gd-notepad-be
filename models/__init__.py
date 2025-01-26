@@ -1,4 +1,5 @@
 from models.relationships import *
+from models.color_schemes import *
 from models.collections import *
 from models.auth_tokens import *
 from models.change_logs import *

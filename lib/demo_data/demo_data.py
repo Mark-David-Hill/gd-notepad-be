@@ -3,16 +3,18 @@ from db import db
 
 from models.relationships import Relationships
 
-from lib.demo_data.item_demo_data import add_items
 from lib.demo_data.item_seed_data import levels_list, enemies_list, level_elements, power_ups, mechanics
 from lib.demo_data.relationship_demo_data import add_relationships
+from lib.demo_data.color_scheme_demo_data import add_color_schemes
 from lib.demo_data.collection_demo_data import add_collections
-from lib.demo_data.type_demo_data import add_types
 from lib.demo_data.user_demo_data import add_users
+from lib.demo_data.type_demo_data import add_types
+from lib.demo_data.item_demo_data import add_items
 
 def run_demo_data():
     if len(sys.argv) > 1 and sys.argv[1] == "demo-data":
         print("Creating Demo Data...")
+        add_color_schemes
         add_users()
         add_collections()
         add_types()
