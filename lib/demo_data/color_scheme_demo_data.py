@@ -4,76 +4,77 @@ from models.color_schemes import ColorSchemes
 
 color_scheme_list = [
     {
-        "name": "Sunny Vibes",
-        "primary_color": "#FFEE58",  # Yellow
-        "secondary_color": "#FFD740",  # Amber
-        "text_color": "#000000",  # Black
-        "background_color": "#FFF9C4",  # Light yellow
+        "name": "Bright Gold",
+        "primary_color": "#FFD700",  # Gold
+        "secondary_color": "#FFA500",  # Orange
+        "text_color": "#2F4F4F",  # Dark Slate Gray
+        "background_color": "#FFFACD",  # Lemon Chiffon
     },
     {
-        "name": "Ocean Breeze",
-        "primary_color": "#0288D1",  # Light blue
-        "secondary_color": "#03A9F4",  # Sky blue
+        "name": "Deep Blue",
+        "primary_color": "#0077B6",  # Deep Cyan
+        "secondary_color": "#0096C7",  # Sky Blue
         "text_color": "#FFFFFF",  # White
-        "background_color": "#E1F5FE",  # Very light blue
+        "background_color": "#CAF0F8",  # Light Aqua
     },
     {
-        "name": "Forest Glow",
-        "primary_color": "#388E3C",  # Forest green
-        "secondary_color": "#4CAF50",  # Leaf green
+        "name": "Night Mode",
+        "primary_color": "#2C2C54",  # Deep Indigo
+        "secondary_color": "#706FD3",  # Soft Purple
+        "text_color": "#D1D1D1",  # Light Gray
+        "background_color": "#1E1E3F",  # Dark Navy
+    },
+    {
+        "name": "Woodland",
+        "primary_color": "#4CAF50",  # Forest Green
+        "secondary_color": "#8BC34A",  # Light Green
+        "text_color": "#1B1B1B",  # Almost Black
+        "background_color": "#E8F5E9",  # Pale Green
+    },
+    {
+        "name": "Frosted Ice",
+        "primary_color": "#85C1E9",  # Light Blue
+        "secondary_color": "#D6EAF8",  # Very Pale Blue
+        "text_color": "#2E4053",  # Steel Gray
+        "background_color": "#EBF5FB",  # Ice White
+    },
+    {
+        "name": "Neutral Gray",
+        "primary_color": "#3D3D3D",  # Charcoal Gray
+        "secondary_color": "#AAAAAA",  # Light Gray
         "text_color": "#FFFFFF",  # White
-        "background_color": "#E8F5E9",  # Very light green
+        "background_color": "#F2F2F2",  # Soft Gray
     },
     {
-        "name": "Desert Sunset",
-        "primary_color": "#FF5722",  # Bright orange
-        "secondary_color": "#FF7043",  # Lighter orange
+        "name": "Fiery Red",
+        "primary_color": "#D72638",  # Crimson
+        "secondary_color": "#FF5C5C",  # Light Red
+        "text_color": "#1A1A1A",  # Almost Black
+        "background_color": "#FFE6E6",  # Light Pink
+    },
+    {
+        "name": "Amber Glow",
+        "primary_color": "#F39C12",  # Amber
+        "secondary_color": "#F7DC6F",  # Light Yellow
+        "text_color": "#1B1B1B",  # Almost Black
+        "background_color": "#FFF8E1",  # Pale Yellow
+    },
+    {
+        "name": "Berry Pop",
+        "primary_color": "#C2185B",  # Raspberry
+        "secondary_color": "#E91E63",  # Hot Pink
         "text_color": "#FFFFFF",  # White
-        "background_color": "#FFE0B2",  # Light peach
+        "background_color": "#F8BBD0",  # Light Pink
     },
     {
-        "name": "Lavender Dream",
-        "primary_color": "#7E57C2",  # Lavender purple
-        "secondary_color": "#9575CD",  # Light lavender
-        "text_color": "#FFFFFF",  # White
-        "background_color": "#EDE7F6",  # Very light lavender
-    },
-    {
-        "name": "Midnight Bliss",
-        "primary_color": "#263238",  # Deep blue-gray
-        "secondary_color": "#37474F",  # Dark gray
-        "text_color": "#FFFFFF",  # White
-        "background_color": "#CFD8DC",  # Light gray
-    },
-    {
-        "name": "Candy Pop",
-        "primary_color": "#E91E63",  # Hot pink
-        "secondary_color": "#F06292",  # Light pink
-        "text_color": "#FFFFFF",  # White
-        "background_color": "#FCE4EC",  # Very light pink
-    },
-    {
-        "name": "Autumn Hues",
-        "primary_color": "#795548",  # Brown
-        "secondary_color": "#A1887F",  # Light brown
-        "text_color": "#FFFFFF",  # White
-        "background_color": "#D7CCC8",  # Beige
-    },
-    {
-        "name": "Ice Frost",
-        "primary_color": "#00BCD4",  # Cyan
-        "secondary_color": "#B2EBF2",  # Light cyan
-        "text_color": "#000000",  # Black
-        "background_color": "#E0F7FA",  # Very light cyan
-    },
-    {
-        "name": "Crimson Passion",
-        "primary_color": "#D32F2F",  # Deep red
-        "secondary_color": "#E57373",  # Lighter red
-        "text_color": "#FFFFFF",  # White
-        "background_color": "#FFEBEE",  # Light pink-red
+        "name": "Rustic Earth",
+        "primary_color": "#8B4513",  # Saddle Brown
+        "secondary_color": "#D2691E",  # Chocolate
+        "text_color": "#FDF5E6",  # Old Lace
+        "background_color": "#FAF3E0",  # Off White
     },
 ]
+
 
 
 def add_color_schemes():
