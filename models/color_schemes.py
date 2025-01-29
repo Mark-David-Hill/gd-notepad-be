@@ -16,8 +16,8 @@ class ColorSchemes(db.Model):
     secondary_color = db.Column(db.String(7), nullable=True)
     text_color = db.Column(db.String(7), nullable=True)
     background_color = db.Column(db.String(7), nullable=True)
-    date_created = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), nullable=False)
-    date_updated = db.Column(db.DateTime(timezone=True), default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc), nullable=False)
+
+    types = db.relationship("Types", back_populates="color_scheme")
 
     def __init__(self, name, primary_color, secondary_color=None, text_color=None, background_color=None):
         self.name = name
@@ -36,8 +36,6 @@ class ColorSchemesSchema(ma.Schema):
             "secondary_color",
             "text_color",
             "background_color",
-            "date_created",
-            "date_updated",
         ]
 
 

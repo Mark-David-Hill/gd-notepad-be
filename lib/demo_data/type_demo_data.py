@@ -1,15 +1,16 @@
 from db import db
 
+from models.color_schemes import ColorSchemes
 from models.collections import Collections
 from models.types import Types
 
 
 smb_types_list = [
-    {"name": "Mechanic", "image_url": "https://www.pngall.com/wp-content/uploads/5/Game-Controller-PNG-Clipart.png", "color": "#2979FF"}, 
-    {"name": "Level", "image_url": "https://www.shutterstock.com/image-vector/2d-arcade-game-level-cartoon-260nw-2259956823.jpg", "color": "#FFEB3B"},
-    {"name": "Level Element", "image_url": "https://i.pinimg.com/564x/6e/e9/b5/6ee9b5fdd1f67fbac5fd80445be55245.jpg", "color": "#FFD54F"},
-    {"name": "Enemy Element", "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyFefeRiOb3lbMSFGyX6SGFnRD39v7GOr-mg&s", "color": "#E53935"},
-    {"name": "Power Up", "image_url": "https://static.vecteezy.com/system/resources/previews/026/973/044/non_2x/3d-icon-video-games-rendered-isolated-on-the-transparent-background-power-up-icon-for-your-design-png.png", "color": "#43A047"}
+    {"name": "Mechanic", "color_scheme": "Deep Blue", "image_url": "https://www.pngall.com/wp-content/uploads/5/Game-Controller-PNG-Clipart.png"}, 
+    {"name": "Level", "color_scheme": "Amber Glow", "image_url": "https://www.shutterstock.com/image-vector/2d-arcade-game-level-cartoon-260nw-2259956823.jpg"},
+    {"name": "Level Element", "color_scheme": "Bright Gold", "image_url": "https://i.pinimg.com/564x/6e/e9/b5/6ee9b5fdd1f67fbac5fd80445be55245.jpg"},
+    {"name": "Enemy Element", "color_scheme": "Fiery Red", "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyFefeRiOb3lbMSFGyX6SGFnRD39v7GOr-mg&s"},
+    {"name": "Power Up", "color_scheme": "Woodland", "image_url": "https://static.vecteezy.com/system/resources/previews/026/973/044/non_2x/3d-icon-video-games-rendered-isolated-on-the-transparent-background-power-up-icon-for-your-design-png.png"}
 ]
 
 wd_types_list = [
@@ -53,6 +54,8 @@ mmc_series_types_list = [
 
 
 def add_types():
+    color_schemes = db.session.query(ColorSchemes).all()
+
     collections_to_types = {
         "Super Mario Bros.": smb_types_list,
         "Watership Down": wd_types_list,
@@ -75,12 +78,20 @@ def add_types():
             new_type = Types(
                 type_data["name"],
                 "example_description",
-                type_data["image_url"],
-                type_data.get("color", "#cccccc"),
+                type_data.get("image_url", ""),  # Default to an empty string if "image_url" is missing
+                None,
                 None
             )
 
             new_type.collection_id = collection_query.collection_id
+            new_type.color_scheme_id = next(
+                (
+                    color_scheme.color_scheme_id
+                    for color_scheme in color_schemes
+                    if color_scheme.name == type_data.get("color_scheme", "Default Color Scheme")
+                ),
+                color_schemes[0].color_scheme_id  # Default to the first color scheme if no match
+            )
 
             db.session.add(new_type)
 
