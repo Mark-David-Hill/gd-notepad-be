@@ -5,6 +5,8 @@ from models.collections import Collections
 from models.types import Types
 
 
+# Bright Gold, Deep Blue, Night Mode, Woodland, Frosted Ice, Neutral Gray, Fiery Red, Amber Glow, Berry Pop, Rustic Earth
+
 smb_types_list = [
     {"name": "Mechanic", "color_scheme": "Deep Blue", "image_url": "https://www.pngall.com/wp-content/uploads/5/Game-Controller-PNG-Clipart.png"}, 
     {"name": "Level", "color_scheme": "Amber Glow", "image_url": "https://www.shutterstock.com/image-vector/2d-arcade-game-level-cartoon-260nw-2259956823.jpg"},
@@ -14,14 +16,14 @@ smb_types_list = [
 ]
 
 wd_types_list = [
-    {"name": "Book", "color": "#4B7BE5", "image_url": "https://i.pinimg.com/474x/d4/d3/c0/d4d3c02f855019b7357b6c46da2124da.jpg"},
-    {"name": "Part", "color": "#FF9800", "image_url": "https://banner2.cleanpng.com/20180314/ikq/av0d580el.webp"},
-    {"name": "Chapter", "color": "#8E44AD", "image_url": "https://lessonpix.com/drawings/143374/380x380/Chapter.png"},
-    {"name": "Character", "color": "#E91E63", "image_url": "https://t3.ftcdn.net/jpg/01/41/00/42/360_F_141004267_gvTQBCsccv1t6oSwtLG9CmzJY0mXzqeV.jpg"},
-    {"name": "Location", "#2ECC71": "", "image_url": "https://png.pngtree.com/png-vector/20220914/ourmid/pngtree-natural-green-hills-transparent-clipart-png-image_6174296.png"},
-    {"name": "Species", "color": "#1ABC9C", "image_url": "https://www.creativefabrica.com/wp-content/uploads/2021/12/21/1640087346/Farm-Animal-Silhouettes-black-version-580x386.jpg"},
-    {"name": "Character Group", "color": "#F39C12", "image_url": "https://img.freepik.com/premium-vector/set-rabbits-silhouette-drawing-white-black_1263357-4739.jpg"},
-    {"name": "Time", "color": "#34495E", "image_url": "https://media.istockphoto.com/id/964947830/vector/calendar.jpg?s=612x612&w=0&k=20&c=O8oeRZpK_gTshy-acC0PkRZSrih9KXULv7ZNfLwCyHU="},
+    {"name": "Book", "color_scheme": "Neutral Gray", "image_url": "https://i.pinimg.com/474x/d4/d3/c0/d4d3c02f855019b7357b6c46da2124da.jpg"},
+    {"name": "Part", "color_scheme": "Bright Gold", "image_url": "https://banner2.cleanpng.com/20180314/ikq/av0d580el.webp"},
+    {"name": "Chapter", "color_scheme": "Amber Glow", "image_url": "https://lessonpix.com/drawings/143374/380x380/Chapter.png"},
+    {"name": "Character", "color_scheme": "Berry Pop", "image_url": "https://t3.ftcdn.net/jpg/01/41/00/42/360_F_141004267_gvTQBCsccv1t6oSwtLG9CmzJY0mXzqeV.jpg"},
+    {"name": "Location", "color_scheme": "Woodland", "image_url": "https://png.pngtree.com/png-vector/20220914/ourmid/pngtree-natural-green-hills-transparent-clipart-png-image_6174296.png"},
+    {"name": "Species", "color_scheme": "Frosted Ice", "image_url": "https://www.creativefabrica.com/wp-content/uploads/2021/12/21/1640087346/Farm-Animal-Silhouettes-black-version-580x386.jpg"},
+    {"name": "Character Group", "color_scheme": "Deep Blue", "image_url": "https://img.freepik.com/premium-vector/set-rabbits-silhouette-drawing-white-black_1263357-4739.jpg"},
+    {"name": "Time", "color_scheme": "Night Mode", "image_url": "https://media.istockphoto.com/id/964947830/vector/calendar.jpg?s=612x612&w=0&k=20&c=O8oeRZpK_gTshy-acC0PkRZSrih9KXULv7ZNfLwCyHU="},
 ]
 
 chinese_characters_types_list = [

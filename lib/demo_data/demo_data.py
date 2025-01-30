@@ -3,7 +3,7 @@ from db import db
 
 from models.relationships import Relationships
 
-from lib.demo_data.watership_down_seed_data import books_list
+from lib.demo_data.watership_down_seed_data import books_list, characters_list
 from lib.demo_data.item_seed_data import levels_list, enemies_list, level_elements, power_ups, mechanics
 from lib.demo_data.relationship_demo_data import add_relationships
 from lib.demo_data.color_scheme_demo_data import add_color_schemes
@@ -25,6 +25,7 @@ def run_demo_data():
         add_items("Super Mario Bros.", "Power Up", power_ups)
         add_items("Super Mario Bros.", "Mechanic", mechanics)
         add_items("Watership Down", "Book", books_list)
+        add_items("Watership Down", "Character", characters_list)
 
         relationships_query = db.session.query(Relationships).all()
 
