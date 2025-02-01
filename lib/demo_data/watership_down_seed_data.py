@@ -104,3 +104,41 @@ characters_list = [
         "image_url": ""
     }
 ]
+
+locations_list = [
+    {   
+        "name": "Sandleford Warren",
+        "description": "The rabbits' original home, which they flee due to impending destruction by humans.",
+        "image_url": ""
+    },
+    {   
+        "name": "Watership Down",
+        "description": "The new home of Hazel and his group, a high hill offering safety and a good vantage point.",
+        "image_url": ""
+    },
+    {   
+        "name": "Cowslip’s Warren",
+        "description": "A strange warren where rabbits live in comfort but at a cost",
+        "image_url": ""
+    },
+    {   
+        "name": "Efrafa",
+        "description": "A large, oppressive warren ruled by the tyrannical General Woundwort, where rabbits live under strict control.",
+        "image_url": ""
+    },
+    {   
+        "name": "The Iron Road",
+        "description": "A railway line that the rabbits must cross on their journey, presenting a dangerous challenge.",
+        "image_url": ""
+    },
+    {   
+        "name": "The River Test",
+        "description": "The river used by Hazel and his group to escape from Efrafa with the help of Kehaar.",
+        "image_url": ""
+    },
+    {   
+        "name": "Nuthanger Farm",
+        "description": "A human farm where Hazel leads a daring raid to free domesticated rabbits.",
+        "image_url": ""
+    }
+]
