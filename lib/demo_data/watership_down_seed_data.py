@@ -21,7 +21,7 @@ characters_list = [
     {   
         "name": "Hazel",
         "description": "The brave and intelligent leader of the rabbits who guides his group to safety and a new home.",
-        "image_url": ""
+        "image_url": "",
     },
     {   
         "name": "Fiver",
@@ -148,17 +148,32 @@ chapters_list = [
     {
         "name": "Chapter 1 - The Notice Board",
         "description": "Fiver has a vision of impending doom, prompting Hazel and a small group of rabbits to flee Sandleford Warren.",
-        "image_url": ""
+        "image_url": "",
+        "relationships": [
+            {
+                "name": "Watership Down", "description": ""
+            }
+        ]
     },
     {
         "name": "Chapter 2 - The Chief Rabbit",
         "description": "Hazel and Fiver try to convince the Chief Rabbit of the danger, but he dismisses their warning.",
-        "image_url": ""
+        "image_url": "",
+        "relationships": [
+            {
+                "name": "Watership Down", "description": ""
+            }
+        ]
     },
     {
         "name": "Chapter 3 - Hazel's Decision",
         "description": "Hazel, Fiver, and a small group secretly leave Sandleford Warren under the cover of night.",
-        "image_url": ""
+        "image_url": "",
+        "relationships": [
+            {
+                "name": "Watership Down", "description": ""
+            }
+        ]
     },
     {
         "name": "Chapter 4 - The Departure",
@@ -416,6 +431,45 @@ parts_list = [
     {
         "name": "Part IV - Hazel-rah",
         "description": "The final confrontation with General Woundwort and the Efrafan forces, leading to Hazel's eventual fate.",
+        "image_url": ""
+    }
+]
+
+
+character_groups_list = [
+    {
+        "name": "Sandleford Warren Rabbits",
+        "description": "The original warren where Hazel, Fiver, and their companions lived before escaping due to Fiver's premonition of danger.",
+        "image_url": ""
+    },
+    {
+        "name": "Watership Down Warren Rabbits",
+        "description": "The rabbits who establish a new home on Watership Down, led by Hazel and his companions.",
+        "image_url": ""
+    },
+    {
+        "name": "Efrafan Rabbits",
+        "description": "The rabbits from the totalitarian warren of Efrafa, ruled by the tyrannical General Woundwort.",
+        "image_url": ""
+    },
+    {
+        "name": "Nuthanger Farm Characters",
+        "description": "Animals and people from Nuthanger Farm",
+        "image_url": ""
+    },
+    {
+        "name": "Cowslip's Warren Rabbits",
+        "description": "A strange and eerie warren where the rabbits live in unnatural luxury but at a terrible cost.",
+        "image_url": ""
+    },
+    {
+        "name": "Kehaar and Other Allies",
+        "description": "Non-rabbit allies, including Kehaar the gull, who aid Hazel and his friends in their struggles.",
+        "image_url": ""
+    },
+    {
+        "name": "Folk Characters",
+        "description": "Legendary figures from rabbit folklore, including El-ahrairah, Prince Rainbow, and the Black Rabbit of Inlé.",
         "image_url": ""
     }
 ]
