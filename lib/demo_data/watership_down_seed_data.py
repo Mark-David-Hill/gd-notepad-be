@@ -178,17 +178,32 @@ chapters_list = [
     {
         "name": "Chapter 4 - The Departure",
         "description": "The group sets off on their journey, facing their first challenges outside the warren.",
-        "image_url": ""
+        "image_url": "",
+        "relationships": [
+            {
+                "name": "Watership Down", "description": ""
+            }
+        ]
     },
     {
         "name": "Chapter 5 - In the Woods",
         "description": "The rabbits navigate unfamiliar terrain, avoiding predators and other dangers.",
-        "image_url": ""
+        "image_url": "",
+        "relationships": [
+            {
+                "name": "Watership Down", "description": ""
+            }
+        ]
     },
     {
         "name": "Chapter 6 - The Story of the Blessing of El-ahrairah",
         "description": "Dandelion tells the first of many stories about El-ahrairah, the trickster rabbit hero.",
-        "image_url": ""
+        "image_url": "",
+        "relationships": [
+            {
+                "name": "Watership Down", "description": ""
+            }
+        ]
     },
     {
         "name": "Chapter 7 - The Lendri and the River",
