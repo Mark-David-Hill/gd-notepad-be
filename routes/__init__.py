@@ -1,3 +1,4 @@
+from .color_schemes_routes import color_schemes
 from .relationships_routes import relationships
 from .collections_routes import collections
 from .items_routes import items

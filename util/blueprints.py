@@ -2,6 +2,7 @@ import routes
 
 def register_blueprints(app):
     app.register_blueprint(routes.relationships)
+    app.register_blueprint(routes.color_schemes)
     app.register_blueprint(routes.items)
     app.register_blueprint(routes.users)
     app.register_blueprint(routes.notes)

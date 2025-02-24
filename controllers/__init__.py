@@ -1,3 +1,4 @@
+from .color_schemes_controller import *
 from .relationships_controller import *
 from .collections_controller import *
 from .items_controller import *
