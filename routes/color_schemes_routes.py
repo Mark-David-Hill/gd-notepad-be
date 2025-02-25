@@ -5,9 +5,9 @@ import controllers
 color_schemes = Blueprint("color_scheme", __name__)
 
 
-# @color_schemes.route("/color-scheme", methods=["POST"])
-# def color_scheme_add():
-#     return controllers.color_scheme_add(request)
+@color_schemes.route("/color-scheme", methods=["POST"])
+def color_scheme_add():
+    return controllers.color_scheme_add(request)
 
 
 # @color_schemes.route("/item/tag", methods=["POST"])

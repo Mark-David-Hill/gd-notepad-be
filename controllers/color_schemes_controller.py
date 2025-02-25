@@ -6,9 +6,9 @@ from util.controllers_util import *
 from lib.authenticate import auth, validate_uuid4
 
 
-# @auth
-# def color_scheme_add(req):
-#     return record_add(req, ColorSchemes.new_color_scheme_obj(), color_scheme_schema, "color_scheme")
+@auth
+def color_scheme_add(req):
+    return record_add(req, ColorSchemes.new_color_scheme_obj(), color_scheme_schema, "color_scheme")
     
     
 # @auth

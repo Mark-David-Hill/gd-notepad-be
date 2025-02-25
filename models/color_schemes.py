@@ -26,6 +26,9 @@ class ColorSchemes(db.Model):
         self.text_color = text_color
         self.background_color = background_color
 
+    def new_color_scheme_obj():
+        return ColorSchemes("", "", "", "", "")
+
 
 class ColorSchemesSchema(ma.Schema):
     class Meta:
