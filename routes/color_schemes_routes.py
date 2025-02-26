@@ -10,29 +10,14 @@ def color_scheme_add():
     return controllers.color_scheme_add(request)
 
 
-# @color_schemes.route("/item/tag", methods=["POST"])
-# def item_tag_update():
-#     return controllers.item_tag_update(request)
-
-
 @color_schemes.route("/color-schemes")
 def color_schemes_get_all():
     return controllers.color_schemes_get_all()
 
 
-# @items.route("/items/collection/<collection_id>")
-# def items_get_by_collection(collection_id):
-#     return controllers.items_get_by_collection(collection_id)
-
-
-# @items.route("/items/tag/<tag_id>")
-# def items_get_all_with_tag(tag_id):
-#     return controllers.items_get_all_with_tag(tag_id)
-
-
-# @items.route("/item/<item_id>")
-# def item_get_by_id(item_id):
-#     return controllers.item_get_by_id(item_id)
+@color_schemes.route("/color_scheme/<color_scheme_id>")
+def color_scheme_get_by_id(color_scheme_id):
+    return controllers.color_scheme_get_by_id(color_scheme_id)
 
 
 # @items.route("/item/<item_id>", methods=["PUT"])

@@ -16,17 +16,13 @@ def color_schemes_get_all():
     return records_get_all(ColorSchemes, color_schemes_schema, "color_schemes")
 
 
-# def types_get_by_collection(collection_id):
-#     return records_get_by_collection(Types, types_schema, "types", collection_id)
+# @auth
+def color_scheme_get_by_id(color_scheme_id):
+    if not validate_uuid4(color_scheme_id):
+        return jsonify({"message": "cannot get color scheme without a valid uuid"}), 400
 
-
-# # @auth
-# def type_get_by_id(type_id):
-#     if not validate_uuid4(type_id):
-#         return jsonify({"message": "cannot get type without a valid uuid"}), 400
-
-#     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
-#     return record_get_by_id(type_query, type_schema, "type")
+    color_scheme_query = db.session.query(ColorSchemes).filter(ColorSchemes.color_scheme_id == color_scheme_id).first()
+    return record_get_by_id(color_scheme_query, color_scheme_schema, "color_scheme")
 
 
 # @auth
