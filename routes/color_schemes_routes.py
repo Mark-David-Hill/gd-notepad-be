@@ -20,9 +20,9 @@ def color_scheme_get_by_id(color_scheme_id):
     return controllers.color_scheme_get_by_id(color_scheme_id)
 
 
-# @items.route("/item/<item_id>", methods=["PUT"])
-# def item_update_by_id(item_id):
-#     return controllers.item_update_by_id(request, item_id)
+@color_schemes.route("/color_scheme/<color_scheme_id>", methods=["PUT"])
+def color_scheme_update_by_id(color_scheme_id):
+    return controllers.color_scheme_update_by_id(request, color_scheme_id)
 
 
 # @items.route("/item/delete/<item_id>", methods=["DELETE"])

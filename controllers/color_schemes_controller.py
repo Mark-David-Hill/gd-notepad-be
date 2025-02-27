@@ -26,12 +26,12 @@ def color_scheme_get_by_id(color_scheme_id):
 
 
 # @auth
-# def type_update_by_id(req, type_id):
-#     if not validate_uuid4(type_id):
-#         return jsonify({"message": "cannot update type without a valid uuid"}), 400
+def color_scheme_update_by_id(req, color_scheme_id):
+    if not validate_uuid4(color_scheme_id):
+        return jsonify({"message": "cannot update color scheme without a valid uuid"}), 400
 
-#     type_query = db.session.query(Types).filter(Types.type_id == type_id).first()
-#     return record_update_by_id(req, type_query, type_schema, "type")
+    color_scheme_query = db.session.query(ColorSchemes).filter(ColorSchemes.color_scheme_id == color_scheme_id).first()
+    return record_update_by_id(req, color_scheme_query, color_scheme_schema, "color_scheme")
 
 
 # @auth
