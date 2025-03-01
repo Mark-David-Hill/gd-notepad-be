@@ -25,6 +25,6 @@ def color_scheme_update_by_id(color_scheme_id):
     return controllers.color_scheme_update_by_id(request, color_scheme_id)
 
 
-# @items.route("/item/delete/<item_id>", methods=["DELETE"])
-# def item_delete_by_id(item_id):
-#     return controllers.item_delete_by_id(item_id)
+@color_schemes.route("/color_scheme/delete/<color_scheme_id>", methods=["DELETE"])
+def color_scheme_delete_by_id(color_scheme_id):
+    return controllers.color_scheme_delete_by_id(color_scheme_id)
