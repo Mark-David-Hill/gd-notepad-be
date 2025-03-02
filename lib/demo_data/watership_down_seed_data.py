@@ -424,6 +424,11 @@ chapters_list = [
         "name": "Chapter 50 - And Last",
         "description": "Hazel's journey ends as he joins El-ahrairah in the afterlife.",
         "image_url": ""
+    },
+    {
+        "name": "The Sense of Smell",
+        "Description": "",
+        "image_url": ""
     }
 ]
 
