@@ -65,5 +65,23 @@ def check_login():
         return jsonify({"message": "Invalid or expired session token"}), 401
 
 
-# def logout(self, auth_info):
-#     auth_data = db.session.query(AuthTokens).filter(Users.email == post_data.get("email")).first()
+from flask import jsonify, request, make_response
+from db import db
+from models.auth_tokens import AuthTokens
+
+def logout():
+    token = request.cookies.get("_sid")
+
+    if not token:
+        return jsonify({"message": "No session token found"}), 401
+
+    auth_token_data = db.session.query(AuthTokens).filter(AuthTokens.auth_token == token).first()
+
+    if auth_token_data:
+        db.session.delete(auth_token_data)
+        db.session.commit()
+
+    response = make_response(jsonify({"message": "Logout successful"}), 200)
+    response.set_cookie("_sid", "", expires=0, httponly=True, secure=False, samesite="Strict")
+
+    return response

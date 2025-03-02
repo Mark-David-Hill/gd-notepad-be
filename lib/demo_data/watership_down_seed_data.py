@@ -427,7 +427,7 @@ chapters_list = [
     },
     {
         "name": "The Sense of Smell",
-        "Description": "",
+        "description": "",
         "image_url": ""
     }
 ]

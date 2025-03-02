@@ -13,6 +13,6 @@ def auth_token_add():
 def check_login_route():
     return controllers.check_login()
     
-# @auth.route("/user/logout", methods=["POST"])
-# def logout(self):
-#     return self.controller.logout()
+@auth.route("/user/logout", methods=["POST"])
+def logout():
+    return controllers.logout()
