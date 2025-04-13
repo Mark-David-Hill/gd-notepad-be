@@ -34,8 +34,8 @@ def run_demo_data():
         relationships_query = db.session.query(Relationships).all()
 
         if not relationships_query:
-            add_relationships(levels_list)
-            add_relationships(enemies_list)
-            add_relationships(level_elements)
-            add_relationships(power_ups)
-            add_relationships(mechanics)
+            add_relationships(levels_list, "Super Mario Bros.")
+            add_relationships(enemies_list, "Super Mario Bros.")
+            add_relationships(level_elements, "Super Mario Bros.")
+            add_relationships(power_ups, "Super Mario Bros.")
+            add_relationships(mechanics, "Super Mario Bros.")

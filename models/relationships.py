@@ -10,6 +10,7 @@ class Relationships(db.Model):
     __tablename__ = "Relationships"
 
     relationship_id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    collection_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Collections.collection_id"), nullable=False)
     item_1_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Items.item_id"), nullable=False)
     item_2_id = db.Column(UUID(as_uuid=True), db.ForeignKey("Items.item_id"), nullable=False)
     description = db.Column(db.String())
@@ -18,19 +19,20 @@ class Relationships(db.Model):
     item_1 = db.relationship("Items", foreign_keys=[item_1_id], back_populates="related_item_1")
     item_2 = db.relationship("Items", foreign_keys=[item_2_id], back_populates="related_item_2")
 
-    def __init__(self, item_1_id, item_2_id, description, count=0):
+    def __init__(self, collection_id, item_1_id, item_2_id, description, count=0):
+        self.collection_id = collection_id
         self.item_1_id = item_1_id
         self.item_2_id = item_2_id
         self.description = description
         self.count = count
 
     def new_relationship_obj():
-        return Relationships("", "", "", 0)
+        return Relationships("", "", "", "", 0)
     
 
 class RelationshipsSchema(ma.Schema):
     class Meta:
-        fields = ['relationship_id', 'item_1', 'item_2', 'description', 'count']
+        fields = ['relationship_id', 'collection_id', 'item_1', 'item_2', 'description', 'count']
     item_1 = ma.fields.Nested("ItemsSchema")
     item_2 = ma.fields.Nested("ItemsSchema")
 
