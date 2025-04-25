@@ -314,9 +314,11 @@ levels_list = [
         "name": "5-1",
         "relationships": [
             {"name": "Piranha Plant", "description": "Level 5-1 has a few Piranha Plant enemies", "count": 4}, 
-            # {"name": "Pit", "description": "Level 4-1 has a few small pits", "count": 6}, 
-            # {"name": "Coin", "description": "Level 4-1 has several coins both floating in a bonus room and inside of blocks", "count": 62}, 
-            # {"name": "1-Up Mushroom", "description": "Level 4-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
+            {"name": "Goomba", "description": "Level 501 has several Goombas", "count": 21},
+            {"name": "Pit", "description": "Level 5-1 has a few small pits", "count": 4}, 
+            {"name": "Coin", "description": "Level 5-1 has several coins both floating in a bonus room and inside a block in the bonus room", "count": 20}, 
+            {"name": "1-Up Mushroom", "description": "Level 5-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
+
             # {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 4-1", "count": 3}, 
             # {"name": "Fire Flower", "description": "There are 3 blocks with Fire Flower power-ups in Level 4-1", "count": 3}, 
             # {"name": "Warp Pipe", "description": "Level 4-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles", "count": 2},
