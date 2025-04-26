@@ -322,15 +322,10 @@ levels_list = [
             {"name": "Pit", "description": "Level 5-1 has a few small pits", "count": 4},
             {"name": "Coin", "description": "Level 5-1 has several coins both floating in a bonus room and inside a block in the bonus room", "count": 20}, 
             {"name": "1-Up Mushroom", "description": "Level 5-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
-
-            # {"name": "Super Mushroom", "description": "There are 3 blocks with Super Mushroom power-ups in Level 4-1", "count": 3}, 
-            # {"name": "Fire Flower", "description": "There are 3 blocks with Fire Flower power-ups in Level 4-1", "count": 3}, 
-            # {"name": "Warp Pipe", "description": "Level 4-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles", "count": 2},
-            # {"name": "? Block", "description": "There are several ? blocks in Level 4-1, containing coins and power-ups", "count": 20},
-            # {"name": "Brick Block", "description": "There are several brick blocks in Level 4-1, some containing coins or power-ups"},
-            # {"name": "Hard Block", "description": "There are hard blocks forming obstacles and a staircase in Level 4-1"},
-            # {"name": "Hidden Block", "description": "There is 1 invisible 1-up block in Level 4-1", "count": 1},
-            # {"name": "Flagpole", "description": "There is a flagpole at the end of Level 4-1"}
+            {"name": "Warp Pipe", "description": "Level 5-1 has a warp pipe that leads to a bonus room and several pipes that just serve as platforms/obstacles", "count": 2},
+            {"name": "Brick Block", "description": "There are several brick blocks in Level 5-1, some containing coins or power-ups"},
+            {"name": "Hard Block", "description": "There are hard blocks forming obstacles and a staircase in Level 5-1"},
+            {"name": "Flagpole", "description": "There is a flagpole at the end of Level 5-1"}
         ]
     },
     {
