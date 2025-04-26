@@ -314,8 +314,12 @@ levels_list = [
         "name": "5-1",
         "relationships": [
             {"name": "Piranha Plant", "description": "Level 5-1 has a few Piranha Plant enemies", "count": 4}, 
-            {"name": "Goomba", "description": "Level 501 has several Goombas", "count": 21},
-            {"name": "Pit", "description": "Level 5-1 has a few small pits", "count": 4}, 
+            {"name": "Goomba", "description": "Level 5-1 has several Goombas", "count": 21},
+            {"name": "Green Shell Koopa", "description": "Level 5-1 has some Green Shell Koopas", "count": 6},
+            {"name": "Green Shell Paratroopa", "description": "Level 5-1 has a few Green Shell Paratroopas", "count": 4},
+            {"name": "Bill Blaster", "description": "Level 5-1 has a few Bill Blasters", "count": 3},
+            {"name": "Bullet Bill", "description": "Level 5-1 has Bullet Bills launched by the Bill Blasters"},
+            {"name": "Pit", "description": "Level 5-1 has a few small pits", "count": 4},
             {"name": "Coin", "description": "Level 5-1 has several coins both floating in a bonus room and inside a block in the bonus room", "count": 20}, 
             {"name": "1-Up Mushroom", "description": "Level 5-1 has 1 1-up mushroom hidden in an invisible block", "count": 1}, 
 
