@@ -8,12 +8,11 @@ flask = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
 flask-marshmallow = "*"
-marshmallow = "*"
+marshmallow = "==3.26.1"
 flask-cors = "*"
 marshmallow-sqlalchemy = "*"
-psycopg2-binary = "*"
 flask-bcrypt = "*"
-psycopg2 = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
