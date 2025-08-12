@@ -12,7 +12,7 @@ marshmallow = "==3.26.1"
 flask-cors = "*"
 marshmallow-sqlalchemy = "*"
 flask-bcrypt = "*"
-psycopg2-binary = "*"
+psycopg2-binary = "==2.9.7"
 
 [dev-packages]
 
