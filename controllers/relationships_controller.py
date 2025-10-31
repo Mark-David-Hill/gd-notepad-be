@@ -27,7 +27,20 @@ def relationships_get_all():
 
 
 def relationships_get_by_collection(collection_id):
-    return records_get_by_collection(Relationships, relationships_schema, "relationships", collection_id)
+    # Use joinedload to eagerly load the related items
+    from sqlalchemy.orm import joinedload
+    relationships_query = db.session.query(Relationships).options(
+        joinedload(Relationships.item_1),
+        joinedload(Relationships.item_2)
+    ).filter(Relationships.collection_id == collection_id).all()
+    
+    if not relationships_query:
+        return jsonify({"message": "No relationships found for the given collection"}), 404
+    
+    return jsonify({
+        "message": "relationships found",
+        "results": relationships_schema.dump(relationships_query)
+    }), 200
 
 
 # @auth
