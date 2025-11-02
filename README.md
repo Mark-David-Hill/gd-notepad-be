@@ -1,34 +1,206 @@
-# gd-notepad-be
+# Game Design Notepad - Backend
 
-Overview
+The backend API for the Game Design Notepad application - a tool designed to help developers and designers analyze and document game elements, their relationships, and structure.
 
-This is the backend for a Game Design Notepad app, which is designed to make it easier to analyze the different parts of a game and take notes on them. I made this for my Dev Pipeline Backend Course Capstone project.
+## Overview
 
-I learned a lot this semester, but one of the most significant things I feel I learned was getting to know the workflow of the backend well enough that I could troubleshoot and find the source of problems when things weren't working. This was very difficult for me at the beginning of the semester, so it was satisfying to be able to begin to understand better how things were related so I could solve problems as they arose.
+This is a RESTful Flask API that provides comprehensive endpoints for managing game design data. The application supports:
 
-My favorite part of this Backend course was seeing everything come together over the course of the semester. We started small, but it was satisfying to add each successive piece until I was able to build out an entire backend myself (with help from my instructors). Finishing this capstone was challenging but also interesting and a lot of fun.
+- **Collections** - Organize games or projects into collections
+- **Types** - Define categories for game elements (characters, items, locations, etc.)
+- **Items** - Create and manage individual game elements
+- **Relationships** - Link items together with descriptive relationships
+- **Tags** - Label and organize items across collections
+- **Notes** - Take detailed notes on any item
+- **Color Schemes** - Customize visual appearance for different types
+- **User Management** - Multi-user support with authentication
 
-Getting Started
+## Tech Stack
 
-## run the following commands to start the backend
+- **Framework**: Flask (Python)
+- **ORM**: SQLAlchemy
+- **Database**: PostgreSQL
+- **Authentication**: Flask-Bcrypt + session-based auth
+- **Serialization**: Marshmallow
+- **CORS**: Flask-CORS
 
-python3 -m pipenv shell
-pipenv install
-createdb gd-notepad
-python app.py
+## Getting Started
 
-There is a Postman Collection included which allows you to test the requests. You can start by creating a user and then authenticating them. This give you access to other requests. Refer to the included ERD to see what tables require other tables.
+### Prerequisites
 
-The included tables are:
--App Users
--Auth Tokens
--Game Elements
--Games
--Release Profiles
--Types
--Tags
--Notes
--Element Relationships
--Game Elements Tags Xref
+- Python 3.9.6
+- PostgreSQL
+- pipenv
 
-I plan on adding additional requests and eventually making a frontend for this app, but it should be functional as a backend in its current state.
+### Installation
+
+1. Clone the repository
+2. Navigate to the backend directory:
+
+   ```bash
+   cd gd-notepad-be
+   ```
+
+3. Create and activate a virtual environment:
+
+   ```bash
+   python3 -m pipenv shell
+   ```
+
+4. Install dependencies:
+
+   ```bash
+   pipenv install
+   ```
+
+5. Create the database:
+
+   ```bash
+   createdb gd-notepad
+   ```
+
+6. Set up the environment variable:
+
+   ```bash
+   export DATABASE_URI=postgresql://localhost/gd-notepad
+   ```
+
+7. Run the application:
+   ```bash
+   python app.py
+   ```
+
+The server will start on `http://127.0.0.1:8086`
+
+## Database Schema
+
+The application uses the following main tables:
+
+- **Users** - User accounts and authentication
+- **Auth Tokens** - Session management
+- **Collections** - Game/project collections
+- **Types** - Element categories
+- **Items** - Individual game elements
+- **Relationships** - Links between items
+- **Tags** - Labeling system
+- **Notes** - Item documentation
+- **Color Schemes** - Visual styling
+- **Items Tags Xref** - Many-to-many relationship between items and tags
+- **Roles Permissions Xref** - User permissions
+- **Change Logs** - Audit trail
+
+## API Endpoints
+
+### Authentication
+
+- `POST /user/auth` - Login
+- `GET /user/check-login` - Verify authentication
+- `POST /user/logout` - Logout
+
+### Users
+
+- `POST /user` - Create user
+- `GET /users` - Get all users
+- `GET /user/<id>` - Get user by ID
+- `PUT /user/<id>` - Update user
+- `DELETE /user/delete/<id>` - Delete user
+
+### Collections
+
+- `POST /collection` - Create collection
+- `GET /collections` - Get all collections
+- `GET /collection/<id>` - Get collection by ID
+- `PUT /collection/<id>` - Update collection
+- `DELETE /collection/delete/<id>` - Delete collection
+
+### Types
+
+- `POST /type` - Create type
+- `GET /types` - Get all types
+- `GET /types/collection/<collection_id>` - Get types for collection
+- `GET /type/<id>` - Get type by ID
+- `PUT /type/<id>` - Update type
+- `DELETE /type/delete/<id>` - Delete type
+
+### Items
+
+- `POST /item` - Create item
+- `GET /items` - Get all items
+- `GET /items/collection/<collection_id>` - Get items for collection
+- `GET /item/<id>` - Get item by ID
+- `PUT /item/<id>` - Update item
+- `DELETE /item/delete/<id>` - Delete item
+- `POST /item/tag` - Add tags to item
+
+### Relationships
+
+- `POST /relationship` - Create relationship
+- `GET /relationships` - Get all relationships
+- `GET /relationships/collection/<collection_id>` - Get relationships for collection
+- `GET /relationship/<id>` - Get relationship by ID
+- `PUT /relationship/<id>` - Update relationship
+- `DELETE /relationship/delete/<id>` - Delete relationship
+
+### Tags
+
+- `POST /tag` - Create tag
+- `GET /tags` - Get all tags
+- `GET /tag/<id>` - Get tag by ID
+- `PUT /tag/<id>` - Update tag
+- `DELETE /tag/delete/<id>` - Delete tag
+
+### Notes
+
+- `POST /note` - Create note
+- `GET /notes` - Get all notes
+- `GET /notes/collection/<collection_id>` - Get notes for collection
+- `GET /note/<id>` - Get note by ID
+- `PUT /note/<id>` - Update note
+- `DELETE /note/delete/<id>` - Delete note
+
+### Color Schemes
+
+- `POST /color-scheme` - Create color scheme
+- `GET /color-schemes` - Get all color schemes
+- `GET /color-scheme/<id>` - Get color scheme by ID
+- `PUT /color-scheme/<id>` - Update color scheme
+- `DELETE /color-scheme/delete/<id>` - Delete color scheme
+
+## Demo Data
+
+The application automatically loads demo data on startup, including:
+
+- Sample collections
+- Game element types
+- Items with relationships
+- Tags and notes
+- Color schemes
+
+This demo data uses examples from "Watership Down" and "Super Mario Bros." to demonstrate the system's capabilities.
+
+## Development
+
+The project structure follows Flask best practices:
+
+```
+gd-notepad-be/
+├── app.py                 # Application entry point
+├── db.py                  # Database configuration
+├── models/                # SQLAlchemy models
+├── controllers/           # Business logic
+├── routes/                # URL routing
+├── util/                  # Utility functions
+├── lib/                   # Libraries and helpers
+│   ├── authenticate.py    # Auth decorators
+│   └── demo_data/         # Demo data scripts
+└── Pipfile                # Python dependencies
+```
+
+## Testing
+
+API endpoints can be tested using:
+
+- Postman collections (included in repository)
+- curl commands
+- Frontend application
+- API testing tools
