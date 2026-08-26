@@ -12,7 +12,7 @@ from lib.authenticate import auth, authenticate_return_auth, validate_uuid4
 @authenticate_return_auth
 def item_add(req, auth_info):
     post_data = req.form if req.form else req.json
-    if not validate_uuid4(post_data.get("collection_id") or not validate_uuid4(post_data.get("type_id"))):
+    if not validate_uuid4(post_data.get("collection_id")) or not validate_uuid4(post_data.get("type_id")):
         return jsonify({"message": "could not create item, must provide valid uuids for collection id and type id"}), 400
     
     collection_query = db.session.query(Collections).filter(Collections.collection_id == post_data.get("collection_id")).first()
